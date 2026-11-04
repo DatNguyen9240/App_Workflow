@@ -196,6 +196,17 @@
     color: #0f172a;
     border-color: #94a3b8;
   }
+  .sop-btn-primary {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-color: #bfdbfe;
+    font-weight: 600;
+  }
+  .sop-btn-primary:hover {
+    background: #dbeafe;
+    color: #1e40af;
+    border-color: #93c5fd;
+  }
 
   /* ERP Pages inside Panel */
   .erp-box-title { font-size:.72rem; font-weight:700; color:#475569; text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; display:flex; align-items:center; gap:4px; }
@@ -1149,25 +1160,40 @@ function showDetail(id) {
 
       const isWeb = window.location.protocol.startsWith('http');
       const webUrl = window.location.origin + '/' + encodeURI(filePath);
+      const isOfficeDoc = ['docx', 'doc', 'pptx', 'ppt', 'xlsx', 'xls'].includes(ext);
+
+      // Online viewer URL (Office Online Viewer for PPTX, DOCX, XLSX on web)
+      let viewUrl = `./${encodeURI(filePath)}`;
+      let viewLabel = '👁️ Xem online';
+      if (ext === 'pdf') {
+        viewLabel = '👁️ Xem PDF';
+      } else if (isWeb && isOfficeDoc) {
+        viewUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(webUrl)}`;
+        viewLabel = '👁️ Xem online';
+      } else {
+        viewLabel = '↗️ Mở file';
+      }
+
       const copyVal = isWeb ? webUrl : fullWinPath;
       const copyLabel = isWeb ? '📋 Copy link' : '📋 Copy đường dẫn';
-      const actionLabel = (ext === 'pdf') ? '↗️ Mở PDF' : '📥 Tải file';
-      const downloadAttr = (ext === 'pdf') ? '' : `download="${fileName.replace(/"/g, '&quot;')}"`;
 
       const li = document.createElement('li');
       li.className = 'sop-item';
       li.innerHTML = `
         <div class="sop-item-header">
           <span class="sop-badge ${badgeClass}">${badgeText}</span>
-          <a href="./${encodeURI(filePath)}" ${downloadAttr} target="_blank" class="sop-link" title="Bấm để mở file hoặc tải về: ${fileName}">
+          <a href="${viewUrl}" target="_blank" class="sop-link" title="Bấm để xem trực tiếp trên trình duyệt: ${fileName}">
             ${fileName}
           </a>
         </div>
         <div class="sop-actions">
-          <a href="./${encodeURI(filePath)}" ${downloadAttr} target="_blank" class="sop-btn">
-            ${actionLabel}
+          <a href="${viewUrl}" target="_blank" class="sop-btn sop-btn-primary" title="Xem trực tiếp trên trình duyệt (không cần tải về)">
+            ${viewLabel}
           </a>
-          <button class="sop-btn" data-copy="${copyVal.replace(/"/g, '&quot;')}" onclick="copyUrl(this.getAttribute('data-copy'), this)">
+          <a href="./${encodeURI(filePath)}" download="${fileName.replace(/"/g, '&quot;')}" class="sop-btn" title="Tải file về máy">
+            📥 Tải về
+          </a>
+          <button class="sop-btn" data-copy="${copyVal.replace(/"/g, '&quot;')}" onclick="copyUrl(this.getAttribute('data-copy'), this)" title="Sao chép liên kết">
             ${copyLabel}
           </button>
         </div>
