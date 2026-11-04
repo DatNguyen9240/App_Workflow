@@ -1,0 +1,6 @@
+# Ignore heavy training videos (>100MB) and backup archives
+*.mp4
+*.7z
+
+# Ignore python helper scripts
+*.py

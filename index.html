@@ -1,0 +1,1261 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ERP Sản Xuất – Sơ Đồ Luồng & Minh Họa Thực Tế (100 Hộp Quà)</title>
+<script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background: #f8fafc;
+    color: #1e293b;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 0; padding: 0;
+  }
+
+  /* ── Header ── */
+  #header {
+    position: sticky; top: 0; z-index: 40;
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 10px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  }
+  #header h1 { margin:0; font-size:1.05rem; font-weight:700; letter-spacing:.3px; display:flex; align-items:center; gap:8px; }
+  #header p  { margin:0; font-size:.73rem; color:#94a3b8; }
+
+  /* Mode Switch Buttons */
+  .mode-btn {
+    font-size: .75rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    color: #e2e8f0;
+    cursor: pointer;
+    transition: all .2s;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .mode-btn:hover { background: rgba(255,255,255,0.18); }
+  .mode-btn.active {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(59,130,246,0.5);
+  }
+
+  /* ── Story Overview Banner ── */
+  #story-banner {
+    background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 50%, #fefce8 100%);
+    border-bottom: 1.5px solid #e2e8f0;
+    padding: 12px 20px;
+  }
+  .story-step-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .story-step-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+
+  /* ── Panel ── */
+  #panel {
+    position: fixed;
+    top: 60px; right: 16px;
+    width: 360px;
+    background: #ffffff !important;
+    border: 1.5px solid #e2e8f0 !important;
+    color: #1a202c !important;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+    border-radius: 14px;
+    padding: 16px;
+    z-index: 50;
+    display: none;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  #panel-title-zh { font-size:1.05rem; font-weight:700; color:#0f172a; margin:0 0 2px; }
+  #panel-title-vi { font-size:.82rem; font-weight:600; color:#475569; margin:0 0 12px; }
+  #panel-close {
+    position:absolute; top:12px; right:14px;
+    background:#f1f5f9; border:none; font-size:.9rem;
+    width:24px; height:24px; border-radius:12px;
+    cursor:pointer; color:#64748b; line-height:24px; text-align:center;
+  }
+  #panel-close:hover { background:#e2e8f0; color:#0f172a; }
+
+  /* Story Box inside Panel */
+  .story-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+  }
+  .story-box-title { font-size:.72rem; font-weight:700; color:#15803d; text-transform:uppercase; letter-spacing:.5px; margin-bottom:4px; display:flex; align-items:center; gap:4px; }
+  .story-box-text  { font-size:.78rem; line-height:1.45; color:#1e293b; }
+  .story-box-issue {
+    background: #fff1f2;
+    border: 1px dashed #fecdd3;
+    border-radius: 8px;
+    padding: 6px 9px;
+    margin-top: 8px;
+    font-size:.74rem;
+    color:#9f1239;
+    line-height:1.4;
+  }
+
+  
+  
+  /* SOP Box inside Panel */
+  .sop-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+  }
+  .sop-box-title { font-size:.73rem; font-weight:700; color:#1e40af; text-transform:uppercase; letter-spacing:.5px; margin-bottom:4px; display:flex; align-items:center; gap:5px; }
+  #panel-sop-list { list-style:none; margin:0; padding:0; }
+  .sop-item {
+    font-size: .73rem;
+    padding: 7px 9px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all .15s;
+  }
+  .sop-item:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+  }
+  .sop-item-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sop-link {
+    color: #1e3a8a;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-word;
+    flex: 1;
+    transition: color .15s;
+  }
+  .sop-link:hover {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+  .sop-badge {
+    font-size: .6rem;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    text-transform: uppercase;
+  }
+  .badge-pdf  { background: #fee2e2; color: #b91c1c; }
+  .badge-pptx { background: #ffedd5; color: #c2410c; }
+  .badge-docx { background: #dbeafe; color: #1d4ed8; }
+  .badge-xlsx { background: #dcfce7; color: #15803d; }
+  .sop-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+  }
+  .sop-btn {
+    font-size: .63rem;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    background: #f1f5f9;
+    color: #334155;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    transition: all .15s;
+  }
+  .sop-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    border-color: #94a3b8;
+  }
+
+  /* ERP Pages inside Panel */
+  .erp-box-title { font-size:.72rem; font-weight:700; color:#475569; text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px; display:flex; align-items:center; gap:4px; }
+  #panel-list { list-style:none; margin:0; padding:0; }
+  #panel-list li {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 7px 10px;
+    margin-bottom: 6px;
+    background: #f8fafc;
+  }
+  #panel-list .pg-name { font-size:.8rem; font-weight:600; color:#1e293b; }
+  #panel-list .pg-url  { font-size:.68rem; color:#64748b; word-break:break-all; margin:2px 0 4px; }
+  #panel-list .copy-btn {
+    font-size:.65rem; padding:2px 7px;
+    background:#e2e8f0; border:none; border-radius:4px;
+    cursor:pointer; color:#334155; transition:background .15s;
+  }
+  #panel-list .copy-btn:hover { background:#cbd5e1; }
+  .copy-ok { color:#16a34a!important; font-weight:600; }
+
+  /* ── Layout wrapper ── */
+  #main-wrap {
+    padding: 20px 16px 40px;
+    min-width: 1040px;
+    overflow-x: auto;
+  }
+
+  /* ── Stage containers ── */
+  .stage {
+    position: relative;
+    border-radius: 14px;
+    padding: 16px 14px 12px;
+    margin-bottom: 14px;
+    transition: all .2s;
+  }
+  .stage-label {
+    position: absolute; top: -11px; left: 16px;
+    font-size: .68rem; font-weight: 700;
+    padding: 2px 12px;
+    border-radius: 20px;
+    letter-spacing: .4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  }
+
+  /* ── Node ── */
+  .node {
+    display: inline-flex; flex-direction: column; align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    padding: 8px 12px;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: transform .15s, filter .15s, box-shadow .15s, border-color .15s;
+    text-align: center;
+    user-select: none;
+    position: relative;
+    background: #ffffff;
+  }
+  .node:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+  .node.highlight-node {
+    box-shadow: 0 0 0 3px #3b82f6 !important;
+    transform: scale(1.02);
+  }
+  .node .n-zh  { font-size: .8rem; font-weight: 700; line-height:1.25; }
+  .node .n-vi  { font-size: .64rem; opacity:.85; line-height:1.2; margin-top:2px; font-weight: 500; }
+  .node .n-ex  {
+    font-size: .63rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-top: 4px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(0,0,0,0.08);
+    display: block;
+    max-width: 180px;
+    white-space: normal;
+  }
+
+  .node-sm {
+    min-width: 105px;
+    padding: 6px 10px;
+    border-radius: 9px;
+  }
+  .node-sm .n-zh { font-size:.74rem; }
+  .node-sm .n-vi { font-size:.6rem; }
+  .node-sm .n-ex { font-size:.58rem; max-width: 140px; }
+
+  /* ── Dashed node (phụ) ── */
+  .node-dash { border-style: dashed !important; }
+
+  /* ── Arrow helpers ── */
+  .arr { font-size:.95rem; color:#94a3b8; line-height:1; display:flex; align-items:center; justify-content:center; padding:1px 2px; }
+
+  /* ── Flex row / col ── */
+  .row { display:flex; align-items:flex-start; gap:6px; flex-wrap:nowrap; }
+  .col { display:flex; flex-direction:column; align-items:center; gap:5px; }
+
+  /* ── 3-column section ── */
+  .three-col { display:grid; grid-template-columns: 1fr 1fr 1fr; gap:12px; align-items:start; }
+
+  /* Stage color themes */
+  .s-indigo { background:rgba(99,102,241,.06); border:2px dashed rgba(99,102,241,.35); }
+  .s-indigo .stage-label { background:#4f46e5; color:#ffffff; }
+
+  .s-sky { background:rgba(14,165,233,.06); border:2px dashed rgba(14,165,233,.35); }
+  .s-sky .stage-label { background:#0284c7; color:#ffffff; }
+
+  .s-amber { background:rgba(217,119,6,.06); border:2px dashed rgba(217,119,6,.35); }
+  .s-amber .stage-label { background:#d97706; color:#ffffff; }
+
+  .s-green { background:rgba(22,163,74,.06); border:2px dashed rgba(22,163,74,.35); }
+  .s-green .stage-label { background:#16a34a; color:#ffffff; }
+
+  .s-orange { background:rgba(234,88,12,.06); border:2px dashed rgba(234,88,12,.35); }
+  .s-orange .stage-label { background:#ea580c; color:#ffffff; }
+
+  .s-emerald { background:rgba(5,150,105,.06); border:2px dashed rgba(5,150,105,.35); }
+  .s-emerald .stage-label { background:#059669; color:#ffffff; }
+
+  .s-purple { background:rgba(147,51,234,.06); border:2px dashed rgba(147,51,234,.35); }
+  .s-purple .stage-label { background:#9333ea; color:#ffffff; }
+
+  /* Node color borders & text */
+  .n-indigo { background:rgba(99,102,241,.1);  border:1.5px solid rgba(99,102,241,.6);  color:#3730a3; }
+  .n-sky    { background:rgba(14,165,233,.1);   border:1.5px solid rgba(14,165,233,.6);   color:#0369a1; }
+  .n-amber  { background:rgba(217,119,6,.1);    border:1.5px solid rgba(217,119,6,.6);    color:#92400e; }
+  .n-green  { background:rgba(22,163,74,.1);    border:1.5px solid rgba(22,163,74,.6);    color:#166534; }
+  .n-orange { background:rgba(234,88,12,.1);   border:1.5px solid rgba(234,88,12,.6);   color:#9a3412; }
+  .n-emerald{ background:rgba(5,150,105,.1);   border:1.5px solid rgba(5,150,105,.6);   color:#065f46; }
+  .n-purple { background:rgba(147,51,234,.1);  border:1.5px solid rgba(147,51,234,.6);  color:#6b21a8; }
+  .n-red    { background:rgba(225,29,72,.1);    border:1.5px solid rgba(225,29,72,.6);    color:#9f1239; }
+  .n-gray   { background:rgba(100,116,139,.1); border:1.5px dashed rgba(100,116,139,.5);color:#334155; }
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<div id="header">
+  <div>
+    <h1>🏭 ERP Sản Xuất – Luồng Nghiệp Vụ & Minh Họa Thực Tế</h1>
+    <p>Dựa trên ví dụ: <strong>Sản xuất 100 chiếc hộp đựng quà cao cấp mạ vàng</strong></p>
+  </div>
+  <div class="flex items-center gap-2">
+    <button class="mode-btn active" id="btn-mode-story" onclick="setMode('story')">🎁 Bật Minh Họa (100 Hộp Quà)</button>
+    <button class="mode-btn" id="btn-mode-erp" onclick="setMode('erp')">🏢 Chế Độ Menu ERP</button>
+  </div>
+</div>
+
+<!-- ── Story Overview Banner (3 Giai Đoạn Tóm Tắt) ── -->
+<div id="story-banner">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="flex items-center justify-between mb-2">
+      <span class="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1">
+        📖 Cốt truyện 3 giai đoạn (Click vào giai đoạn để làm sáng các bước trên sơ đồ):
+      </span>
+      <span class="text-[11px] text-slate-500 italic">💡 Click vào bất kỳ ô nào bên dưới để xem chi tiết ví dụ & trang ERP tương ứng</span>
+    </div>
+    <div class="grid grid-cols-3 gap-3">
+      <!-- Giai đoạn 1 -->
+      <div class="story-step-card" onclick="highlightStage('s1')">
+        <div class="text-[11px] font-bold text-indigo-700 flex items-center justify-between">
+          <span>Giai Đoạn 1: Khởi Đầu & Kế Hoạch</span>
+          <span class="text-[10px] bg-indigo-100 text-indigo-800 px-1.5 py-0.5 rounded">Nhận đơn</span>
+        </div>
+        <p class="text-[11px] text-slate-600 mt-1 leading-snug">
+          Khách đặt 100 hộp quà → Xưởng duyệt khả thi → Tính cần 100 bìa, keo dán, khuôn dập K-100.
+        </p>
+      </div>
+
+      <!-- Giai đoạn 2 -->
+      <div class="story-step-card" onclick="highlightStage('s2')">
+        <div class="text-[11px] font-bold text-emerald-700 flex items-center justify-between">
+          <span>Giai Đoạn 2: Triển Khai 4 Nhánh</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded">Sản xuất & Lỗi</span>
+        </div>
+        <p class="text-[11px] text-slate-600 mt-1 leading-snug">
+          Mua keo (trả keo khô) + Xưởng dập phôi (xin bù bìa, xét 5 hộp lem) + Thuê ngoài mạ vàng (trả hàng ố) + Lắp ráp hoàn thiện.
+        </p>
+      </div>
+
+      <!-- Giai đoạn 3 -->
+      <div class="story-step-card" onclick="highlightStage('s3')">
+        <div class="text-[11px] font-bold text-purple-700 flex items-center justify-between">
+          <span>Giai Đoạn 3: Giao Hàng & Tiền Bạc</span>
+          <span class="text-[10px] bg-purple-100 text-purple-800 px-1.5 py-0.5 rounded">Kết thúc</span>
+        </div>
+        <p class="text-[11px] text-slate-600 mt-1 leading-snug">
+          Xuất giao cho khách (khách trả 2 hộp móp) → Xuất HĐ bán & Nhận HĐ mua → Thu tiền khách, chi trả thầu phụ.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Side Panel (Hiển Thị Minh Họa + Pages ERP) ── -->
+<div id="panel">
+  <button id="panel-close" onclick="closePanel()">✕</button>
+  <div id="panel-stage-badge" class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1"></div>
+  <div id="panel-title-zh"></div>
+  <div id="panel-title-vi"></div>
+
+  <!-- Story Box -->
+  <div class="story-box">
+    <div class="story-box-title">💡 Minh Họa Thực Tế (100 Hộp Quà)</div>
+    <div id="panel-story-desc" class="story-box-text"></div>
+    <div id="panel-story-issue" class="story-box-issue" style="display:none;"></div>
+  </div>
+
+  
+  
+
+  <!-- SOP Documents Box (Single Clean Box) -->
+  <div class="sop-box">
+    <div class="sop-box-title">📚 Tài Liệu SOP Hướng Dẫn Vận Hành</div>
+    <div class="text-[10px] text-slate-500 mb-2 italic">💡 Bấm vào tên file để mở/tải về hoặc bấm nút copy đường dẫn:</div>
+    <ul id="panel-sop-list"></ul>
+  </div>
+
+  
+  <div class="erp-box-title">🔗 Menu & Trang ERP Tương Ứng</div>
+  <ul id="panel-list"></ul>
+</div>
+
+<!-- ── Main Diagram ── -->
+<div id="main-wrap">
+
+  <!-- ════════════════════════════════════════
+       STAGE ① – KINH DOANH
+  ════════════════════════════════════════ -->
+  <div class="stage s-indigo" id="stage-box-1">
+    <div class="stage-label">① Kinh Doanh · 销售</div>
+    <div class="col" style="align-items:center;">
+      <div onclick="showDetail('SO')" class="node n-indigo" data-id="SO">
+        <span class="n-zh">销售订单</span>
+        <span class="n-vi">Đơn hàng bán</span>
+        <span class="n-ex">📦 Khách đặt 100 hộp quà</span>
+      </div>
+      <div class="arr">↓</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       STAGE ② – KẾ HOẠCH
+  ════════════════════════════════════════ -->
+  <div class="stage s-sky" id="stage-box-2">
+    <div class="stage-label">② Kế Hoạch Sản Xuất · 计划 (MRP)</div>
+    <div class="col" style="align-items:center;">
+      <div onclick="showDetail('OR')" class="node n-sky" data-id="OR">
+        <span class="n-zh">订单评审 (MPS)</span>
+        <span class="n-vi">Đánh giá đơn hàng (MPS)</span>
+        <span class="n-ex">⚖️ Họp duyệt: Đủ người, kịp giao?</span>
+      </div>
+      <div class="arr">↓</div>
+      <div onclick="showDetail('MRC')" class="node n-sky" data-id="MRC">
+        <span class="n-zh">物料需求计算 (MRC)</span>
+        <span class="n-vi">Tính toán nhu cầu vật liệu</span>
+        <span class="n-ex">🧮 Tính: Cần 100 bìa, keo, khuôn</span>
+      </div>
+      <div class="arr">↓</div>
+
+      <!-- 4 branches từ MRC -->
+      <div class="row" style="justify-content:center; gap:8px; flex-wrap:wrap;">
+        <div class="col" style="align-items:center;">
+          <div onclick="showDetail('PurReq')" class="node node-sm n-amber" data-id="PurReq">
+            <span class="n-zh">采购申请</span>
+            <span class="n-vi">Yêu cầu mua hàng</span>
+            <span class="n-ex">🛒 Xin mua 10 lọ keo</span>
+          </div>
+        </div>
+        <div class="col" style="align-items:center;">
+          <div onclick="showDetail('ProdOrder')" class="node node-sm n-green" data-id="ProdOrder">
+            <span class="n-zh">生产加工单</span>
+            <span class="n-vi">Lệnh gia công sản xuất</span>
+            <span class="n-ex">🏭 Lệnh dập 100 phôi</span>
+          </div>
+        </div>
+        <div class="col" style="align-items:center;">
+          <div onclick="showDetail('MatList')" class="node node-sm n-gray node-dash" data-id="MatList">
+            <span class="n-zh">发料清单</span>
+            <span class="n-vi">Danh mục phát liệu</span>
+            <span class="n-ex">📋 Bảng kê bìa & keo</span>
+          </div>
+        </div>
+        <div class="col" style="align-items:center;">
+          <div onclick="showDetail('ToolNotice')" class="node node-sm n-gray node-dash" data-id="ToolNotice">
+            <span class="n-zh">工模具设备通知单</span>
+            <span class="n-vi">Thông báo thiết bị/khuôn</span>
+            <span class="n-ex">🛠️ Lắp khuôn dập K-100</span>
+          </div>
+        </div>
+      </div>
+      <div class="arr">↓</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       3 CỘT: MUA HÀNG | SẢN XUẤT | GIA CÔNG NGOÀI
+  ════════════════════════════════════════ -->
+  <div class="three-col" style="margin-bottom:12px;">
+
+    <!-- ── CỘT 1: MUA HÀNG (Stage ③) ── -->
+    <div class="stage s-amber" id="stage-box-3" style="margin-bottom:0;">
+      <div class="stage-label">③ Mua Hàng · 采购 (Vật Tư Phụ)</div>
+      <div class="col" style="align-items:center;">
+
+        <div onclick="showDetail('PurOrder')" class="node n-amber" data-id="PurOrder">
+          <span class="n-zh">采购订单</span>
+          <span class="n-vi">Đơn đặt hàng mua</span>
+          <span class="n-ex">📑 Đặt mua 10 lọ keo từ NCC</span>
+        </div>
+        <div class="arr">↓</div>
+
+        <!-- PurReceive ← PurReturn -->
+        <div class="row" style="align-items:center;">
+          <div onclick="showDetail('PurReceive')" class="node n-amber" data-id="PurReceive">
+            <span class="n-zh">采购收货</span>
+            <span class="n-vi">Nhận hàng mua</span>
+            <span class="n-ex">🚚 Giao 10 lọ keo tới kho</span>
+          </div>
+          <div class="arr" style="color:#e11d48; font-size:.75rem; padding:0 2px;">←</div>
+          <div onclick="showDetail('PurReturn')" class="node node-sm n-red node-dash" data-id="PurReturn">
+            <span class="n-zh">采购退货</span>
+            <span class="n-vi">Trả lại hàng mua</span>
+            <span class="n-ex">❌ 2 lọ khô cứng → Trả</span>
+          </div>
+        </div>
+        <div class="arr">↓</div>
+
+        <div onclick="showDetail('IQC1')" class="node n-red" data-id="IQC1">
+          <span class="n-zh">来料检验</span>
+          <span class="n-vi">Kiểm tra NVL đầu vào (IQC)</span>
+          <span class="n-ex">🔬 KCS duyệt 8 lọ keo đạt</span>
+        </div>
+        <div class="arr">↓</div>
+
+        <div onclick="showDetail('InNotice1')" class="node n-amber" data-id="InNotice1">
+          <span class="n-zh">入库通知单 (NVL)</span>
+          <span class="n-vi">Nhập kho nguyên vật liệu</span>
+          <span class="n-ex">📥 Nhập kho 8 lọ keo cất trữ</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CỘT 2: SẢN XUẤT XƯỞNG (Stage ④) ── -->
+    <div class="stage s-green" id="stage-box-4" style="margin-bottom:0;">
+      <div class="stage-label">④ Xưởng – 跟单 (Sản Xuất Đợt 1)</div>
+      <div class="col" style="align-items:center;">
+
+        <div onclick="showDetail('Dispatch')" class="node n-green" data-id="Dispatch">
+          <span class="n-zh">生产派工单</span>
+          <span class="n-vi">Lệnh phân công / Phát việc</span>
+          <span class="n-ex">👷 Giao Tổ 1 phụ trách dập</span>
+        </div>
+        <div class="arr">↓</div>
+
+        <!-- FollowIssue ← MatReq -->
+        <div class="row" style="align-items:center;">
+          <div onclick="showDetail('FollowIssue')" class="node n-green" data-id="FollowIssue">
+            <span class="n-zh">生产领料 (跟单)</span>
+            <span class="n-vi">Lĩnh liệu theo đơn</span>
+            <span class="n-ex">📦 Lĩnh 100 tấm bìa carton</span>
+          </div>
+          <div class="arr" style="color:#64748b; font-size:.75rem; padding:0 2px;">←</div>
+          <div onclick="showDetail('MatReq')" class="node node-sm n-gray node-dash" data-id="MatReq">
+            <span class="n-zh">用料申请单</span>
+            <span class="n-vi">Đơn xin bổ sung vật liệu</span>
+            <span class="n-ex">⚠️ Rách 3 bìa → Đơn bù</span>
+          </div>
+        </div>
+        <div class="arr">↓</div>
+
+        <!-- Rep1 → QualCheck -->
+        <div class="row" style="align-items:center; gap:4px;">
+          <div onclick="showDetail('Rep1')" class="node n-green" data-id="Rep1">
+            <span class="n-zh">生产报工 ①</span>
+            <span class="n-vi">Báo công sản xuất (đợt 1)</span>
+            <span class="n-ex">✅ Báo dập xong 100 phôi</span>
+          </div>
+          <div class="arr" style="color:#e11d48; font-size:.8rem;">→</div>
+          <div onclick="showDetail('QualCheck')" class="node node-sm n-red" data-id="QualCheck">
+            <span class="n-zh">品质判定单</span>
+            <span class="n-vi">Phán định chất lượng</span>
+            <span class="n-ex">🔍 5 hộp lem → Phán định</span>
+          </div>
+        </div>
+        <div class="arr">↓</div>
+
+        <div onclick="showDetail('InNotice2')" class="node n-green" data-id="InNotice2">
+          <span class="n-zh">入库通知单 (BTP1)</span>
+          <span class="n-vi">Nhập kho BTP đợt 1</span>
+          <span class="n-ex">📥 Nhập kho 95 phôi đạt</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CỘT 3: GIA CÔNG NGOÀI (Stage ⑤) ── -->
+    <div class="stage s-orange" id="stage-box-5" style="margin-bottom:0;">
+      <div class="stage-label">⑤ Gia Công Ngoài · 委外 (Mạ Vàng Viền)</div>
+      <div class="col" style="align-items:center;">
+
+        <div onclick="showDetail('SubOrder')" class="node n-orange" data-id="SubOrder">
+          <span class="n-zh">委外加工单</span>
+          <span class="n-vi">Đơn gia công ngoài</span>
+          <span class="n-ex">🤝 Thuê ngoài mạ vàng viền</span>
+        </div>
+        <div class="arr">↓</div>
+
+        <!-- SubIssue ← SubIssueRet -->
+        <div class="row" style="align-items:center;">
+          <div onclick="showDetail('SubIssue')" class="node n-orange" data-id="SubIssue">
+            <span class="n-zh">委外发料</span>
+            <span class="n-vi">Phát liệu gia công ngoài</span>
+            <span class="n-ex">🚚 Gửi 95 phôi sang xưởng mạ</span>
+          </div>
+          <div class="arr" style="color:#e11d48; font-size:.75rem; padding:0 2px;">←</div>
+          <div onclick="showDetail('SubIssueRet')" class="node node-sm n-red node-dash" data-id="SubIssueRet">
+            <span class="n-zh">委外退料</span>
+            <span class="n-vi">Trả lại vật liệu gia công</span>
+            <span class="n-ex">↩️ 3 phôi móp → Trả kho</span>
+          </div>
+        </div>
+        <div class="arr">↓</div>
+
+        <!-- SubReceive ← SubReceiveRet -->
+        <div class="row" style="align-items:center;">
+          <div onclick="showDetail('SubReceive')" class="node n-orange" data-id="SubReceive">
+            <span class="n-zh">委外收货</span>
+            <span class="n-vi">Nhận hàng gia công ngoài</span>
+            <span class="n-ex">📦 Nhận 92 hộp mạ vàng về</span>
+          </div>
+          <div class="arr" style="color:#e11d48; font-size:.75rem; padding:0 2px;">←</div>
+          <div onclick="showDetail('SubReceiveRet')" class="node node-sm n-red node-dash" data-id="SubReceiveRet">
+            <span class="n-zh">委外退货</span>
+            <span class="n-vi">Trả lại hàng gia công</span>
+            <span class="n-ex">❌ 2 hộp ố → Bắt mạ lại</span>
+          </div>
+        </div>
+        <div class="arr">↓</div>
+
+        <div onclick="showDetail('SubInsp')" class="node n-red" data-id="SubInsp">
+          <span class="n-zh">来料检验 (委外)</span>
+          <span class="n-vi">Kiểm tra chất lượng GCN</span>
+          <span class="n-ex">🔬 KCS duyệt 90 hộp mạ đẹp</span>
+        </div>
+        <div class="arr">↓</div>
+
+        <div onclick="showDetail('InNotice3')" class="node n-orange" data-id="InNotice3">
+          <span class="n-zh">入库通知单 (BTP2)</span>
+          <span class="n-vi">Nhập kho BTP đợt 2</span>
+          <span class="n-ex">📥 Nhập kho 90 phôi mạ vàng</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /three-col -->
+
+  <!-- ════════════════════════════════════════
+       STAGE ⑥ – HOÀN THIỆN (工序)
+  ════════════════════════════════════════ -->
+  <div class="stage s-emerald" id="stage-box-6">
+    <div class="stage-label">⑥ Hoàn Thiện – Công Đoạn · 工序 (Dán Keo, Lót Nhung)</div>
+    <div class="col" style="align-items:center;">
+      <div onclick="showDetail('ProcIssue')" class="node n-emerald" data-id="ProcIssue">
+        <span class="n-zh">生产领料 (工序)</span>
+        <span class="n-vi">Lĩnh liệu theo công đoạn</span>
+        <span class="n-ex">🎨 Lĩnh keo & nhung hoàn thiện</span>
+      </div>
+      <div class="arr">↓</div>
+
+      <!-- Rep2 → QualCheck2 -->
+      <div class="row" style="align-items:center; gap:4px;">
+        <div onclick="showDetail('Rep2')" class="node n-emerald" data-id="Rep2">
+          <span class="n-zh">生产报工 ②</span>
+          <span class="n-vi">Báo công sản xuất (đợt 2)</span>
+          <span class="n-ex">✅ Báo công hoàn tất 90 hộp quà</span>
+        </div>
+        <div class="arr" style="color:#e11d48; font-size:.8rem;">→</div>
+        <div onclick="showDetail('QualCheck')" class="node node-sm n-red" data-id="QualCheck2">
+          <span class="n-zh">品质判定单</span>
+          <span class="n-vi">Phán định chất lượng</span>
+          <span class="n-ex">🔍 Đánh giá hàng lỗi nếu có</span>
+        </div>
+      </div>
+      <div class="arr">↓</div>
+
+      <div onclick="showDetail('InNotice4')" class="node n-emerald" data-id="InNotice4">
+        <span class="n-zh">入库通知单 (TP)</span>
+        <span class="n-vi">Nhập kho thành phẩm hoàn chỉnh</span>
+        <span class="n-ex">📥 Nhập kho 90 hộp quà thành phẩm</span>
+      </div>
+      <div class="arr">↓</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       STAGE ⑦ – XUẤT BÁN
+  ════════════════════════════════════════ -->
+  <div class="stage s-indigo" id="stage-box-7">
+    <div class="stage-label">⑦ Xuất Bán · 销售出货 (Giao Hàng Cho Khách)</div>
+    <div class="col" style="align-items:center;">
+      <!-- SalesShip ← SalesReturn -->
+      <div class="row" style="align-items:center; gap:4px;">
+        <div onclick="showDetail('SalesShip')" class="node n-indigo" data-id="SalesShip">
+          <span class="n-zh">销售出货</span>
+          <span class="n-vi">Xuất hàng bán</span>
+          <span class="n-ex">🚚 Giao 90 hộp quà cho khách</span>
+        </div>
+        <div class="arr" style="color:#e11d48; font-size:.8rem;">←</div>
+        <div onclick="showDetail('SalesReturn')" class="node node-sm n-red node-dash" data-id="SalesReturn">
+          <span class="n-zh">销售退货</span>
+          <span class="n-vi">Hàng bán bị trả lại</span>
+          <span class="n-ex">↩️ Ship móp 2 hộp → Khách trả</span>
+        </div>
+      </div>
+      <div class="arr">↓</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       STAGE ⑧ – TÀI CHÍNH
+  ════════════════════════════════════════ -->
+  <div class="stage s-purple" id="stage-box-8">
+    <div class="stage-label">⑧ Tài Chính · 财务 (Hóa Đơn & Thu/Chi Tiền)</div>
+    <div class="col" style="align-items:center;">
+
+      <div class="row" style="align-items:flex-start; gap:16px; justify-content:center; flex-wrap:wrap;">
+
+        <!-- Nhánh Bán Hàng -->
+        <div class="col" style="align-items:center; gap:4px;">
+          <div class="text-[11px] font-bold text-purple-700">Dòng Tiền Bán Hàng (Đầu Ra)</div>
+          <div onclick="showDetail('SalesInv')" class="node n-purple" data-id="SalesInv">
+            <span class="n-zh">销售发票</span>
+            <span class="n-vi">Hóa đơn bán hàng</span>
+            <span class="n-ex">🧾 Xuất HĐ 50tr cho khách</span>
+          </div>
+          <div class="arr" style="color:#9333ea;">↓</div>
+          <div onclick="showDetail('InvReg')" class="node n-purple" data-id="InvReg">
+            <span class="n-zh">发票登记</span>
+            <span class="n-vi">Đăng ký hóa đơn</span>
+            <span class="n-ex">📒 Kế toán vào sổ thuế & phần mềm</span>
+          </div>
+          <div class="arr" style="color:#9333ea;">↓</div>
+          <div onclick="showDetail('RecDoc')" class="node n-purple" data-id="RecDoc">
+            <span class="n-zh">收款单</span>
+            <span class="n-vi">Phiếu thu tiền</span>
+            <span class="n-ex">💰 Khách chuyển khoản trả 50tr</span>
+          </div>
+        </div>
+
+        <!-- Dải phân cách -->
+        <div style="width:1.5px; background:#d8b4fe; min-height:140px; align-self:stretch; margin:16px 8px 0; opacity:.6;"></div>
+
+        <!-- Nhánh Mua Hàng & Gia Công -->
+        <div class="col" style="align-items:center; gap:4px;">
+          <div class="text-[11px] font-bold text-purple-700">Dòng Tiền Mua Sắm & Thuê Ngoài (Đầu Vào)</div>
+          <div onclick="showDetail('PurInv')" class="node n-purple" data-id="PurInv">
+            <span class="n-zh">采购发票</span>
+            <span class="n-vi">Hóa đơn mua hàng</span>
+            <span class="n-ex">🧾 Nhận HĐ tiền keo & tiền mạ viền</span>
+          </div>
+          <div class="arr" style="color:#9333ea;">↓</div>
+          <div onclick="showDetail('InvReg')" class="node n-purple" data-id="InvReg2">
+            <span class="n-zh">发票登记</span>
+            <span class="n-vi">Đăng ký hóa đơn</span>
+            <span class="n-ex">📒 Kế toán vào sổ thuế & phần mềm</span>
+          </div>
+          <div class="arr" style="color:#9333ea;">↓</div>
+          <div onclick="showDetail('PayDoc')" class="node n-purple" data-id="PayDoc">
+            <span class="n-zh">付款单</span>
+            <span class="n-vi">Phiếu chi tiền</span>
+            <span class="n-ex">💸 Trả tiền keo & tiền công mạ</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main-wrap -->
+
+<script>
+const DATA = {
+  'SO': {
+    stage: 'Stage ① Kinh Doanh (Khởi đầu)',
+    zh: '销售订单', vi: 'Đơn hàng bán',
+    ex_short: '📦 Khách đặt 100 hộp quà',
+    ex_desc: 'Khách hàng gọi điện hoặc gửi email đặt mua 100 chiếc hộp đựng quà cao cấp có in logo và viền mạ vàng.',
+    ex_issue: '',
+    sops: [{"name": "SOP tạo đơn bán hàng thông thường.pptx", "path": "SOP/报工时间/我是胡文松/sop các bô phận/SOP tạo đơn bán hàng thông thường.pptx"}, {"name": "SOP tạo loại hình và tạo khách hàng.pptx", "path": "SOP/报工时间/我是胡文松/sop các bô phận/SOP tạo loại hình và tạo khách hàng.pptx"}, {"name": "销售管理ERP操作流程.pdf", "path": "SOP/销售管理ERP操作流程.pdf"}], pages: [{ title: '销售订单', url: './SalesManage/SoheadManage/' }]
+  },
+  'OR': {
+    stage: 'Stage ② Kế Hoạch (Đánh giá)',
+    zh: '订单评审 (MPS)', vi: 'Đánh giá đơn hàng (MPS)',
+    ex_short: '⚖️ Họp duyệt: Đủ người, kịp giao?',
+    ex_desc: 'Các bộ phận (Kế toán, Kho, Xưởng) ngồi lại xem xét: "Xưởng mình có đủ thợ dập, đủ máy móc và thời gian để làm xong 100 chiếc hộp này giao đúng hạn cho khách không?". Đạt yêu cầu mới chốt nhận đơn.',
+    ex_issue: '',
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}, {"name": "计划管理（生管）生产加工单操作流程 - 新.pdf", "path": "SOP/计划管理（生管）生产加工单操作流程 - 新.pdf"}], pages: [{ title: '订单评审(MPS)', url: './MRPManage/BillReviewManage/' }]
+  },
+  'MRC': {
+    stage: 'Stage ② Kế Hoạch (Tính toán BOM)',
+    zh: '物料需求计算', vi: 'Tính toán nhu cầu vật liệu (MRP)',
+    ex_short: '🧮 Tính: Cần 100 bìa, keo dán, khuôn',
+    ex_desc: 'Hệ thống tự động tính toán bóc tách định mức (BOM): Để làm 100 chiếc hộp thì cần 100 tấm bìa các-tông, 10 lọ keo dán dính, mực in và chuẩn bị bộ khuôn dập mã K-100.',
+    ex_issue: 'Tự động phân rã thành 4 đầu việc: Mua hàng, Lệnh sản xuất, Danh mục phát liệu, Chuẩn bị khuôn.',
+    sops: [{"name": "SOP làm bom.pptx", "path": "SOP/报工时间/我是胡文松/sop các bô phận/SOP làm bom.pptx"}, {"name": "VCK-产品档案-BOM明细.xlsx", "path": "SOP/VCK-产品档案-BOM明细.xlsx"}, {"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [
+      { title: '物料需求评估表', url: './MRPManage/MRPProductionAssessment/' },
+      { title: '物料需求计算', url: './MRPManage/MRPProductionPlan/' },
+      { title: '批量MRP', url: './MRPManage/BatchMRP/' }
+    ]
+  },
+  'PurReq': {
+    stage: 'Stage ③ Mua Hàng (Vật tư phụ)',
+    zh: '采购申请', vi: 'Yêu cầu mua hàng',
+    ex_short: '🛒 Xin mua 10 lọ keo dán',
+    ex_desc: 'Kiểm kho thấy thiếu keo dán dính, phòng kế hoạch gửi phiếu yêu cầu bộ phận thu mua cần đặt mua gấp 10 lọ keo dán chuyên dụng.',
+    ex_issue: '',
+    sops: [{"name": "采购申请 操作流程规范SOP THU  MUA.docx", "path": "SOP/采购申请 操作流程规范SOP THU  MUA.docx"}, {"name": "VCK物品采购申请--辅料领用操作流程(越文).pdf", "path": "SOP/VCK物品采购申请--辅料领用操作流程(越文).pdf"}], pages: [{ title: '采购申请', url: './MRPManage/PurchaseApplyManage/' }]
+  },
+  'ProdOrder': {
+    stage: 'Stage ④ Sản Xuất Tại Xưởng',
+    zh: '生产加工单', vi: 'Lệnh gia công sản xuất',
+    ex_short: '🏭 Lệnh dập 100 phôi hộp quà',
+    ex_desc: 'Ban hành lệnh chính thức gửi xuống xưởng: Tổ chức cắt dập tạo hình 100 phôi hộp quà theo quy cách thiết kế.',
+    ex_issue: '',
+    sops: [{"name": "SOP KHAI ĐƠN SẢN XUẤT.pptx", "path": "SOP/报工时间/我是胡文松/sop các bô phận/SOP KHAI ĐƠN SẢN XUẤT.pptx"}, {"name": "计划管理（生管）生产加工单操作流程 - 新.pdf", "path": "SOP/计划管理（生管）生产加工单操作流程 - 新.pdf"}, {"name": "车间工单、生产领料、报工管理操作流程202307.pdf", "path": "SOP/车间工单、生产领料、报工管理操作流程202307.pdf"}], pages: [{ title: '生产加工单', url: './MRPManage/MRPProductionBill/' }]
+  },
+  'MatList': {
+    stage: 'Stage ② Kế Hoạch (Tài liệu hỗ trợ)',
+    zh: '发料清单', vi: 'Danh mục phát liệu',
+    ex_short: '📋 Bảng kê bìa carton & keo',
+    ex_desc: 'Bảng kê chi tiết đúng số lượng bìa các-tông và keo dán tiêu chuẩn để thủ kho căn cứ xuất kho cho xưởng.',
+    ex_issue: '',
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}, {"name": "车间管理（生产）生产领料操作流程.pdf", "path": "SOP/车间管理（生产）生产领料操作流程.pdf"}], pages: [{ title: '发料清单', url: './MRPManage/SelectItemPlanBillManage/DispatchListManage/' }]
+  },
+  'ToolNotice': {
+    stage: 'Stage ② Kế Hoạch (Thiết bị/Khuôn)',
+    zh: '工模具设备通知单', vi: 'Thông báo thiết bị / Khuôn mẫu',
+    ex_short: '🛠️ Lắp khuôn dập K-100 lên máy',
+    ex_desc: 'Thông báo gửi tổ kỹ thuật: Cần kiểm tra, bảo dưỡng và gá lắp sẵn bộ khuôn dập K-100 lên máy dập số 2 để phục vụ ca sản xuất.',
+    ex_issue: '',
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}, {"name": "PDA-工业平板（资产）使用清单--VCK.xlsx", "path": "SOP/PDA-工业平板（资产）使用清单--VCK.xlsx"}], pages: [{ title: '模具工具通知单', url: './MachineManage/RequireBillManage/' }]
+  },
+  'PurOrder': {
+    stage: 'Stage ③ Mua Hàng (Đặt hàng)',
+    zh: '采购订单', vi: 'Đơn đặt hàng mua',
+    ex_short: '📑 Đặt mua 10 lọ keo từ NCC',
+    ex_desc: 'Nhân viên thu mua gửi đơn đặt hàng chính thức tới cửa hàng vật tư hóa chất để đặt mua 10 lọ keo dán.',
+    ex_issue: '',
+    sops: [{"name": "(采购)供应商平台操作手册20251215--中越文.pptx", "path": "SOP/(采购)供应商平台操作手册20251215--中越文.pptx"}, {"name": "VCK采购建档及流程说明.pdf", "path": "SOP/VCK采购建档及流程说明.pdf"}, {"name": "企助_供应商平台操作手册.pptx", "path": "SOP/企助_供应商平台操作手册.pptx"}], pages: [
+      { title: '采购订单录入', url: './VendorManage/OrderManage/' },
+      { title: '采购变更单', url: '/VendorManage/PurchaseChangeManage/' }
+    ]
+  },
+  'PurReceive': {
+    stage: 'Stage ③ Mua Hàng (Nhận hàng)',
+    zh: '采购收货', vi: 'Nhận hàng mua',
+    ex_short: '🚚 Giao 10 lọ keo tới kho',
+    ex_desc: 'Cửa hàng vật tư chở 10 lọ keo dán tới kho xưởng, thủ kho tiếp nhận thùng hàng và ký biên bản giao nhận tạm thời.',
+    ex_issue: '',
+    sops: [{"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}, {"name": "VCK来料-成品规则及档案建立流程说明.pdf", "path": "SOP/VCK来料-成品规则及档案建立流程说明.pdf"}], pages: [{ title: '采购收货', url: './DepotManage/PurchaseCollectManage/' }]
+  },
+  'PurReturn': {
+    stage: 'Stage ③ Mua Hàng (Tình huống phát sinh)',
+    zh: '采购退货', vi: 'Trả lại hàng mua',
+    ex_short: '❌ 2 lọ keo khô cứng → Trả NCC',
+    ex_desc: 'Khui thùng kiểm tra thấy có 2 lọ keo bị nứt nắp, keo bên trong bị đông đặc khô cứng không dùng được → Lập phiếu trả lại 2 lọ cho cửa hàng bán keo.',
+    ex_issue: '⚡ Tình huống thực tế: Trả lại hàng mua lỗi để NCC giao bù lọ mới hoặc trừ công nợ.',
+    sops: [{"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}, {"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [{ title: '采购退货', url: './DepotManage/PurchaseReturnsManage/' }]
+  },
+  'IQC1': {
+    stage: 'Stage ③ Mua Hàng (Kiểm tra chất lượng)',
+    zh: '来料检验', vi: 'Kiểm tra NVL đầu vào (IQC)',
+    ex_short: '🔬 KCS duyệt 8 lọ keo đạt',
+    ex_desc: 'Nhân viên kiểm tra chất lượng (KCS/QC) test thử 8 lọ keo còn lại: Độ dính tốt, khô nhanh, không lem ố màu, đạt chuẩn đưa vào sử dụng.',
+    ex_issue: '',
+    sops: [{"name": "企助_品质判定及返修操作手册(1).pptx", "path": "SOP/企助_品质判定及返修操作手册(1).pptx"}, {"name": "VCK来料-成品规则及档案建立流程说明.pdf", "path": "SOP/VCK来料-成品规则及档案建立流程说明.pdf"}], pages: [{ title: '来料检验单', url: './IPQManage/CheckIncomingManage/' }]
+  },
+  'InNotice1': {
+    stage: 'Stage ③ Mua Hàng (Nhập kho)',
+    zh: '入库通知单 (NVL)', vi: 'Nhập kho nguyên vật liệu',
+    ex_short: '📥 Nhập kho 8 lọ keo cất trữ',
+    ex_desc: 'Thủ kho làm phiếu nhập kho chính thức 8 lọ keo đạt chuẩn cất vào giá vật tư phụ, sẵn sàng để xuất cấp cho xưởng.',
+    ex_issue: '',
+    sops: [{"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}, {"name": "kiểm tra tồn kho.docx", "path": "SOP/kiểm tra tồn kho.docx"}], pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
+  },
+  'Dispatch': {
+    stage: 'Stage ④ Sản Xuất Xưởng (Phát việc)',
+    zh: '生产派工单', vi: 'Lệnh phân công / Phát việc',
+    ex_short: '👷 Phân công Tổ 1 phụ trách dập',
+    ex_desc: 'Quản đốc xưởng phân công ca làm việc: Giao việc cụ thể cho Tổ 1 (3 thợ dập) phụ trách đứng máy dập 100 phôi hộp quà.',
+    ex_issue: '',
+    sops: [{"name": "车间工单、生产领料、报工管理操作流程202307.pdf", "path": "SOP/车间工单、生产领料、报工管理操作流程202307.pdf"}, {"name": "车间生产报工（PDA扫码）操作流程 - 派工单报工（WIP管理202501）.pptx", "path": "SOP/车间生产报工（PDA扫码）操作流程 - 派工单报工（WIP管理202501）.pptx"}], pages: [{ title: '生产派工单', url: './MRPManage/Dispatching/' }]
+  },
+  'FollowIssue': {
+    stage: 'Stage ④ Sản Xuất Xưởng (Lĩnh liệu)',
+    zh: '生产领料 (跟单)', vi: 'Lĩnh liệu theo đơn',
+    ex_short: '📦 Tổ 1 lĩnh 100 tấm bìa carton',
+    ex_desc: 'Tổ trưởng Tổ 1 cầm phiếu đến kho lĩnh đủ 100 tấm bìa các-tông và keo dán theo định mức của đơn sản xuất.',
+    ex_issue: '',
+    sops: [{"name": "车间管理（生产）生产领料操作流程.pdf", "path": "SOP/车间管理（生产）生产领料操作流程.pdf"}, {"name": "车间管理（生产）领料-退料单操作流程.pdf", "path": "SOP/车间管理（生产）领料-退料单操作流程.pdf"}], pages: [{ title: '生产领料单', url: './WorkShopManage/ReceiveMateriel/' }]
+  },
+  'MatReq': {
+    stage: 'Stage ④ Sản Xuất Xưởng (Tình huống phát sinh)',
+    zh: '用料申请单', vi: 'Đơn xin bổ sung vật liệu (车间补料)',
+    ex_short: '⚠️ Rách 3 bìa → Đơn xin bù',
+    ex_desc: 'Trong lúc dập định hình, máy bị kẹt làm rách hỏng mất 3 tấm bìa → Tổ trưởng viết đơn xin bổ sung vật liệu để kho cấp thêm 3 bìa bù vào.',
+    ex_issue: '⚡ Tình huống thực tế: Xử lý hao hụt ngoài định mức phát sinh trong quá trình sản xuất.',
+    sops: [{"name": "车间管理（生产）领料-退料单操作流程.pdf", "path": "SOP/车间管理（生产）领料-退料单操作流程.pdf"}, {"name": "VCK物品采购申请--辅料领用操作流程(越文).pdf", "path": "SOP/VCK物品采购申请--辅料领用操作流程(越文).pdf"}], pages: [{ title: '用料申请单', url: './WorkShopManage/' }]
+  },
+  'Rep1': {
+    stage: 'Stage ④ Sản Xuất Xưởng (Báo công đợt 1)',
+    zh: '生产报工 ①', vi: 'Báo công sản xuất (đợt 1)',
+    ex_short: '✅ Báo dập xong 100 phôi hộp',
+    ex_desc: 'Hết ca dập, thợ quét mã barcode báo công: Đã dập hoàn tất 100 phôi hộp quà, ghi nhận sản lượng và số giờ công của tổ.',
+    ex_issue: '',
+    sops: [{"name": "工业平板扫码报工操作流程SOP-20260421.docx", "path": "SOP/工业平板扫码报工操作流程SOP-20260421.docx"}, {"name": "车间生产报工（PDA扫码）操作流程-(越文).pdf", "path": "SOP/车间生产报工（PDA扫码）操作流程-(越文).pdf"}, {"name": "工业平板SOP操作流程20250403.docx", "path": "SOP/工业平板SOP操作流程20250403.docx"}, {"name": "车间生产报工（WIP）异常数据查找操作.pptx", "path": "SOP/车间生产报工（WIP）异常数据查找操作.pptx"}], pages: [
+      { title: '生产报工', url: './WorkShopManage/WorkReportManage/' },
+      { title: '报工确认单', url: './WorkShopManage/WorkReportConfirmManage/' }
+    ]
+  },
+  'QualCheck': {
+    stage: 'Stage ④ Sản Xuất Xưởng (Tình huống phát sinh)',
+    zh: '品质判定单', vi: 'Phán định chất lượng',
+    ex_short: '🔍 5 hộp lem → Đơn phán định',
+    ex_desc: 'QC phát hiện có 5 chiếc hộp bị lem mực in → Lập phiếu phán định chất lượng: Phán định 3 chiếc có thể cạo lau sửa lại, 2 chiếc hủy làm phế phẩm.',
+    ex_issue: '⚡ Tình huống thực tế: Đánh giá số lượng phế phẩm / bán thành phẩm không đạt để quyết định sửa hay hủy.',
+    sops: [{"name": "车间不良品（NG废品）品质待判操作流程.pptx", "path": "SOP/车间不良品（NG废品）品质待判操作流程.pptx"}, {"name": "企助_品质判定及返修操作手册(1).pptx", "path": "SOP/企助_品质判定及返修操作手册(1).pptx"}], pages: [
+      { title: '品质判定单', url: './IPQManage/QualityDecideBillManage/' },
+      { title: '品质异常登记', url: './IPQManage/AbnormalQualityManage/' }
+    ]
+  },
+  'InNotice2': {
+    stage: 'Stage ④ Sản Xuất Xưởng (Nhập kho BTP1)',
+    zh: '入库通知单 (BTP1)', vi: 'Nhập kho bán thành phẩm đợt 1',
+    ex_short: '📥 Nhập kho 95 phôi hộp đạt',
+    ex_desc: 'Nhập kho tạm 95 phôi hộp quà đã dập định hình chuẩn đẹp, sẵn sàng để xuất kho mang đi mạ vàng viền hộp bên ngoài.',
+    ex_issue: '',
+    sops: [{"name": "CK台湾振凯--半制品编码明细表.xlsx", "path": "SOP/CK台湾振凯--半制品编码明细表.xlsx"}, {"name": "WIP流程与职能部门.xlsx", "path": "SOP/WIP流程与职能部门.xlsx"}, {"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}], pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
+  },
+  'SubOrder': {
+    stage: 'Stage ⑤ Gia Công Ngoài (Thuê ngoài)',
+    zh: '委外加工单', vi: 'Đơn gia công ngoài',
+    ex_short: '🤝 Thuê ngoài mạ vàng viền hộp',
+    ex_desc: 'Xưởng mình không có bể mạ kim loại, phòng kế hoạch lập đơn thuê Cơ sở mạ Hoàng Kim mạ vàng viền cho 95 chiếc phôi hộp.',
+    ex_issue: '',
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}, {"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [{ title: '委外加工单', url: './OutsourcingManage/MachiningManage/' }]
+  },
+  'SubIssue': {
+    stage: 'Stage ⑤ Gia Công Ngoài (Phát liệu)',
+    zh: '委外发料', vi: 'Phát liệu gia công ngoài',
+    ex_short: '🚚 Gửi 95 phôi sang xưởng mạ',
+    ex_desc: 'Thủ kho xuất 95 phôi hộp quà từ kho và gọi xe chở sang xưởng mạ của đối tác kèm phiếu giao hàng.',
+    ex_issue: '',
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}], pages: [{ title: '委外发料单', url: './OutsourcingManage/ExternalOutManage/' }]
+  },
+  'SubIssueRet': {
+    stage: 'Stage ⑤ Gia Công Ngoài (Tình huống phát sinh)',
+    zh: '委外退料', vi: 'Trả lại vật liệu gia công ngoài',
+    ex_short: '↩️ 3 phôi móp → Trả lại kho',
+    ex_desc: 'Gửi sang tới nơi, đối tác phát hiện có 3 phôi bị móp méo góc từ trước không mạ được → Trả 3 phôi hỏng này về lại xưởng.',
+    ex_issue: '⚡ Tình huống thực tế: Trả lại vật liệu hỏng không sử dụng để trừ khỏi lượng phôi gia công.',
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}], pages: [{ title: '委外退料单', url: './OutsourcingManage/ExternalEnterManage/' }]
+  },
+  'SubReceive': {
+    stage: 'Stage ⑤ Gia Công Ngoài (Nhận hàng)',
+    zh: '委外收货', vi: 'Nhận hàng gia công ngoài',
+    ex_short: '📦 Nhận 92 hộp mạ vàng về',
+    ex_desc: 'Cơ sở mạ giao lại 92 chiếc hộp đã hoàn thành công đoạn mạ viền vàng bóng loáng về kho xưởng công ty.',
+    ex_issue: '',
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}], pages: [{ title: '委外收货单', url: './OutsourcingManage/ExternalOutStockManage/' }]
+  },
+  'SubReceiveRet': {
+    stage: 'Stage ⑤ Gia Công Ngoài (Tình huống phát sinh)',
+    zh: '委外退货', vi: 'Trả lại hàng gia công ngoài',
+    ex_short: '❌ 2 hộp ố lem → Bắt mạ lại',
+    ex_desc: 'Kiểm tra thấy có 2 hộp bị ố lem, lớp mạ vàng bị bong tróc → Lập phiếu Trả lại hàng gia công, bắt đối tác mang về tẩy mạ lại.',
+    ex_issue: '⚡ Tình huống thực tế: Từ chối nhận và yêu cầu đối tác gia công lại sản phẩm lỗi.',
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}, {"name": "企助_品质判定及返修操作手册(1).pptx", "path": "SOP/企助_品质判定及返修操作手册(1).pptx"}], pages: [{ title: '委外退货单', url: './OutsourcingManage/ExternalEnterStockManage/' }]
+  },
+  'SubInsp': {
+    stage: 'Stage ⑤ Gia Công Ngoài (Kiểm tra chất lượng)',
+    zh: '来料检验 (委外)', vi: 'Kiểm tra chất lượng GCN',
+    ex_short: '🔬 KCS duyệt 90 hộp mạ đẹp',
+    ex_desc: 'KCS kiểm tra 90 chiếc hộp mạ vàng đạt chuẩn: Ánh kim sáng bóng, viền sắc nét, độ dày lớp mạ đạt yêu cầu đơn hàng.',
+    ex_issue: '',
+    sops: [{"name": "企助_品质判定及返修操作手册(1).pptx", "path": "SOP/企助_品质判定及返修操作手册(1).pptx"}, {"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}], pages: [{ title: '来料检验单', url: './IPQManage/CheckIncomingManage/' }]
+  },
+  'InNotice3': {
+    stage: 'Stage ⑤ Gia Công Ngoài (Nhập kho BTP2)',
+    zh: '入库通知单 (BTP2)', vi: 'Nhập kho bán thành phẩm đợt 2',
+    ex_short: '📥 Nhập kho 90 phôi mạ vàng',
+    ex_desc: 'Lập phiếu nhập kho cho 90 chiếc phôi hộp đã mạ viền vàng lấp lánh, sẵn sàng đưa sang tổ hoàn thiện để dán lót nhung.',
+    ex_issue: '',
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}, {"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}], pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
+  },
+  'ProcIssue': {
+    stage: 'Stage ⑥ Hoàn Thiện (Lắp ráp công đoạn)',
+    zh: '生产领料 (工序)', vi: 'Lĩnh liệu theo công đoạn',
+    ex_short: '🎨 Lĩnh keo & nhung hoàn thiện',
+    ex_desc: 'Thợ tổ hoàn thiện lĩnh 90 phôi hộp đã mạ vàng từ kho, đồng thời lĩnh thêm keo dán và vải nhung đỏ lót lòng hộp.',
+    ex_issue: '',
+    sops: [{"name": "4. SRD-01產品編碼辦法-250409 MÃ CÔNG ĐOẠN.pdf", "path": "SOP/4. SRD-01產品編碼辦法-250409 MÃ CÔNG ĐOẠN.pdf"}, {"name": "车间管理（生产）生产领料操作流程.pdf", "path": "SOP/车间管理（生产）生产领料操作流程.pdf"}], pages: [{ title: '生产领料单', url: './WorkShopManage/ReceiveMateriel/' }]
+  },
+  'Rep2': {
+    stage: 'Stage ⑥ Hoàn Thiện (Báo công đợt 2)',
+    zh: '生产报工 ②', vi: 'Báo công sản xuất (đợt 2)',
+    ex_short: '✅ Báo công hoàn tất 90 hộp quà',
+    ex_desc: 'Tổ hoàn thiện báo công: Đã dán nhung đỏ, gắn nắp kính và đóng nơ hoàn thiện 100% cho toàn bộ 90 chiếc hộp quà sang trọng.',
+    ex_issue: '',
+    sops: [{"name": "工业平板扫码报工操作流程SOP-20260421.docx", "path": "SOP/工业平板扫码报工操作流程SOP-20260421.docx"}, {"name": "车间生产报工（PDA扫码）操作流程-(越文).pdf", "path": "SOP/车间生产报工（PDA扫码）操作流程-(越文).pdf"}], pages: [
+      { title: '生产报工', url: './WorkShopManage/WorkReportManage/' },
+      { title: '报工确认单', url: './WorkShopManage/WorkReportConfirmManage/' }
+    ]
+  },
+  'InNotice4': {
+    stage: 'Stage ⑥ Hoàn Thiện (Thành phẩm)',
+    zh: '入库通知单 (TP)', vi: 'Nhập kho thành phẩm hoàn chỉnh',
+    ex_short: '📥 Nhập kho 90 hộp quà thành phẩm',
+    ex_desc: 'Thủ kho kiểm đếm và lập phiếu nhập kho cho 90 chiếc hộp quà thành phẩm hoàn hảo, bọc màng bảo vệ chờ xuất bán.',
+    ex_issue: '',
+    sops: [{"name": "VCK来料-成品规则及档案建立流程说明.pdf", "path": "SOP/VCK来料-成品规则及档案建立流程说明.pdf"}, {"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}], pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
+  },
+  'SalesShip': {
+    stage: 'Stage ⑦ Xuất Bán (Giao hàng)',
+    zh: '销售出货', vi: 'Xuất hàng bán',
+    ex_short: '🚚 Giao 90 hộp quà cho khách',
+    ex_desc: 'Kho xuất 90 chiếc hộp quà đóng thùng carton cẩn thận, bàn giao cho tài xế chở đến kho của khách hàng theo đơn đặt.',
+    ex_issue: '',
+    sops: [{"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}, {"name": "销售管理ERP操作流程.pdf", "path": "SOP/销售管理ERP操作流程.pdf"}], pages: [
+      { title: '销售出货', url: './DepotManage/SalesShipmentManage/' },
+      { title: '发货计划单', url: './SalesManage/DeliveryPlansTableManage/' },
+      { title: '出货检验报告', url: './IPQManage/InspectionReportManage/' }
+    ]
+  },
+  'SalesReturn': {
+    stage: 'Stage ⑦ Xuất Bán (Tình huống phát sinh)',
+    zh: '销售退货', vi: 'Hàng bán bị trả lại',
+    ex_short: '↩️ Ship móp 2 hộp → Khách trả',
+    ex_desc: 'Lúc khách khui thùng thấy có 2 hộp bị tài xế chèn ép móp góc trong lúc vận chuyển → Khách trả lại 2 hộp này về xưởng để trừ tiền hoặc đổi mới.',
+    ex_issue: '⚡ Tình huống thực tế: Hàng bán bị trả lại do lỗi vận chuyển, trừ doanh thu hoặc đổi bù.',
+    sops: [{"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}], pages: [{ title: '销售退货', url: './DepotManage/SalesReturnsManage/' }]
+  },
+  'SalesInv': {
+    stage: 'Stage ⑧ Tài Chính (Doanh thu)',
+    zh: '销售发票', vi: 'Hóa đơn bán hàng',
+    ex_short: '🧾 Xuất HĐ 50tr cho khách',
+    ex_desc: 'Kế toán xuất hóa đơn GTGT bán 88 chiếc hộp quà thực nhận trị giá 50 triệu đồng gửi cho khách hàng.',
+    ex_issue: '',
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [{ title: '销售发票', url: './SalesManage/Sales_InvoiceManage/' }]
+  },
+  'PurInv': {
+    stage: 'Stage ⑧ Tài Chính (Chi phí)',
+    zh: '采购发票', vi: 'Hóa đơn mua hàng',
+    ex_short: '🧾 Nhận HĐ tiền keo & tiền mạ viền',
+    ex_desc: 'Kế toán nhận hóa đơn GTGT tiền mua 8 lọ keo dán từ cửa hàng vật tư và hóa đơn tiền công từ xưởng mạ vàng.',
+    ex_issue: '',
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [{ title: '采购发票', url: './ARAPManage/PurchaseInvoiceRewriteManage/' }]
+  },
+  'InvReg': {
+    stage: 'Stage ⑧ Tài Chính (Đăng ký sổ sách)',
+    zh: '发票登记', vi: 'Đăng ký hóa đơn',
+    ex_short: '📒 Kế toán vào sổ thuế & phần mềm',
+    ex_desc: 'Kế toán hạch toán đăng ký cả 2 loại hóa đơn (hóa đơn bán và hóa đơn mua) vào hệ thống tài chính để đối chiếu thuế và chốt sổ công nợ.',
+    ex_issue: '',
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [{ title: '发票登记表', url: './ARAPManage/ARAP_InvoiceRegisterTableManage/' }]
+  },
+  'RecDoc': {
+    stage: 'Stage ⑧ Tài Chính (Thu tiền)',
+    zh: '收款单', vi: 'Phiếu thu tiền',
+    ex_short: '💰 Khách chuyển khoản trả 50tr',
+    ex_desc: 'Khách hàng chuyển khoản 50 triệu đồng vào tài khoản công ty → Kế toán lập Phiếu thu và làm thủ tục đối trừ công nợ cho khách.',
+    ex_issue: '',
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [
+      { title: '收款单', url: './GLManage/Receipt/' },
+      { title: '收款核销单', url: '/ARAPManage/SendCollVerificationManage/' }
+    ]
+  },
+  'PayDoc': {
+    stage: 'Stage ⑧ Tài Chính (Chi tiền)',
+    zh: '付款单', vi: 'Phiếu chi tiền',
+    ex_short: '💸 Trả tiền keo & tiền công mạ',
+    ex_desc: 'Kế toán chuyển khoản thanh toán tiền mua keo dán cho cửa hàng vật tư và trả tiền công mạ vàng cho cơ sở mạ.',
+    ex_issue: '',
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [
+      { title: '付款单', url: './GLManage/Payment/' },
+      { title: '付款核销单', url: './ARAPManage/SendVerificationManage/' }
+    ]
+  }
+};
+
+let currentMode = 'story'; // 'story' | 'erp'
+
+function setMode(mode) {
+  currentMode = mode;
+  document.getElementById('btn-mode-story').classList.toggle('active', mode === 'story');
+  document.getElementById('btn-mode-erp').classList.toggle('active', mode === 'erp');
+
+  document.querySelectorAll('.node .n-ex').forEach(el => {
+    el.style.display = (mode === 'story') ? 'block' : 'none';
+  });
+}
+
+function showDetail(id) {
+  const item = DATA[id];
+  if (!item) return;
+
+  // Highlight selected node
+  document.querySelectorAll('.node').forEach(n => n.classList.remove('highlight-node'));
+  const targetNode = document.querySelector(`.node[data-id="${id}"]`);
+  if (targetNode) targetNode.classList.add('highlight-node');
+
+  document.getElementById('panel-stage-badge').textContent = item.stage;
+  document.getElementById('panel-title-zh').textContent = item.zh;
+  document.getElementById('panel-title-vi').textContent = item.vi;
+
+  document.getElementById('panel-story-desc').textContent = item.ex_desc;
+  const issueBox = document.getElementById('panel-story-issue');
+  if (item.ex_issue) {
+    issueBox.style.display = 'block';
+    issueBox.textContent = item.ex_issue;
+  } else {
+    issueBox.style.display = 'none';
+  }
+
+  // Populate SOP List
+  const sopList = document.getElementById('panel-sop-list');
+  const sopBox = document.querySelector('.sop-box');
+  sopList.innerHTML = '';
+  if (item.sops && item.sops.length > 0) {
+    sopBox.style.display = 'block';
+    item.sops.forEach(s => {
+      const fileName = (typeof s === 'string') ? s : s.name;
+      const filePath = (typeof s === 'string') ? ('SOP/' + s) : s.path;
+      const fullWinPath = 'D:\\Dat\\App_Workflow\\' + filePath.replace(/\//g, '\\');
+
+      const ext = fileName.split('.').pop().toLowerCase();
+      let badgeClass = 'badge-pdf';
+      let badgeText = 'PDF';
+      if (ext === 'docx' || ext === 'doc') { badgeClass = 'badge-docx'; badgeText = 'DOC'; }
+      else if (ext === 'pptx' || ext === 'ppt') { badgeClass = 'badge-pptx'; badgeText = 'PPT'; }
+      else if (ext === 'xlsx' || ext === 'xls') { badgeClass = 'badge-xlsx'; badgeText = 'XLS'; }
+
+      const isWeb = window.location.protocol.startsWith('http');
+      const webUrl = window.location.origin + '/' + encodeURI(filePath);
+      const copyVal = isWeb ? webUrl : fullWinPath;
+      const copyLabel = isWeb ? '📋 Copy link' : '📋 Copy đường dẫn';
+      const actionLabel = (ext === 'pdf') ? '↗️ Mở PDF' : '📥 Tải file';
+      const downloadAttr = (ext === 'pdf') ? '' : `download="${fileName.replace(/"/g, '&quot;')}"`;
+
+      const li = document.createElement('li');
+      li.className = 'sop-item';
+      li.innerHTML = `
+        <div class="sop-item-header">
+          <span class="sop-badge ${badgeClass}">${badgeText}</span>
+          <a href="./${encodeURI(filePath)}" ${downloadAttr} target="_blank" class="sop-link" title="Bấm để mở file hoặc tải về: ${fileName}">
+            ${fileName}
+          </a>
+        </div>
+        <div class="sop-actions">
+          <a href="./${encodeURI(filePath)}" ${downloadAttr} target="_blank" class="sop-btn">
+            ${actionLabel}
+          </a>
+          <button class="sop-btn" data-copy="${copyVal.replace(/"/g, '&quot;')}" onclick="copyUrl(this.getAttribute('data-copy'), this)">
+            ${copyLabel}
+          </button>
+        </div>
+      `;
+      sopList.appendChild(li);
+    });
+  } else {
+    sopBox.style.display = 'none';
+  }
+
+  // Populate ERP Pages List
+  const list = document.getElementById('panel-list');
+  list.innerHTML = '';
+  item.pages.forEach(p => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <div class="pg-name">${p.title}</div>
+      <div class="pg-url">${p.url}</div>
+      <button class="copy-btn" data-url="${p.url}" onclick="copyUrl(this.getAttribute('data-url'), this)">
+        📋 Copy URL
+      </button>
+    `;
+    list.appendChild(li);
+  });
+
+  const panel = document.getElementById('panel');
+  panel.style.display = 'block';
+}
+
+function closePanel() {
+  document.getElementById('panel').style.display = 'none';
+  document.querySelectorAll('.node').forEach(n => n.classList.remove('highlight-node'));
+}
+
+function copyUrl(url, btn) {
+  function showSuccess() {
+    const orig = btn.textContent;
+    btn.textContent = '✅ Đã chép!';
+    btn.classList.add('copy-ok');
+    setTimeout(function(){ btn.textContent = orig; btn.classList.remove('copy-ok'); }, 1500);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(url).then(showSuccess).catch(function() {
+      fallbackCopy(url, showSuccess);
+    });
+  } else {
+    fallbackCopy(url, showSuccess);
+  }
+}
+
+function fallbackCopy(url, callback) {
+  const ta = document.createElement('textarea');
+  ta.value = url;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try {
+    document.execCommand('copy');
+    callback();
+  } catch (err) {
+    prompt('Sao chép đường dẫn:', url);
+  }
+  document.body.removeChild(ta);
+}
+
+function highlightStage(stg) {
+  document.querySelectorAll('.stage').forEach(s => s.style.opacity = '0.35');
+  if (stg === 's1') {
+    document.getElementById('stage-box-1').style.opacity = '1';
+    document.getElementById('stage-box-2').style.opacity = '1';
+    document.getElementById('stage-box-1').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } else if (stg === 's2') {
+    document.getElementById('stage-box-3').style.opacity = '1';
+    document.getElementById('stage-box-4').style.opacity = '1';
+    document.getElementById('stage-box-5').style.opacity = '1';
+    document.getElementById('stage-box-6').style.opacity = '1';
+    document.getElementById('stage-box-4').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } else if (stg === 's3') {
+    document.getElementById('stage-box-7').style.opacity = '1';
+    document.getElementById('stage-box-8').style.opacity = '1';
+    document.getElementById('stage-box-7').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  setTimeout(() => {
+    document.querySelectorAll('.stage').forEach(s => s.style.opacity = '1');
+  }, 2500);
+}
+</script>
+</body>
+</html>

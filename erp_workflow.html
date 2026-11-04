@@ -71,7 +71,7 @@
   #panel {
     position: fixed;
     top: 60px; right: 16px;
-    width: 330px;
+    width: 360px;
     background: #ffffff !important;
     border: 1.5px solid #e2e8f0 !important;
     color: #1a202c !important;
@@ -112,6 +112,89 @@
     font-size:.74rem;
     color:#9f1239;
     line-height:1.4;
+  }
+
+  
+  
+  /* SOP Box inside Panel */
+  .sop-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+  }
+  .sop-box-title { font-size:.73rem; font-weight:700; color:#1e40af; text-transform:uppercase; letter-spacing:.5px; margin-bottom:4px; display:flex; align-items:center; gap:5px; }
+  #panel-sop-list { list-style:none; margin:0; padding:0; }
+  .sop-item {
+    font-size: .73rem;
+    padding: 7px 9px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all .15s;
+  }
+  .sop-item:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+  }
+  .sop-item-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sop-link {
+    color: #1e3a8a;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-word;
+    flex: 1;
+    transition: color .15s;
+  }
+  .sop-link:hover {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+  .sop-badge {
+    font-size: .6rem;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    text-transform: uppercase;
+  }
+  .badge-pdf  { background: #fee2e2; color: #b91c1c; }
+  .badge-pptx { background: #ffedd5; color: #c2410c; }
+  .badge-docx { background: #dbeafe; color: #1d4ed8; }
+  .badge-xlsx { background: #dcfce7; color: #15803d; }
+  .sop-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+  }
+  .sop-btn {
+    font-size: .63rem;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    background: #f1f5f9;
+    color: #334155;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    transition: all .15s;
+  }
+  .sop-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    border-color: #94a3b8;
   }
 
   /* ERP Pages inside Panel */
@@ -327,7 +410,17 @@
     <div id="panel-story-issue" class="story-box-issue" style="display:none;"></div>
   </div>
 
-  <!-- ERP Pages Box -->
+  
+  
+
+  <!-- SOP Documents Box (Single Clean Box) -->
+  <div class="sop-box">
+    <div class="sop-box-title">📚 Tài Liệu SOP Hướng Dẫn Vận Hành</div>
+    <div class="text-[10px] text-slate-500 mb-2 italic">💡 Bấm vào tên file để mở/tải về hoặc bấm nút copy đường dẫn:</div>
+    <ul id="panel-sop-list"></ul>
+  </div>
+
+  
   <div class="erp-box-title">🔗 Menu & Trang ERP Tương Ứng</div>
   <ul id="panel-list"></ul>
 </div>
@@ -700,7 +793,7 @@ const DATA = {
     ex_short: '📦 Khách đặt 100 hộp quà',
     ex_desc: 'Khách hàng gọi điện hoặc gửi email đặt mua 100 chiếc hộp đựng quà cao cấp có in logo và viền mạ vàng.',
     ex_issue: '',
-    pages: [{ title: '销售订单', url: './SalesManage/SoheadManage/' }]
+    sops: [{"name": "SOP tạo đơn bán hàng thông thường.pptx", "path": "SOP/报工时间/我是胡文松/sop các bô phận/SOP tạo đơn bán hàng thông thường.pptx"}, {"name": "SOP tạo loại hình và tạo khách hàng.pptx", "path": "SOP/报工时间/我是胡文松/sop các bô phận/SOP tạo loại hình và tạo khách hàng.pptx"}, {"name": "销售管理ERP操作流程.pdf", "path": "SOP/销售管理ERP操作流程.pdf"}], pages: [{ title: '销售订单', url: './SalesManage/SoheadManage/' }]
   },
   'OR': {
     stage: 'Stage ② Kế Hoạch (Đánh giá)',
@@ -708,7 +801,7 @@ const DATA = {
     ex_short: '⚖️ Họp duyệt: Đủ người, kịp giao?',
     ex_desc: 'Các bộ phận (Kế toán, Kho, Xưởng) ngồi lại xem xét: "Xưởng mình có đủ thợ dập, đủ máy móc và thời gian để làm xong 100 chiếc hộp này giao đúng hạn cho khách không?". Đạt yêu cầu mới chốt nhận đơn.',
     ex_issue: '',
-    pages: [{ title: '订单评审(MPS)', url: './MRPManage/BillReviewManage/' }]
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}, {"name": "计划管理（生管）生产加工单操作流程 - 新.pdf", "path": "SOP/计划管理（生管）生产加工单操作流程 - 新.pdf"}], pages: [{ title: '订单评审(MPS)', url: './MRPManage/BillReviewManage/' }]
   },
   'MRC': {
     stage: 'Stage ② Kế Hoạch (Tính toán BOM)',
@@ -716,7 +809,7 @@ const DATA = {
     ex_short: '🧮 Tính: Cần 100 bìa, keo dán, khuôn',
     ex_desc: 'Hệ thống tự động tính toán bóc tách định mức (BOM): Để làm 100 chiếc hộp thì cần 100 tấm bìa các-tông, 10 lọ keo dán dính, mực in và chuẩn bị bộ khuôn dập mã K-100.',
     ex_issue: 'Tự động phân rã thành 4 đầu việc: Mua hàng, Lệnh sản xuất, Danh mục phát liệu, Chuẩn bị khuôn.',
-    pages: [
+    sops: [{"name": "SOP làm bom.pptx", "path": "SOP/报工时间/我是胡文松/sop các bô phận/SOP làm bom.pptx"}, {"name": "VCK-产品档案-BOM明细.xlsx", "path": "SOP/VCK-产品档案-BOM明细.xlsx"}, {"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [
       { title: '物料需求评估表', url: './MRPManage/MRPProductionAssessment/' },
       { title: '物料需求计算', url: './MRPManage/MRPProductionPlan/' },
       { title: '批量MRP', url: './MRPManage/BatchMRP/' }
@@ -728,7 +821,7 @@ const DATA = {
     ex_short: '🛒 Xin mua 10 lọ keo dán',
     ex_desc: 'Kiểm kho thấy thiếu keo dán dính, phòng kế hoạch gửi phiếu yêu cầu bộ phận thu mua cần đặt mua gấp 10 lọ keo dán chuyên dụng.',
     ex_issue: '',
-    pages: [{ title: '采购申请', url: './MRPManage/PurchaseApplyManage/' }]
+    sops: [{"name": "采购申请 操作流程规范SOP THU  MUA.docx", "path": "SOP/采购申请 操作流程规范SOP THU  MUA.docx"}, {"name": "VCK物品采购申请--辅料领用操作流程(越文).pdf", "path": "SOP/VCK物品采购申请--辅料领用操作流程(越文).pdf"}], pages: [{ title: '采购申请', url: './MRPManage/PurchaseApplyManage/' }]
   },
   'ProdOrder': {
     stage: 'Stage ④ Sản Xuất Tại Xưởng',
@@ -736,7 +829,7 @@ const DATA = {
     ex_short: '🏭 Lệnh dập 100 phôi hộp quà',
     ex_desc: 'Ban hành lệnh chính thức gửi xuống xưởng: Tổ chức cắt dập tạo hình 100 phôi hộp quà theo quy cách thiết kế.',
     ex_issue: '',
-    pages: [{ title: '生产加工单', url: './MRPManage/MRPProductionBill/' }]
+    sops: [{"name": "SOP KHAI ĐƠN SẢN XUẤT.pptx", "path": "SOP/报工时间/我是胡文松/sop các bô phận/SOP KHAI ĐƠN SẢN XUẤT.pptx"}, {"name": "计划管理（生管）生产加工单操作流程 - 新.pdf", "path": "SOP/计划管理（生管）生产加工单操作流程 - 新.pdf"}, {"name": "车间工单、生产领料、报工管理操作流程202307.pdf", "path": "SOP/车间工单、生产领料、报工管理操作流程202307.pdf"}], pages: [{ title: '生产加工单', url: './MRPManage/MRPProductionBill/' }]
   },
   'MatList': {
     stage: 'Stage ② Kế Hoạch (Tài liệu hỗ trợ)',
@@ -744,7 +837,7 @@ const DATA = {
     ex_short: '📋 Bảng kê bìa carton & keo',
     ex_desc: 'Bảng kê chi tiết đúng số lượng bìa các-tông và keo dán tiêu chuẩn để thủ kho căn cứ xuất kho cho xưởng.',
     ex_issue: '',
-    pages: [{ title: '发料清单', url: './MRPManage/SelectItemPlanBillManage/DispatchListManage/' }]
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}, {"name": "车间管理（生产）生产领料操作流程.pdf", "path": "SOP/车间管理（生产）生产领料操作流程.pdf"}], pages: [{ title: '发料清单', url: './MRPManage/SelectItemPlanBillManage/DispatchListManage/' }]
   },
   'ToolNotice': {
     stage: 'Stage ② Kế Hoạch (Thiết bị/Khuôn)',
@@ -752,7 +845,7 @@ const DATA = {
     ex_short: '🛠️ Lắp khuôn dập K-100 lên máy',
     ex_desc: 'Thông báo gửi tổ kỹ thuật: Cần kiểm tra, bảo dưỡng và gá lắp sẵn bộ khuôn dập K-100 lên máy dập số 2 để phục vụ ca sản xuất.',
     ex_issue: '',
-    pages: [{ title: '模具工具通知单', url: './MachineManage/RequireBillManage/' }]
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}, {"name": "PDA-工业平板（资产）使用清单--VCK.xlsx", "path": "SOP/PDA-工业平板（资产）使用清单--VCK.xlsx"}], pages: [{ title: '模具工具通知单', url: './MachineManage/RequireBillManage/' }]
   },
   'PurOrder': {
     stage: 'Stage ③ Mua Hàng (Đặt hàng)',
@@ -760,7 +853,7 @@ const DATA = {
     ex_short: '📑 Đặt mua 10 lọ keo từ NCC',
     ex_desc: 'Nhân viên thu mua gửi đơn đặt hàng chính thức tới cửa hàng vật tư hóa chất để đặt mua 10 lọ keo dán.',
     ex_issue: '',
-    pages: [
+    sops: [{"name": "(采购)供应商平台操作手册20251215--中越文.pptx", "path": "SOP/(采购)供应商平台操作手册20251215--中越文.pptx"}, {"name": "VCK采购建档及流程说明.pdf", "path": "SOP/VCK采购建档及流程说明.pdf"}, {"name": "企助_供应商平台操作手册.pptx", "path": "SOP/企助_供应商平台操作手册.pptx"}], pages: [
       { title: '采购订单录入', url: './VendorManage/OrderManage/' },
       { title: '采购变更单', url: '/VendorManage/PurchaseChangeManage/' }
     ]
@@ -771,7 +864,7 @@ const DATA = {
     ex_short: '🚚 Giao 10 lọ keo tới kho',
     ex_desc: 'Cửa hàng vật tư chở 10 lọ keo dán tới kho xưởng, thủ kho tiếp nhận thùng hàng và ký biên bản giao nhận tạm thời.',
     ex_issue: '',
-    pages: [{ title: '采购收货', url: './DepotManage/PurchaseCollectManage/' }]
+    sops: [{"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}, {"name": "VCK来料-成品规则及档案建立流程说明.pdf", "path": "SOP/VCK来料-成品规则及档案建立流程说明.pdf"}], pages: [{ title: '采购收货', url: './DepotManage/PurchaseCollectManage/' }]
   },
   'PurReturn': {
     stage: 'Stage ③ Mua Hàng (Tình huống phát sinh)',
@@ -779,7 +872,7 @@ const DATA = {
     ex_short: '❌ 2 lọ keo khô cứng → Trả NCC',
     ex_desc: 'Khui thùng kiểm tra thấy có 2 lọ keo bị nứt nắp, keo bên trong bị đông đặc khô cứng không dùng được → Lập phiếu trả lại 2 lọ cho cửa hàng bán keo.',
     ex_issue: '⚡ Tình huống thực tế: Trả lại hàng mua lỗi để NCC giao bù lọ mới hoặc trừ công nợ.',
-    pages: [{ title: '采购退货', url: './DepotManage/PurchaseReturnsManage/' }]
+    sops: [{"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}, {"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [{ title: '采购退货', url: './DepotManage/PurchaseReturnsManage/' }]
   },
   'IQC1': {
     stage: 'Stage ③ Mua Hàng (Kiểm tra chất lượng)',
@@ -787,7 +880,7 @@ const DATA = {
     ex_short: '🔬 KCS duyệt 8 lọ keo đạt',
     ex_desc: 'Nhân viên kiểm tra chất lượng (KCS/QC) test thử 8 lọ keo còn lại: Độ dính tốt, khô nhanh, không lem ố màu, đạt chuẩn đưa vào sử dụng.',
     ex_issue: '',
-    pages: [{ title: '来料检验单', url: './IPQManage/CheckIncomingManage/' }]
+    sops: [{"name": "企助_品质判定及返修操作手册(1).pptx", "path": "SOP/企助_品质判定及返修操作手册(1).pptx"}, {"name": "VCK来料-成品规则及档案建立流程说明.pdf", "path": "SOP/VCK来料-成品规则及档案建立流程说明.pdf"}], pages: [{ title: '来料检验单', url: './IPQManage/CheckIncomingManage/' }]
   },
   'InNotice1': {
     stage: 'Stage ③ Mua Hàng (Nhập kho)',
@@ -795,7 +888,7 @@ const DATA = {
     ex_short: '📥 Nhập kho 8 lọ keo cất trữ',
     ex_desc: 'Thủ kho làm phiếu nhập kho chính thức 8 lọ keo đạt chuẩn cất vào giá vật tư phụ, sẵn sàng để xuất cấp cho xưởng.',
     ex_issue: '',
-    pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
+    sops: [{"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}, {"name": "kiểm tra tồn kho.docx", "path": "SOP/kiểm tra tồn kho.docx"}], pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
   },
   'Dispatch': {
     stage: 'Stage ④ Sản Xuất Xưởng (Phát việc)',
@@ -803,7 +896,7 @@ const DATA = {
     ex_short: '👷 Phân công Tổ 1 phụ trách dập',
     ex_desc: 'Quản đốc xưởng phân công ca làm việc: Giao việc cụ thể cho Tổ 1 (3 thợ dập) phụ trách đứng máy dập 100 phôi hộp quà.',
     ex_issue: '',
-    pages: [{ title: '生产派工单', url: './MRPManage/Dispatching/' }]
+    sops: [{"name": "车间工单、生产领料、报工管理操作流程202307.pdf", "path": "SOP/车间工单、生产领料、报工管理操作流程202307.pdf"}, {"name": "车间生产报工（PDA扫码）操作流程 - 派工单报工（WIP管理202501）.pptx", "path": "SOP/车间生产报工（PDA扫码）操作流程 - 派工单报工（WIP管理202501）.pptx"}], pages: [{ title: '生产派工单', url: './MRPManage/Dispatching/' }]
   },
   'FollowIssue': {
     stage: 'Stage ④ Sản Xuất Xưởng (Lĩnh liệu)',
@@ -811,7 +904,7 @@ const DATA = {
     ex_short: '📦 Tổ 1 lĩnh 100 tấm bìa carton',
     ex_desc: 'Tổ trưởng Tổ 1 cầm phiếu đến kho lĩnh đủ 100 tấm bìa các-tông và keo dán theo định mức của đơn sản xuất.',
     ex_issue: '',
-    pages: [{ title: '生产领料单', url: './WorkShopManage/ReceiveMateriel/' }]
+    sops: [{"name": "车间管理（生产）生产领料操作流程.pdf", "path": "SOP/车间管理（生产）生产领料操作流程.pdf"}, {"name": "车间管理（生产）领料-退料单操作流程.pdf", "path": "SOP/车间管理（生产）领料-退料单操作流程.pdf"}], pages: [{ title: '生产领料单', url: './WorkShopManage/ReceiveMateriel/' }]
   },
   'MatReq': {
     stage: 'Stage ④ Sản Xuất Xưởng (Tình huống phát sinh)',
@@ -819,7 +912,7 @@ const DATA = {
     ex_short: '⚠️ Rách 3 bìa → Đơn xin bù',
     ex_desc: 'Trong lúc dập định hình, máy bị kẹt làm rách hỏng mất 3 tấm bìa → Tổ trưởng viết đơn xin bổ sung vật liệu để kho cấp thêm 3 bìa bù vào.',
     ex_issue: '⚡ Tình huống thực tế: Xử lý hao hụt ngoài định mức phát sinh trong quá trình sản xuất.',
-    pages: [{ title: '用料申请单', url: './WorkShopManage/' }]
+    sops: [{"name": "车间管理（生产）领料-退料单操作流程.pdf", "path": "SOP/车间管理（生产）领料-退料单操作流程.pdf"}, {"name": "VCK物品采购申请--辅料领用操作流程(越文).pdf", "path": "SOP/VCK物品采购申请--辅料领用操作流程(越文).pdf"}], pages: [{ title: '用料申请单', url: './WorkShopManage/' }]
   },
   'Rep1': {
     stage: 'Stage ④ Sản Xuất Xưởng (Báo công đợt 1)',
@@ -827,7 +920,7 @@ const DATA = {
     ex_short: '✅ Báo dập xong 100 phôi hộp',
     ex_desc: 'Hết ca dập, thợ quét mã barcode báo công: Đã dập hoàn tất 100 phôi hộp quà, ghi nhận sản lượng và số giờ công của tổ.',
     ex_issue: '',
-    pages: [
+    sops: [{"name": "工业平板扫码报工操作流程SOP-20260421.docx", "path": "SOP/工业平板扫码报工操作流程SOP-20260421.docx"}, {"name": "车间生产报工（PDA扫码）操作流程-(越文).pdf", "path": "SOP/车间生产报工（PDA扫码）操作流程-(越文).pdf"}, {"name": "工业平板SOP操作流程20250403.docx", "path": "SOP/工业平板SOP操作流程20250403.docx"}, {"name": "车间生产报工（WIP）异常数据查找操作.pptx", "path": "SOP/车间生产报工（WIP）异常数据查找操作.pptx"}], pages: [
       { title: '生产报工', url: './WorkShopManage/WorkReportManage/' },
       { title: '报工确认单', url: './WorkShopManage/WorkReportConfirmManage/' }
     ]
@@ -838,7 +931,7 @@ const DATA = {
     ex_short: '🔍 5 hộp lem → Đơn phán định',
     ex_desc: 'QC phát hiện có 5 chiếc hộp bị lem mực in → Lập phiếu phán định chất lượng: Phán định 3 chiếc có thể cạo lau sửa lại, 2 chiếc hủy làm phế phẩm.',
     ex_issue: '⚡ Tình huống thực tế: Đánh giá số lượng phế phẩm / bán thành phẩm không đạt để quyết định sửa hay hủy.',
-    pages: [
+    sops: [{"name": "车间不良品（NG废品）品质待判操作流程.pptx", "path": "SOP/车间不良品（NG废品）品质待判操作流程.pptx"}, {"name": "企助_品质判定及返修操作手册(1).pptx", "path": "SOP/企助_品质判定及返修操作手册(1).pptx"}], pages: [
       { title: '品质判定单', url: './IPQManage/QualityDecideBillManage/' },
       { title: '品质异常登记', url: './IPQManage/AbnormalQualityManage/' }
     ]
@@ -849,7 +942,7 @@ const DATA = {
     ex_short: '📥 Nhập kho 95 phôi hộp đạt',
     ex_desc: 'Nhập kho tạm 95 phôi hộp quà đã dập định hình chuẩn đẹp, sẵn sàng để xuất kho mang đi mạ vàng viền hộp bên ngoài.',
     ex_issue: '',
-    pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
+    sops: [{"name": "CK台湾振凯--半制品编码明细表.xlsx", "path": "SOP/CK台湾振凯--半制品编码明细表.xlsx"}, {"name": "WIP流程与职能部门.xlsx", "path": "SOP/WIP流程与职能部门.xlsx"}, {"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}], pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
   },
   'SubOrder': {
     stage: 'Stage ⑤ Gia Công Ngoài (Thuê ngoài)',
@@ -857,7 +950,7 @@ const DATA = {
     ex_short: '🤝 Thuê ngoài mạ vàng viền hộp',
     ex_desc: 'Xưởng mình không có bể mạ kim loại, phòng kế hoạch lập đơn thuê Cơ sở mạ Hoàng Kim mạ vàng viền cho 95 chiếc phôi hộp.',
     ex_issue: '',
-    pages: [{ title: '委外加工单', url: './OutsourcingManage/MachiningManage/' }]
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}, {"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [{ title: '委外加工单', url: './OutsourcingManage/MachiningManage/' }]
   },
   'SubIssue': {
     stage: 'Stage ⑤ Gia Công Ngoài (Phát liệu)',
@@ -865,7 +958,7 @@ const DATA = {
     ex_short: '🚚 Gửi 95 phôi sang xưởng mạ',
     ex_desc: 'Thủ kho xuất 95 phôi hộp quà từ kho và gọi xe chở sang xưởng mạ của đối tác kèm phiếu giao hàng.',
     ex_issue: '',
-    pages: [{ title: '委外发料单', url: './OutsourcingManage/ExternalOutManage/' }]
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}], pages: [{ title: '委外发料单', url: './OutsourcingManage/ExternalOutManage/' }]
   },
   'SubIssueRet': {
     stage: 'Stage ⑤ Gia Công Ngoài (Tình huống phát sinh)',
@@ -873,7 +966,7 @@ const DATA = {
     ex_short: '↩️ 3 phôi móp → Trả lại kho',
     ex_desc: 'Gửi sang tới nơi, đối tác phát hiện có 3 phôi bị móp méo góc từ trước không mạ được → Trả 3 phôi hỏng này về lại xưởng.',
     ex_issue: '⚡ Tình huống thực tế: Trả lại vật liệu hỏng không sử dụng để trừ khỏi lượng phôi gia công.',
-    pages: [{ title: '委外退料单', url: './OutsourcingManage/ExternalEnterManage/' }]
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}], pages: [{ title: '委外退料单', url: './OutsourcingManage/ExternalEnterManage/' }]
   },
   'SubReceive': {
     stage: 'Stage ⑤ Gia Công Ngoài (Nhận hàng)',
@@ -881,7 +974,7 @@ const DATA = {
     ex_short: '📦 Nhận 92 hộp mạ vàng về',
     ex_desc: 'Cơ sở mạ giao lại 92 chiếc hộp đã hoàn thành công đoạn mạ viền vàng bóng loáng về kho xưởng công ty.',
     ex_issue: '',
-    pages: [{ title: '委外收货单', url: './OutsourcingManage/ExternalOutStockManage/' }]
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}], pages: [{ title: '委外收货单', url: './OutsourcingManage/ExternalOutStockManage/' }]
   },
   'SubReceiveRet': {
     stage: 'Stage ⑤ Gia Công Ngoài (Tình huống phát sinh)',
@@ -889,7 +982,7 @@ const DATA = {
     ex_short: '❌ 2 hộp ố lem → Bắt mạ lại',
     ex_desc: 'Kiểm tra thấy có 2 hộp bị ố lem, lớp mạ vàng bị bong tróc → Lập phiếu Trả lại hàng gia công, bắt đối tác mang về tẩy mạ lại.',
     ex_issue: '⚡ Tình huống thực tế: Từ chối nhận và yêu cầu đối tác gia công lại sản phẩm lỗi.',
-    pages: [{ title: '委外退货单', url: './OutsourcingManage/ExternalEnterStockManage/' }]
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}, {"name": "企助_品质判定及返修操作手册(1).pptx", "path": "SOP/企助_品质判定及返修操作手册(1).pptx"}], pages: [{ title: '委外退货单', url: './OutsourcingManage/ExternalEnterStockManage/' }]
   },
   'SubInsp': {
     stage: 'Stage ⑤ Gia Công Ngoài (Kiểm tra chất lượng)',
@@ -897,7 +990,7 @@ const DATA = {
     ex_short: '🔬 KCS duyệt 90 hộp mạ đẹp',
     ex_desc: 'KCS kiểm tra 90 chiếc hộp mạ vàng đạt chuẩn: Ánh kim sáng bóng, viền sắc nét, độ dày lớp mạ đạt yêu cầu đơn hàng.',
     ex_issue: '',
-    pages: [{ title: '来料检验单', url: './IPQManage/CheckIncomingManage/' }]
+    sops: [{"name": "企助_品质判定及返修操作手册(1).pptx", "path": "SOP/企助_品质判定及返修操作手册(1).pptx"}, {"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}], pages: [{ title: '来料检验单', url: './IPQManage/CheckIncomingManage/' }]
   },
   'InNotice3': {
     stage: 'Stage ⑤ Gia Công Ngoài (Nhập kho BTP2)',
@@ -905,7 +998,7 @@ const DATA = {
     ex_short: '📥 Nhập kho 90 phôi mạ vàng',
     ex_desc: 'Lập phiếu nhập kho cho 90 chiếc phôi hộp đã mạ viền vàng lấp lánh, sẵn sàng đưa sang tổ hoàn thiện để dán lót nhung.',
     ex_issue: '',
-    pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
+    sops: [{"name": "委外管理（生管-仓库）订单-发料-收回操作流程.pdf", "path": "SOP/委外管理（生管-仓库）订单-发料-收回操作流程.pdf"}, {"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}], pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
   },
   'ProcIssue': {
     stage: 'Stage ⑥ Hoàn Thiện (Lắp ráp công đoạn)',
@@ -913,7 +1006,7 @@ const DATA = {
     ex_short: '🎨 Lĩnh keo & nhung hoàn thiện',
     ex_desc: 'Thợ tổ hoàn thiện lĩnh 90 phôi hộp đã mạ vàng từ kho, đồng thời lĩnh thêm keo dán và vải nhung đỏ lót lòng hộp.',
     ex_issue: '',
-    pages: [{ title: '生产领料单', url: './WorkShopManage/ReceiveMateriel/' }]
+    sops: [{"name": "4. SRD-01產品編碼辦法-250409 MÃ CÔNG ĐOẠN.pdf", "path": "SOP/4. SRD-01產品編碼辦法-250409 MÃ CÔNG ĐOẠN.pdf"}, {"name": "车间管理（生产）生产领料操作流程.pdf", "path": "SOP/车间管理（生产）生产领料操作流程.pdf"}], pages: [{ title: '生产领料单', url: './WorkShopManage/ReceiveMateriel/' }]
   },
   'Rep2': {
     stage: 'Stage ⑥ Hoàn Thiện (Báo công đợt 2)',
@@ -921,7 +1014,7 @@ const DATA = {
     ex_short: '✅ Báo công hoàn tất 90 hộp quà',
     ex_desc: 'Tổ hoàn thiện báo công: Đã dán nhung đỏ, gắn nắp kính và đóng nơ hoàn thiện 100% cho toàn bộ 90 chiếc hộp quà sang trọng.',
     ex_issue: '',
-    pages: [
+    sops: [{"name": "工业平板扫码报工操作流程SOP-20260421.docx", "path": "SOP/工业平板扫码报工操作流程SOP-20260421.docx"}, {"name": "车间生产报工（PDA扫码）操作流程-(越文).pdf", "path": "SOP/车间生产报工（PDA扫码）操作流程-(越文).pdf"}], pages: [
       { title: '生产报工', url: './WorkShopManage/WorkReportManage/' },
       { title: '报工确认单', url: './WorkShopManage/WorkReportConfirmManage/' }
     ]
@@ -932,7 +1025,7 @@ const DATA = {
     ex_short: '📥 Nhập kho 90 hộp quà thành phẩm',
     ex_desc: 'Thủ kho kiểm đếm và lập phiếu nhập kho cho 90 chiếc hộp quà thành phẩm hoàn hảo, bọc màng bảo vệ chờ xuất bán.',
     ex_issue: '',
-    pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
+    sops: [{"name": "VCK来料-成品规则及档案建立流程说明.pdf", "path": "SOP/VCK来料-成品规则及档案建立流程说明.pdf"}, {"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}], pages: [{ title: '入库通知单', url: './DepotManage/WarehousingNotice/' }]
   },
   'SalesShip': {
     stage: 'Stage ⑦ Xuất Bán (Giao hàng)',
@@ -940,7 +1033,7 @@ const DATA = {
     ex_short: '🚚 Giao 90 hộp quà cho khách',
     ex_desc: 'Kho xuất 90 chiếc hộp quà đóng thùng carton cẩn thận, bàn giao cho tài xế chở đến kho của khách hàng theo đơn đặt.',
     ex_issue: '',
-    pages: [
+    sops: [{"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}, {"name": "销售管理ERP操作流程.pdf", "path": "SOP/销售管理ERP操作流程.pdf"}], pages: [
       { title: '销售出货', url: './DepotManage/SalesShipmentManage/' },
       { title: '发货计划单', url: './SalesManage/DeliveryPlansTableManage/' },
       { title: '出货检验报告', url: './IPQManage/InspectionReportManage/' }
@@ -952,7 +1045,7 @@ const DATA = {
     ex_short: '↩️ Ship móp 2 hộp → Khách trả',
     ex_desc: 'Lúc khách khui thùng thấy có 2 hộp bị tài xế chèn ép móp góc trong lúc vận chuyển → Khách trả lại 2 hộp này về xưởng để trừ tiền hoặc đổi mới.',
     ex_issue: '⚡ Tình huống thực tế: Hàng bán bị trả lại do lỗi vận chuyển, trừ doanh thu hoặc đổi bù.',
-    pages: [{ title: '销售退货', url: './DepotManage/SalesReturnsManage/' }]
+    sops: [{"name": "仓库管理流程图-及ERP系统单据.pdf", "path": "SOP/仓库管理流程图-及ERP系统单据.pdf"}], pages: [{ title: '销售退货', url: './DepotManage/SalesReturnsManage/' }]
   },
   'SalesInv': {
     stage: 'Stage ⑧ Tài Chính (Doanh thu)',
@@ -960,7 +1053,7 @@ const DATA = {
     ex_short: '🧾 Xuất HĐ 50tr cho khách',
     ex_desc: 'Kế toán xuất hóa đơn GTGT bán 88 chiếc hộp quà thực nhận trị giá 50 triệu đồng gửi cho khách hàng.',
     ex_issue: '',
-    pages: [{ title: '销售发票', url: './SalesManage/Sales_InvoiceManage/' }]
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [{ title: '销售发票', url: './SalesManage/Sales_InvoiceManage/' }]
   },
   'PurInv': {
     stage: 'Stage ⑧ Tài Chính (Chi phí)',
@@ -968,7 +1061,7 @@ const DATA = {
     ex_short: '🧾 Nhận HĐ tiền keo & tiền mạ viền',
     ex_desc: 'Kế toán nhận hóa đơn GTGT tiền mua 8 lọ keo dán từ cửa hàng vật tư và hóa đơn tiền công từ xưởng mạ vàng.',
     ex_issue: '',
-    pages: [{ title: '采购发票', url: './ARAPManage/PurchaseInvoiceRewriteManage/' }]
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [{ title: '采购发票', url: './ARAPManage/PurchaseInvoiceRewriteManage/' }]
   },
   'InvReg': {
     stage: 'Stage ⑧ Tài Chính (Đăng ký sổ sách)',
@@ -976,7 +1069,7 @@ const DATA = {
     ex_short: '📒 Kế toán vào sổ thuế & phần mềm',
     ex_desc: 'Kế toán hạch toán đăng ký cả 2 loại hóa đơn (hóa đơn bán và hóa đơn mua) vào hệ thống tài chính để đối chiếu thuế và chốt sổ công nợ.',
     ex_issue: '',
-    pages: [{ title: '发票登记表', url: './ARAPManage/ARAP_InvoiceRegisterTableManage/' }]
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [{ title: '发票登记表', url: './ARAPManage/ARAP_InvoiceRegisterTableManage/' }]
   },
   'RecDoc': {
     stage: 'Stage ⑧ Tài Chính (Thu tiền)',
@@ -984,7 +1077,7 @@ const DATA = {
     ex_short: '💰 Khách chuyển khoản trả 50tr',
     ex_desc: 'Khách hàng chuyển khoản 50 triệu đồng vào tài khoản công ty → Kế toán lập Phiếu thu và làm thủ tục đối trừ công nợ cho khách.',
     ex_issue: '',
-    pages: [
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [
       { title: '收款单', url: './GLManage/Receipt/' },
       { title: '收款核销单', url: '/ARAPManage/SendCollVerificationManage/' }
     ]
@@ -995,7 +1088,7 @@ const DATA = {
     ex_short: '💸 Trả tiền keo & tiền công mạ',
     ex_desc: 'Kế toán chuyển khoản thanh toán tiền mua keo dán cho cửa hàng vật tư và trả tiền công mạ vàng cho cơ sở mạ.',
     ex_issue: '',
-    pages: [
+    sops: [{"name": "企助ERP系统业务流程图-信凯.docx", "path": "SOP/企助ERP系统业务流程图-信凯.docx"}], pages: [
       { title: '付款单', url: './GLManage/Payment/' },
       { title: '付款核销单', url: './ARAPManage/SendVerificationManage/' }
     ]
@@ -1036,14 +1129,67 @@ function showDetail(id) {
     issueBox.style.display = 'none';
   }
 
+  // Populate SOP List
+  const sopList = document.getElementById('panel-sop-list');
+  const sopBox = document.querySelector('.sop-box');
+  sopList.innerHTML = '';
+  if (item.sops && item.sops.length > 0) {
+    sopBox.style.display = 'block';
+    item.sops.forEach(s => {
+      const fileName = (typeof s === 'string') ? s : s.name;
+      const filePath = (typeof s === 'string') ? ('SOP/' + s) : s.path;
+      const fullWinPath = 'D:\\Dat\\App_Workflow\\' + filePath.replace(/\//g, '\\');
+
+      const ext = fileName.split('.').pop().toLowerCase();
+      let badgeClass = 'badge-pdf';
+      let badgeText = 'PDF';
+      if (ext === 'docx' || ext === 'doc') { badgeClass = 'badge-docx'; badgeText = 'DOC'; }
+      else if (ext === 'pptx' || ext === 'ppt') { badgeClass = 'badge-pptx'; badgeText = 'PPT'; }
+      else if (ext === 'xlsx' || ext === 'xls') { badgeClass = 'badge-xlsx'; badgeText = 'XLS'; }
+
+      const isWeb = window.location.protocol.startsWith('http');
+      const webUrl = window.location.origin + '/' + encodeURI(filePath);
+      const copyVal = isWeb ? webUrl : fullWinPath;
+      const copyLabel = isWeb ? '📋 Copy link' : '📋 Copy đường dẫn';
+      const actionLabel = (ext === 'pdf') ? '↗️ Mở PDF' : '📥 Tải file';
+      const downloadAttr = (ext === 'pdf') ? '' : `download="${fileName.replace(/"/g, '&quot;')}"`;
+
+      const li = document.createElement('li');
+      li.className = 'sop-item';
+      li.innerHTML = `
+        <div class="sop-item-header">
+          <span class="sop-badge ${badgeClass}">${badgeText}</span>
+          <a href="./${encodeURI(filePath)}" ${downloadAttr} target="_blank" class="sop-link" title="Bấm để mở file hoặc tải về: ${fileName}">
+            ${fileName}
+          </a>
+        </div>
+        <div class="sop-actions">
+          <a href="./${encodeURI(filePath)}" ${downloadAttr} target="_blank" class="sop-btn">
+            ${actionLabel}
+          </a>
+          <button class="sop-btn" data-copy="${copyVal.replace(/"/g, '&quot;')}" onclick="copyUrl(this.getAttribute('data-copy'), this)">
+            ${copyLabel}
+          </button>
+        </div>
+      `;
+      sopList.appendChild(li);
+    });
+  } else {
+    sopBox.style.display = 'none';
+  }
+
+  // Populate ERP Pages List
   const list = document.getElementById('panel-list');
   list.innerHTML = '';
   item.pages.forEach(p => {
     const li = document.createElement('li');
-    li.innerHTML =
-      '<div class="pg-name">' + p.title + '</div>' +
-      '<div class="pg-url">' + p.url + '</div>' +
-      '<button class="copy-btn" onclick="copyUrl(\'' + p.url.replace(/'/g,"\\'") + '\', this)">📋 Copy URL</button>';
+    li.innerHTML = `
+      <div class="pg-name">${p.title}</div>
+      <div class="pg-url">${p.url}</div>
+      <button class="copy-btn" data-url="${p.url}" onclick="copyUrl(this.getAttribute('data-url'), this)">
+        📋 Copy URL
+      </button>
+    `;
     list.appendChild(li);
   });
 
@@ -1057,21 +1203,36 @@ function closePanel() {
 }
 
 function copyUrl(url, btn) {
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(url).then(function() {
-      const orig = btn.textContent;
-      btn.textContent = '✅ Copied!';
-      btn.classList.add('copy-ok');
-      setTimeout(function(){ btn.textContent = orig; btn.classList.remove('copy-ok'); }, 1500);
+  function showSuccess() {
+    const orig = btn.textContent;
+    btn.textContent = '✅ Đã chép!';
+    btn.classList.add('copy-ok');
+    setTimeout(function(){ btn.textContent = orig; btn.classList.remove('copy-ok'); }, 1500);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(url).then(showSuccess).catch(function() {
+      fallbackCopy(url, showSuccess);
     });
   } else {
-    const ta = document.createElement('textarea');
-    ta.value = url; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy');
-    document.body.removeChild(ta);
-    btn.textContent = '✅ Copied!';
-    setTimeout(function(){ btn.textContent = '📋 Copy URL'; }, 1500);
+    fallbackCopy(url, showSuccess);
   }
+}
+
+function fallbackCopy(url, callback) {
+  const ta = document.createElement('textarea');
+  ta.value = url;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try {
+    document.execCommand('copy');
+    callback();
+  } catch (err) {
+    prompt('Sao chép đường dẫn:', url);
+  }
+  document.body.removeChild(ta);
 }
 
 function highlightStage(stg) {
