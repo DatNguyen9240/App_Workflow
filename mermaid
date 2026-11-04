@@ -1,0 +1,61 @@
+graph TD
+    %% === GIAI ĐOẠN 1: BÁN HÀNG & KẾ HOẠCH ===
+    SO[销售订单 <br> Đơn hàng bán] --> OR[订单评审 <br> Đánh giá đơn hàng]
+    OR --> MRC[物料需求计算 <br> Tính toán nhu cầu vật liệu]
+
+    %% === GIAI ĐOẠN 2: KẾT QUẢ TỪ TÍNH TOÁN NHU CẦU (4 ĐẦU RA) ===
+    MRC --> PurReq[采购申请 <br> Yêu cầu mua hàng]
+    MRC --> ProdOrder[生产加工单 <br> Lệnh gia công sản xuất]
+    MRC --> MatList[发料清单 <br> Danh mục phát liệu]
+    MRC --> ToolNotice[工模具设备通知单 <br> Thông báo thiết bị dụng cụ/khuôn mẫu]
+
+    %% === NHÁNH MUA HÀNG ===
+    PurReq --> PurOrder[采购订单 <br> Đơn mua hàng]
+    PurOrder --> PurReceive[采购收货 <br> Nhận hàng mua]
+    PurReceive -.->|采购退货| PurReturn[采购退货 <br> Trả lại hàng mua]
+    PurReceive --> IQC1[来料检验 <br> Kiểm tra nguyên liệu đầu vào]
+    IQC1 --> InNotice1[入库通知单 <br> Phiếu báo nhập kho NVL]
+
+    %% === CHẶNG SẢN XUẤT 1: TẠI XƯỞNG (跟单领料) ===
+    ProdOrder --> Dispatch[派工单 <br> Lệnh phân công/Phát việc]
+    MatList -.-> Dispatch
+    ToolNotice -.-> Dispatch
+    InNotice1 ==> FollowIssue[生产领料（跟单领料） <br> Lĩnh liệu theo đơn]
+    Dispatch --> FollowIssue
+
+    %% === BỔ SUNG VẬT LIỆU XƯỞNG ===
+    WorkshopAdd[车间补料 <br> Bổ sung vật liệu xưởng] --> MaterialReq[用料申请单 <br> Đơn xin sử dụng vật liệu]
+    MaterialReq -.-> FollowIssue
+
+    FollowIssue --> Rep1[生产报工 <br> Báo công sản xuất]
+    Rep1 -.->|有不良待判数| QualCheck1[品质判定单 <br> Đơn phán định chất lượng]
+    Rep1 --> InNotice2[入库通知单 <br> Phiếu báo nhập kho BTP 1]
+
+    %% === CHẶNG 2: GIA CÔNG NGOÀI (委外) ===
+    InNotice2 ==> SubOrder[委外加工单 <br> Đơn gia công ngoài]
+    SubOrder --> SubIssue[委外发料 <br> Phát liệu gia công ngoài]
+    SubIssue -.->|委外退料| SubIssueRet[委外退料 <br> Trả lại vật liệu gia công]
+    SubIssue --> SubReceive[委外收货 <br> Nhận hàng gia công ngoài]
+    SubReceive -.->|委外退货| SubReceiveRet[委外退货 <br> Trả lại hàng gia công]
+    SubReceive --> SubInsp[来料检验 <br> Kiểm tra chất lượng gia công]
+    SubInsp --> InNotice3[入库通知单 <br> Phiếu báo nhập kho BTP 2]
+
+    %% === CHẶNG 3: CÔNG ĐOẠN HOÀN THIỆN (工序领料) ===
+    InNotice3 ==> ProcIssue[生产领料（工序领料） <br> Lĩnh liệu theo công đoạn]
+    ProcIssue --> Rep2[生产报工 <br> Báo công sản xuất]
+    Rep2 -.->|有不良待判数| QualCheck2[品质判定单 <br> Đơn phán định chất lượng]
+    Rep2 --> InNotice4[入库通知单 <br> Phiếu báo nhập kho thành phẩm]
+
+    %% === GIAI ĐOẠN 4: BÁN HÀNG & XUẤT KHO ===
+    InNotice4 --> SalesShip[销售出货 <br> Xuất hàng bán]
+    SalesShip -.->|销售退货| SalesReturn[销售退货 <br> Hàng bán bị trả lại]
+
+    %% === GIAI ĐOẠN 5: TÀI CHÍNH ===
+    SalesShip --> SalesInv[销售发票 <br> Hóa đơn bán hàng]
+    PurReceive --> PurInv[采购发票 <br> Hóa đơn mua hàng]
+
+    SalesInv --> InvReg[发票登记 <br> Đăng ký hóa đơn]
+    PurInv --> InvReg
+
+    InvReg --> RecDoc[收款单 <br> Phiếu thu]
+    InvReg --> PayDoc[付款单 <br> Phiếu chi]
