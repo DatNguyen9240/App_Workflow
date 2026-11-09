@@ -1,16 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ERP Sản Xuất – Sơ Đồ Luồng & Minh Họa Thực Tế (100 Hộp Quà)</title>
 <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
   body {
     background: #f8fafc;
-    color: #1e293b;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #0f172a;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
     margin: 0; padding: 0;
   }
 
@@ -83,8 +86,8 @@
     max-height: calc(100vh - 80px);
     overflow-y: auto;
   }
-  #panel-title-zh { font-size:1.05rem; font-weight:700; color:#0f172a; margin:0 0 2px; }
-  #panel-title-vi { font-size:.82rem; font-weight:600; color:#475569; margin:0 0 12px; }
+  #panel-title-zh { font-size:1.2rem; font-weight:800; color:#0f172a; margin:0 0 2px; }
+  #panel-title-vi { font-size:.95rem; font-weight:700; color:#475569; margin:0 0 12px; }
   #panel-close {
     position:absolute; top:12px; right:14px;
     background:#f1f5f9; border:none; font-size:.9rem;
@@ -256,7 +259,7 @@
   .node {
     display: inline-flex; flex-direction: column; align-items: center;
     justify-content: center;
-    min-width: 130px;
+    min-width: 145px;
     padding: 8px 12px;
     border-radius: 11px;
     cursor: pointer;
@@ -275,12 +278,12 @@
     box-shadow: 0 0 0 3px #3b82f6 !important;
     transform: scale(1.02);
   }
-  .node .n-zh  { font-size: .8rem; font-weight: 700; line-height:1.25; }
-  .node .n-vi  { font-size: .64rem; opacity:.85; line-height:1.2; margin-top:2px; font-weight: 500; }
+  .node .n-zh  { font-size: .95rem; font-weight: 800; line-height:1.25; }
+  .node .n-vi  { font-size: .82rem; line-height:1.25; margin-top:3px; font-weight: 600; color: inherit; }
   .node .n-ex  {
-    font-size: .63rem;
+    font-size: .78rem;
     font-weight: 600;
-    line-height: 1.25;
+    line-height: 1.35;
     margin-top: 4px;
     padding: 2px 6px;
     border-radius: 6px;
@@ -345,6 +348,708 @@
   .n-purple { background:rgba(147,51,234,.1);  border:1.5px solid rgba(147,51,234,.6);  color:#6b21a8; }
   .n-red    { background:rgba(225,29,72,.1);    border:1.5px solid rgba(225,29,72,.6);    color:#9f1239; }
   .n-gray   { background:rgba(100,116,139,.1); border:1.5px dashed rgba(100,116,139,.5);color:#334155; }
+
+  /* Main navigation tabs */
+  .main-tabs-nav {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 22px;
+    padding: 3px;
+    gap: 4px;
+  }
+  .tab-nav-btn {
+    font-size: .78rem;
+    padding: 5px 14px;
+    border-radius: 18px;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all .2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+  }
+  .tab-nav-btn:hover {
+    color: #f8fafc;
+    background: rgba(255,255,255,0.08);
+  }
+  .tab-nav-btn.active {
+    background: #3b82f6;
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.4);
+  }
+
+  /* White Pages Tab styling */
+  .badge-sop {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .badge-sop:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+    color: #1e40af;
+  }
+  .page-copy-btn {
+    font-size: 0.7rem;
+    padding: 2px 7px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .page-copy-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+  .page-copy-btn.copied {
+    background: #dcfce7 !important;
+    border-color: #86efac !important;
+    color: #15803d !important;
+    font-weight: 600;
+  }
+  .pill-btn {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  .pill-btn:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: #cbd5e1;
+  }
+  .pill-btn.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(37,99,235,0.25);
+  }
+  .view-tab-btn {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #475569;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.15s;
+  }
+  .view-tab-btn.active {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .mod-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .mod-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    border-color: #cbd5e1;
+  }
+
+
+  /* Redesigned Tab & White Pages Styling */
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.92rem; font-weight: 600;
+    font-weight: 500;
+    color: #475569;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .sidebar-link:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+  }
+  .sidebar-link.active {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 700;
+  }
+  .page-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .page-card:hover {
+    transform: translateY(-2px);
+    border-color: #93c5fd;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  }
+  .copy-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .copy-chip:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #0f172a;
+  }
+  .copy-chip.copied {
+    background: #dcfce7 !important;
+    border-color: #86efac !important;
+    color: #15803d !important;
+    font-weight: 600;
+  }
+  .badge-sop {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    font-size: 0.72rem;
+    padding: 2px 7px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.15s;
+  }
+  .badge-sop:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+    color: #1e40af;
+  }
+  .view-tab-btn {
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: 1px solid transparent;
+  }
+  .view-tab-btn.active {
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .view-tab-btn:not(.active) {
+    background: #ffffff;
+    color: #475569;
+    border-color: #e2e8f0;
+  }
+  .view-tab-btn:not(.active):hover {
+    background: #f8fafc;
+    color: #0f172a;
+  }
+
+
+  /* ══════════════════════════════════════════════════
+     DARK THEME STYLES
+  ══════════════════════════════════════════════════ */
+  body.dark-theme {
+    background-color: #0b0f19 !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-theme #header {
+    background: #0b0f19 !important;
+    border-bottom: 1px solid #1e293b !important;
+  }
+  body.dark-theme #workflow-tab-view {
+    background-color: #0b0f19 !important;
+  }
+  body.dark-theme #story-banner {
+    background: #0f172a !important;
+    border-bottom: 1px solid #1e293b !important;
+  }
+  body.dark-theme .story-step-card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+  }
+  body.dark-theme .story-step-card p {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .node {
+    background: #0f172a !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme .node .n-ex {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme .node:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6) !important;
+  }
+  body.dark-theme .stage {
+    border-color: rgba(255,255,255,0.18) !important;
+  }
+  body.dark-theme #panel {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme #panel-title-zh { color: #f8fafc !important; }
+  body.dark-theme #panel-title-vi { color: #cbd5e1 !important; }
+  body.dark-theme #panel-close { background: #1e293b !important; color: #94a3b8 !important; }
+  body.dark-theme .story-box {
+    background: #0b1120 !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .story-box-title { color: #38bdf8 !important; }
+  body.dark-theme .story-box-text { color: #cbd5e1 !important; }
+  body.dark-theme .sop-box {
+    background: #0b1120 !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .sop-item {
+    background: #131c2e !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .sop-link { color: #60a5fa !important; }
+  body.dark-theme .sop-btn {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme .sop-btn-primary {
+    background: #1e3a8a !important;
+    border-color: #2563eb !important;
+    color: #bfdbfe !important;
+  }
+  body.dark-theme #panel-list li {
+    background: #131c2e !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #panel-list .pg-name { color: #f8fafc !important; }
+  body.dark-theme #panel-list .pg-url { color: #94a3b8 !important; }
+  body.dark-theme #panel-list .copy-btn { background: #1e293b !important; color: #cbd5e1 !important; }
+
+  
+  /* ══════════════════════════════════════════════════
+     HIGH-CONTRAST THEME SYSTEM (LIGHT & DARK MODES)
+  ══════════════════════════════════════════════════ */
+  .theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #ffffff;
+    color: #0f172a !important;
+    border: 1.5px solid #cbd5e1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .theme-toggle-btn:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #0284c7 !important;
+  }
+  body.dark-theme .theme-toggle-btn {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+    border: 1.5px solid #475569 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  }
+  body.dark-theme .theme-toggle-btn:hover {
+    background: #334155 !important;
+    border-color: #64748b !important;
+    color: #38bdf8 !important;
+  }
+
+  /* Light Mode Specifics */
+  .tab-sec-header {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+  }
+  .zh-badge {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+  }
+  .group-badge {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+  }
+  .func-box {
+    background: #f8fafc;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+  }
+  .page-count-pill {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+  }
+
+  /* Dark Mode Comprehensive Overrides */
+  body.dark-theme #pages-tab-view {
+    background-color: #0b0f19 !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-theme #pages-tab-view .bg-white {
+    background-color: #0f172a !important;
+  }
+  body.dark-theme #pages-tab-view .bg-slate-50,
+  body.dark-theme #pages-tab-view [class*="bg-slate-50"] {
+    background-color: #0b1120 !important;
+  }
+  body.dark-theme #pages-tab-view .bg-slate-100 {
+    background-color: #1e293b !important;
+  }
+  body.dark-theme #pages-tab-view .border-slate-200,
+  body.dark-theme #pages-tab-view .border-slate-100 {
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-900 {
+    color: #f8fafc !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-800 {
+    color: #e2e8f0 !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-700 {
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-600 {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-500 {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .tab-sec-header {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .tab-sec-header h3 {
+    color: #f8fafc !important;
+  }
+  body.dark-theme .page-count-pill {
+    background: #1e293b !important;
+    color: #93c5fd !important;
+    border-color: #334155 !important;
+  }
+  body.dark-theme .page-card {
+    background: #131c2e !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .page-card:hover {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5) !important;
+  }
+  body.dark-theme .page-card h4,
+  body.dark-theme .page-card h3 {
+    color: #f8fafc !important;
+  }
+  body.dark-theme .zh-badge {
+    background: #1e293b !important;
+    color: #93c5fd !important;
+    border-color: #334155 !important;
+  }
+  body.dark-theme .group-badge {
+    background: #1e293b !important;
+    color: #cbd5e1 !important;
+    border-color: #334155 !important;
+  }
+  body.dark-theme .func-box {
+    background: #0b1120 !important;
+    color: #e2e8f0 !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .copy-chip {
+    background: #1e293b !important;
+    color: #93c5fd !important;
+    border-color: #334155 !important;
+  }
+  body.dark-theme .copy-chip:hover {
+    background: #334155 !important;
+    color: #ffffff !important;
+  }
+  body.dark-theme .badge-sop {
+    background: #1e3a8a !important;
+    color: #bfdbfe !important;
+    border-color: #2563eb !important;
+  }
+  body.dark-theme .badge-sop:hover {
+    background: #2563eb !important;
+    color: #ffffff !important;
+  }
+  body.dark-theme #tab-left-sidebar,
+  body.dark-theme #sidebar {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-sidebar-dept-select,
+  body.dark-theme #sidebar-dept-select {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-theme .sidebar-link {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .sidebar-link:hover {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme .sidebar-link.active {
+    background: #1e3a8a !important;
+    color: #93c5fd !important;
+    font-weight: 700;
+  }
+  body.dark-theme #tab-controls-bar,
+  body.dark-theme #search-filter-controls {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-search-input,
+  body.dark-theme #main-search-input {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme #tab-search-input::placeholder,
+  body.dark-theme #main-search-input::placeholder {
+    color: #64748b !important;
+  }
+  body.dark-theme .stat-card-box {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+
+  /* Dark Theme for Pages Tab */
+  body.dark-theme #pages-tab-view {
+    background-color: #0b0f19 !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-theme #tab-left-sidebar {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-left-sidebar select {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-theme .sidebar-link {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .sidebar-link:hover {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme .sidebar-link.active {
+    background: #1e3a8a !important;
+    color: #93c5fd !important;
+  }
+  body.dark-theme #pages-tab-view .bg-white {
+    background-color: #0f172a !important;
+  }
+  body.dark-theme #pages-tab-view .bg-gradient-to-r {
+    background-image: linear-gradient(to right, #0f172a, #131c2e, #0f172a) !important;
+  }
+  body.dark-theme #pages-tab-view .border-slate-200,
+  body.dark-theme #pages-tab-view .border-slate-100 {
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-900 {
+    color: #f8fafc !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-800 {
+    color: #e2e8f0 !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-700 {
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-500 {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .page-card {
+    background: #131c2e !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .page-card:hover {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5) !important;
+  }
+  body.dark-theme .page-card .bg-slate-50\/70 {
+    background: #0b1120 !important;
+    border-color: #1e293b !important;
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme .copy-chip {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme .copy-chip:hover {
+    background: #334155 !important;
+    color: #ffffff !important;
+  }
+  body.dark-theme #tab-controls-bar input {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme #tab-table-container {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-table-container table thead {
+    background: #1e293b !important;
+  }
+  body.dark-theme #tab-table-container table tbody {
+    background: #0f172a !important;
+  }
+  body.dark-theme #tab-table-container table tbody tr:hover {
+    background: #1e293b !important;
+  }
+  body.dark-theme .view-tab-btn:not(.active) {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .view-tab-btn.active {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+  }
+
+
+  /* ── View Switcher Buttons (Dạng Thẻ & Dạng Bảng) ── */
+  .view-tab-btn {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .view-tab-btn.active {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border: 1.5px solid #1d4ed8 !important;
+    box-shadow: 0 2px 6px rgba(37,99,235,0.25) !important;
+  }
+  .view-tab-btn:not(.active) {
+    background: #ffffff !important;
+    color: #334155 !important;
+    border: 1.5px solid #cbd5e1 !important;
+  }
+  .view-tab-btn:not(.active):hover {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-color: #94a3b8 !important;
+  }
+  body.dark-theme .view-tab-btn.active {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border: 1.5px solid #3b82f6 !important;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.45) !important;
+  }
+  body.dark-theme .view-tab-btn:not(.active) {
+    background: #1e293b !important;
+    color: #94a3b8 !important;
+    border: 1.5px solid #334155 !important;
+  }
+  body.dark-theme .view-tab-btn:not(.active):hover {
+    background: #334155 !important;
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+  }
+
+
+  /* High-Contrast Dark Mode Table Rows */
+  body.dark-theme #tab-table-container,
+  body.dark-theme #table-container {
+    background-color: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-table-container table thead,
+  body.dark-theme #table-container table thead {
+    background-color: #1e293b !important;
+    color: #93c5fd !important;
+    border-color: #334155 !important;
+  }
+  body.dark-theme #tab-table-container table thead th,
+  body.dark-theme #table-container table thead th {
+    color: #93c5fd !important;
+  }
+  body.dark-theme #tab-table-container table tbody,
+  body.dark-theme #table-container table tbody {
+    background-color: #0f172a !important;
+  }
+  body.dark-theme #tab-table-container table tbody tr,
+  body.dark-theme #table-container table tbody tr {
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-table-container table tbody tr:hover,
+  body.dark-theme #table-container table tbody tr:hover {
+    background-color: #1e293b !important;
+  }
+  body.dark-theme #tab-table-container table tbody td,
+  body.dark-theme #table-container table tbody td {
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme #tab-table-container table tbody .text-slate-900,
+  body.dark-theme #table-container table tbody .text-slate-900 {
+    color: #f8fafc !important;
+  }
+  body.dark-theme #tab-table-container table tbody .text-slate-800,
+  body.dark-theme #table-container table tbody .text-slate-800 {
+    color: #e2e8f0 !important;
+  }
+  body.dark-theme #tab-table-container table tbody .text-slate-700,
+  body.dark-theme #table-container table tbody .text-slate-700 {
+    color: #cbd5e1 !important;
+  }
+
 </style>
 </head>
 <body>
@@ -355,13 +1060,36 @@
     <h1>🏭 ERP Sản Xuất – Luồng Nghiệp Vụ & Minh Họa Thực Tế</h1>
     <p>Dựa trên ví dụ: <strong>Sản xuất 100 chiếc hộp đựng quà cao cấp mạ vàng</strong></p>
   </div>
-  <div class="flex items-center gap-2">
-    <button class="mode-btn active" id="btn-mode-story" onclick="setMode('story')">🎁 Bật Minh Họa (100 Hộp Quà)</button>
-    <button class="mode-btn" id="btn-mode-erp" onclick="setMode('erp')">🏢 Chế Độ Menu ERP</button>
+  <div class="flex items-center gap-3 flex-wrap">
+    <!-- Main Navigation Tabs -->
+    <div class="main-tabs-nav">
+      <button class="tab-nav-btn active" id="tab-nav-workflow" onclick="switchMainTab('workflow')">
+        🌿 Sơ Đồ Quy Trình
+      </button>
+      <button class="tab-nav-btn" id="tab-nav-pages" onclick="switchMainTab('pages')">
+        📑 Danh Mục Trang & Chức Năng (285 Trang)
+      </button>
+    </div>
+
+    <!-- Workflow Mode Controls -->
+    <div id="workflow-mode-controls" class="flex items-center gap-2 border-l border-slate-700 pl-2">
+      <button class="mode-btn active" id="btn-mode-story" onclick="setMode('story')">🎁 Bật Minh Họa (100 Hộp Quà)</button>
+      <button class="mode-btn" id="btn-mode-erp" onclick="setMode('erp')">🏢 Chế Độ Menu ERP</button>
+      <button class="theme-toggle-btn btn-theme-toggle-el" onclick="toggleTheme()" title="Chuyển đổi giao diện Sáng / Tối">🌙 Giao diện Tối</button>
+    </div>
+
+    <!-- Pages Tab Controls -->
+    <div id="pages-top-controls" style="display: none;" class=" flex items-center gap-2 border-l border-slate-700 pl-2">
+      <button class="theme-toggle-btn btn-theme-toggle-el" onclick="toggleTheme()" title="Chuyển đổi giao diện Sáng / Tối">
+        🌙 Giao diện Tối
+      </button>
+      
+    </div>
   </div>
 </div>
 
 <!-- ── Story Overview Banner (3 Giai Đoạn Tóm Tắt) ── -->
+<div id="workflow-tab-view">
 <div id="story-banner">
   <div class="max-w-[1200px] mx-auto">
     <div class="flex items-center justify-between mb-2">
@@ -795,7 +1523,228 @@
   </div>
 
 </div><!-- /main-wrap -->
+</div><!-- /workflow-tab-view -->
 
+<!-- ════════════════════════════════════════
+     TAB VIEW 2: DEDICATED WHITE PAGE FOR ERP PAGES
+════════════════════════════════════════ -->
+<div id="pages-tab-view" style="display: none;" class=" bg-[#f8fafc] text-slate-800 min-h-screen">
+  <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 py-6 flex items-start gap-6">
+
+    <!-- ── LEFT SIDEBAR (STICKY NAVIGATION) ── -->
+    <aside id="tab-left-sidebar" class="w-80 shrink-0 sticky top-20 hidden lg:flex flex-col max-h-[calc(100vh-100px)] bg-white rounded-2xl border border-slate-200 p-4 shadow-sm">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+        <span class="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+          📂 20 Phân Hệ Quản Trị
+        </span>
+        <span class="text-[11px] font-semibold bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full">
+          285 Trang
+        </span>
+      </div>
+
+      <!-- Department Quick Filter inside Sidebar -->
+      <div class="mb-3">
+        <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">
+          🏢 Lọc theo phòng ban:
+        </label>
+        <select id="tab-sidebar-dept-select" onchange="filterByTabDepartment(this.value)" class="w-full text-xs py-2 px-2.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
+          <option value="">Tất cả phòng ban (10+)</option>
+          <option value="Nghiệp vụ">Bộ phận Nghiệp vụ / Kinh doanh (Sales)</option>
+          <option value="Kỹ thuật">Bộ phận Kỹ thuật & Công trình (BOM)</option>
+          <option value="Sinh Quản">Bộ phận Kế hoạch & Sinh Quản (PMC)</option>
+          <option value="Thu Mua">Bộ phận Thu Mua (Procurement)</option>
+          <option value="Vật tư">Bộ phận Quản lý Kho & Vật tư (Warehouse)</option>
+          <option value="Chế tạo">Bộ phận Phân xưởng Chế tạo (Workshop)</option>
+          <option value="Chất lượng">Bộ phận Quản lý Chất lượng (QC/QA)</option>
+          <option value="Kế toán">Bộ phận Kế toán & Tài chính (Finance)</option>
+          <option value="Nhân sự">Bộ phận Nhân sự & Hành chính (HR/OA)</option>
+          <option value="ERP">Ban Quản trị ERP & IT</option>
+        </select>
+      </div>
+
+      <!-- Modules Navigation Scroll List -->
+      <div class="flex-1 overflow-y-auto space-y-1 pr-1 scrollbar-thin" id="tab-sidebar-module-list">
+        <!-- Built dynamically in JS -->
+      </div>
+
+      <!-- Sidebar footer info -->
+      <div class="pt-3 mt-3 border-t border-slate-100 text-[11px] text-slate-400 flex items-center justify-between">
+        <span>ERP QiZhu · Chen Kai</span>
+        <button onclick="resetAllTabFilters()" class="text-blue-600 hover:underline font-semibold">
+          Xóa lọc
+        </button>
+      </div>
+    </aside>
+
+    <!-- ── RIGHT MAIN CONTENT AREA ── -->
+    <main id="tab-main-content" class="flex-1 min-w-0">
+
+      <!-- Header banner of White Page -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 mb-6 shadow-2xs flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">📑</span>
+            <h2 class="text-lg md:text-xl font-extrabold text-slate-900 tracking-tight">
+              Danh Mục 285 Trang & Chức Năng Nghiệp Vụ Hệ Thống ERP Chen Kai
+            </h2>
+            <span class="text-xs bg-blue-50 text-blue-700 font-bold px-2.5 py-0.5 rounded-full border border-blue-200">20 Phân Hệ</span>
+          </div>
+          <p class="text-xs text-slate-500 font-medium mt-1 leading-relaxed">
+            Trang trắng chuyên biệt liệt kê đầy đủ 285 trang từ file <code>pages</code>: Tên song ngữ Trung - Việt, đường dẫn hệ thống (jump URL), bộ phận phụ trách và mô tả chức năng nghiệp vụ chi tiết.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button class="theme-toggle-btn btn-theme-toggle-el" onclick="toggleTheme()" title="Chuyển đổi giao diện Sáng / Tối">
+        🌙 Giao diện Tối
+      </button>
+          
+          
+        </div>
+      </div>
+
+      <!-- Hero Stats Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3.5 mb-6">
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-2xs flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-bold shrink-0">
+            🏢
+          </div>
+          <div>
+            <div class="text-2xl font-black text-slate-900 leading-tight">20</div>
+            <div class="text-xs font-semibold text-slate-500 mt-0.5">Phân Hệ Quản Trị</div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-2xs flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl font-bold shrink-0">
+            📑
+          </div>
+          <div>
+            <div class="text-2xl font-black text-slate-900 leading-tight">285</div>
+            <div class="text-xs font-semibold text-slate-500 mt-0.5">Trang & Chứng Từ ERP</div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-2xs flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl font-bold shrink-0">
+            👥
+          </div>
+          <div>
+            <div class="text-2xl font-black text-slate-900 leading-tight">10+</div>
+            <div class="text-xs font-semibold text-slate-500 mt-0.5">Phòng Ban Vận Hành</div>
+          </div>
+        </div>
+
+        <div onclick="toggleTabSopFilter()" title="Bấm để lọc các trang có SOP/Biểu mẫu" class="bg-white border border-slate-200 rounded-2xl p-4 shadow-2xs flex items-center gap-3.5 cursor-pointer hover:border-purple-300 transition">
+          <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl font-bold shrink-0">
+            📚
+          </div>
+          <div>
+            <div id="stat-sop-count" class="text-2xl font-black text-purple-600 leading-tight">125</div>
+            <div class="text-xs font-semibold text-slate-500 mt-0.5">Trang Có SOP & Biểu Mẫu ↗</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Bar (Search + View Switcher) -->
+      <div id="tab-controls-bar" class="bg-white border border-slate-200 rounded-2xl p-4 mb-6 shadow-2xs">
+        <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+          
+                    <!-- Search Box -->
+          <div class="relative flex-1">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 text-sm">
+              🔍
+            </span>
+            <input
+              type="text"
+              id="tab-search-input"
+              oninput="syncTabSearch(this.value)"
+              onkeydown="handleTabSearchKeyDown(event)"
+              placeholder="Tìm kiếm thông minh: Không dấu (don hang, xuat kho), tiếng Trung (销售, 报工), mã SO/BOM, STT #15..."
+              class="w-full pl-10 pr-24 py-2.5 text-xs sm:text-sm bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-slate-800 placeholder-slate-400 font-medium"
+            />
+            <div class="absolute inset-y-0 right-0 pr-2.5 flex items-center gap-1.5">
+              <button id="tab-clear-search-btn" onclick="clearTabSearch()" class="hidden text-slate-400 hover:text-slate-600 px-1 text-sm font-bold" title="Xóa tìm kiếm (Esc)">
+                ✕
+              </button>
+              <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-semibold text-slate-400 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded shadow-2xs">Ctrl K</kbd>
+            </div>
+          </div>
+
+          <!-- View Switcher -->
+          <div class="flex items-center gap-2 self-end md:self-auto shrink-0">
+            <button id="tab-btn-view-cards" onclick="switchTabView('cards')" class="view-tab-btn active" title="Xem dạng thẻ phân hệ chi tiết">
+              🗂️ Dạng Thẻ
+            </button>
+            <button id="tab-btn-view-table" onclick="switchTabView('table')" class="view-tab-btn" title="Xem dạng bảng 1 hàng ngang">
+              📋 Dạng Bảng
+            </button>
+          </div>
+
+          
+        </div>
+
+        <!-- Active Filter Tags -->
+        <div id="tab-active-filters-bar" class="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-slate-100 text-xs">
+          <span class="text-slate-400 font-semibold text-[11px] uppercase tracking-wider">Bộ lọc:</span>
+          <span id="tab-active-filter-chips" class="flex flex-wrap items-center gap-1.5">
+            <span class="text-slate-500 italic">Đang hiển thị toàn bộ 285 trang</span>
+          </span>
+          <button id="tab-btn-clear-all" onclick="resetAllTabFilters()" class="hidden ml-auto text-blue-600 hover:text-blue-800 text-[11px] font-bold">
+            Xóa toàn bộ lọc
+          </button>
+        </div>
+      </div>
+
+      <!-- Result summary bar -->
+      <div class="flex items-center justify-between text-xs text-slate-500 px-1 mb-4">
+        <div>
+          Hiển thị: <strong id="tab-result-count" class="text-blue-600 font-bold text-sm">285</strong> / 285 trang ERP
+        </div>
+        <div class="flex items-center gap-2 text-xs" id="tab-card-expand-controls" style="display: none;">
+          <button onclick="toggleAllTabSections(true)" class="text-blue-600 hover:underline font-semibold">Mở rộng tất cả</button>
+          <span class="text-slate-300">|</span>
+          <button onclick="toggleAllTabSections(false)" class="text-slate-500 hover:underline">Thu gọn tất cả</button>
+        </div>
+      </div>
+
+      <!-- Cards Container -->
+      <div id="tab-cards-container" class="space-y-6" style="display: block;"></div>
+
+      <!-- Table Container -->
+      <div id="tab-table-container" class="overflow-x-auto bg-white border border-slate-200 rounded-2xl shadow-2xs" style="display: none;">
+        <table class="min-w-full divide-y divide-slate-200 text-left text-[13.5px]">
+          <thead class="bg-slate-50/80 text-slate-700 font-bold uppercase tracking-wider text-[11px]">
+            <tr>
+              <th scope="col" class="py-3.5 px-3 w-12 text-center">STT</th>
+              <th scope="col" class="py-3.5 px-4 w-48">Phân Hệ (Module)</th>
+              <th scope="col" class="py-3.5 px-4 w-52">Tên Trang (Việt / Trung)</th>
+              <th scope="col" class="py-3.5 px-4 w-48">Bộ Phận Phụ Trách</th>
+              <th scope="col" class="py-3.5 px-4 w-48">Đường Dẫn (URL)</th>
+              <th scope="col" class="py-3.5 px-4 min-w-[280px]">Mô Tả Chức Năng Nghiệp Vụ</th>
+              <th scope="col" class="py-3.5 px-3 w-28 text-center">Tài Liệu SOP</th>
+            </tr>
+          </thead>
+          <tbody id="tab-table-body" class="divide-y divide-slate-100 text-slate-700 bg-white"></tbody>
+        </table>
+      </div>
+
+            <!-- Empty state -->
+      <div id="tab-empty-state" class="hidden py-16 px-6 text-center bg-white border border-slate-200 rounded-2xl shadow-2xs">
+        <div class="text-4xl mb-3">🔍</div>
+        <h3 class="text-base font-bold text-slate-800" id="tab-empty-title">Không tìm thấy trang ERP nào phù hợp</h3>
+        <p class="text-xs text-slate-500 mt-1.5 max-w-md mx-auto leading-relaxed" id="tab-empty-desc">
+          Vui lòng kiểm tra lại từ khóa hoặc thử tìm kiếm không dấu (VD: <em>don hang, xuat kho, bao cong, bom</em>), tìm theo mã tiếng Trung (VD: <em>销售, 报工</em>) hoặc số thứ tự trang (VD: <em>#15, #31</em>).
+        </p>
+        <button onclick="resetAllTabFilters()" class="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition shadow-sm inline-flex items-center gap-1.5">
+          <span>🔄</span> Xem Lại Toàn Bộ 285 Trang
+        </button>
+      </div>
+
+    </main>
+
+  </div>
+</div><script src="erp_pages_data.js"></script>
 <script>
 const DATA = {
   'SO': {
@@ -919,11 +1868,15 @@ const DATA = {
   },
   'MatReq': {
     stage: 'Stage ④ Sản Xuất Xưởng (Tình huống phát sinh)',
-    zh: '用料申请单', vi: 'Đơn xin bổ sung vật liệu (车间补料)',
-    ex_short: '⚠️ Rách 3 bìa → Đơn xin bù',
-    ex_desc: 'Trong lúc dập định hình, máy bị kẹt làm rách hỏng mất 3 tấm bìa → Tổ trưởng viết đơn xin bổ sung vật liệu để kho cấp thêm 3 bìa bù vào.',
-    ex_issue: '⚡ Tình huống thực tế: Xử lý hao hụt ngoài định mức phát sinh trong quá trình sản xuất.',
-    sops: [{"name": "车间管理（生产）领料-退料单操作流程.pdf", "path": "SOP/车间管理（生产）领料-退料单操作流程.pdf"}, {"name": "VCK物品采购申请--辅料领用操作流程(越文).pdf", "path": "SOP/VCK物品采购申请--辅料领用操作流程(越文).pdf"}], pages: [{ title: '用料申请单', url: './WorkShopManage/' }]
+    zh: '用料申请单 (车间补料)', vi: 'Đơn xin bổ sung vật liệu (Lĩnh bù / Lĩnh vượt mức)',
+    ex_short: '⚠️ Rách 3 bìa → Lập đơn lĩnh bù',
+    ex_desc: 'Trong lúc dập định hình, máy bị kẹt làm rách hỏng mất 3 tấm bìa → Tổ trưởng lập đơn xin cấp bù vật liệu trực tiếp trên hệ thống ERP để kho xuất bù 3 tấm bìa tiếp tục sản xuất.',
+    ex_issue: '⚡ Hướng dẫn thao tác ERP: Trong ERP Chen Kai, nghiệp vụ Bổ sung vật liệu (车间补料) được thực hiện tại trang "生产领料单" (Trang #147), chọn Phân loại lĩnh là "补料" (Lĩnh bù) hoặc "超领" (Lĩnh vượt mức) kèm theo mã lệnh sản xuất MO.',
+    sops: [{"name": "车间管理（生产）领料-退料单操作流程.pdf", "path": "SOP/车间管理（生产）领料-退料单操作流程.pdf"}, {"name": "VCK物品采购申请--辅料领用操作流程(越文).pdf", "path": "SOP/VCK物品采购申请--辅料领用操作流程(越文).pdf"}], pages: [
+      { title: '生产领料单 (Trang #147 - Chọn loại: 补料 / Lĩnh bù)', url: './WorkShopManage/ReceiveMateriel/' },
+      { title: '生产领料单明细 (Trang #161 - Tra cứu lịch sử cấp bù)', url: './WorkShopManage/WorkShopReportManage/ReceiveMaterielReportManage/' },
+      { title: '车间材料存量表 (Trang #167 - Kiểm tra tồn nguyên vật liệu sàn xưởng)', url: './WorkShopManage/WorkshopMaterialsManage/' }
+    ]
   },
   'Rep1': {
     stage: 'Stage ④ Sản Xuất Xưởng (Báo công đợt 1)',
@@ -1282,6 +2235,741 @@ function highlightStage(stg) {
     document.querySelectorAll('.stage').forEach(s => s.style.opacity = '1');
   }, 2500);
 }
+
+// ════════════════════════════════════════════════════
+// TAB SWITCHING & REDESIGNED ERP PAGES LOGIC
+// ════════════════════════════════════════════════════
+var currentMainTab = 'workflow';
+var currentTabView = 'cards';
+var tabSelectedModule = '';
+var tabSelectedDept = '';
+var tabSearchQuery = '';
+  tabOnlySop = false;
+  tabOnlySop = false;
+  tabOnlySop = false;
+  tabOnlySop = false;
+  tabOnlySop = false;
+  tabOnlySop = false;
+  tabOnlySop = false;
+  tabOnlySop = false;
+  tabOnlySop = false;
+  tabOnlySop = false;
+  tabOnlySop = false;
+  tabOnlySop = false;
+  tabOnlySop = false;
+var tabPagesInitialized = false;
+
+var TAB_MODULE_THEMES = {"CRM管理": {"icon": "🤝", "badge_bg": "bg-indigo-50", "badge_text": "text-indigo-700", "badge_border": "border-indigo-200", "accent": "#4f46e5", "desc": "Quản lý quan hệ đối tác khách hàng, phân loại khách hàng, theo dõi cơ hội và bảng báo giá thương mại."}, "工程信息管理": {"icon": "📐", "badge_bg": "bg-cyan-50", "badge_text": "text-cyan-800", "badge_border": "border-cyan-200", "accent": "#0891b2", "desc": "Quản lý dữ liệu kỹ thuật gốc, định mức cấu thành sản phẩm (BOM), công đoạn sản xuất và thay đổi kỹ thuật ECN."}, "工模具设备管理": {"icon": "⚙️", "badge_bg": "bg-slate-100", "badge_text": "text-slate-800", "badge_border": "border-slate-300", "accent": "#475569", "desc": "Quản lý lý lịch máy dập, khuôn dập, đồ gá (Jig), mượn/trả khuôn, kiểm tra định kỳ hàng ngày (TPM) và bảo dưỡng."}, "销售管理": {"icon": "💼", "badge_bg": "bg-blue-50", "badge_text": "text-blue-800", "badge_border": "border-blue-200", "accent": "#2563eb", "desc": "Quản lý tiếp nhận đơn đặt hàng bán (SO), điều chỉnh đơn, chính sách giá bán, kế hoạch xuất giao và xử lý khiếu nại."}, "计划管理": {"icon": "📋", "badge_bg": "bg-amber-50", "badge_text": "text-amber-800", "badge_border": "border-amber-200", "accent": "#d97706", "desc": "Thẩm định đơn hàng (MPS), tính toán nhu cầu vật liệu MRP, lệnh sản xuất (MO), đề nghị mua hàng (PR) và điều độ xưởng."}, "APS排程管理": {"icon": "⚡", "badge_bg": "bg-violet-50", "badge_text": "text-violet-800", "badge_border": "border-violet-200", "accent": "#7c3aed", "desc": "Xếp lịch sản xuất tự động nâng cao (APS), tối ưu hóa thời gian đổi khuôn và thứ tự gia công trên từng máy móc."}, "采购管理": {"icon": "🛒", "badge_bg": "bg-orange-50", "badge_text": "text-orange-800", "badge_border": "border-orange-200", "accent": "#ea580c", "desc": "Hỏi giá (RFQ), duyệt bảng giá nhà cung cấp, phát hành đơn mua hàng chính thức (PO) và theo dõi tiến độ giao hàng."}, "仓库管理": {"icon": "📦", "badge_bg": "bg-sky-50", "badge_text": "text-sky-800", "badge_border": "border-sky-200", "accent": "#0284c7", "desc": "Quản lý Nhập - Xuất - Tồn, nhận hàng mua, xuất giao khách, trả hàng lỗi, điều chuyển nội bộ, kiểm kê và in tem nhãn."}, "委外管理": {"icon": "🏭", "badge_bg": "bg-purple-50", "badge_text": "text-purple-800", "badge_border": "border-purple-200", "accent": "#9333ea", "desc": "Quản lý gia công ngoài (mạ vàng, sơn, nhiệt luyện), xuất cấp phôi, thu hồi liệu thừa, nghiệm thu và theo dõi tồn kho thầu phụ."}, "品质管理": {"icon": "🔍", "badge_bg": "bg-rose-50", "badge_text": "text-rose-800", "badge_border": "border-rose-200", "accent": "#e11d48", "desc": "Kiểm tra mẫu đầu/cuối ca, nghiệm thu NVL đầu vào (IQC), kiểm tra chuyền (IPQC), thử nghiệm phun muối, phán định lỗi (MRB) và OQC."}, "车间管理": {"icon": "🛠️", "badge_bg": "bg-emerald-50", "badge_text": "text-emerald-800", "badge_border": "border-emerald-200", "accent": "#059669", "desc": "Lĩnh - trả vật tư ra chuyền, quét mã barcode báo công sản lượng (WIP), in nhãn thùng, kiểm kê dở dang và tính lương sản phẩm."}, "人事管理": {"icon": "👥", "badge_bg": "bg-teal-50", "badge_text": "text-teal-800", "badge_border": "border-teal-200", "accent": "#0d9488", "desc": "Hồ sơ cán bộ nhân viên, sơ đồ tổ chức phòng ban, cấu hình ca kíp làm việc, đồng bộ máy chấm công và tổng hợp ngày công."}, "OA办公": {"icon": "📂", "badge_bg": "bg-slate-100", "badge_text": "text-slate-800", "badge_border": "border-slate-300", "accent": "#334155", "desc": "Quy trình phê duyệt trực tuyến: Đơn xin nghỉ phép, tăng ca, chi phí công tác, mua sắm vật tư, thanh lý tài sản và đóng dấu."}, "个人中心": {"icon": "👤", "badge_bg": "bg-blue-50", "badge_text": "text-blue-800", "badge_border": "border-blue-200", "accent": "#3b82f6", "desc": "Bàn làm việc cá nhân, danh sách các chứng từ và đơn từ đang chờ xử lý phê duyệt (To-Do List) cùng sổ tay ghi chú."}, "应收应付管理": {"icon": "💰", "badge_bg": "bg-violet-50", "badge_text": "text-violet-800", "badge_border": "border-violet-200", "accent": "#8b5cf6", "desc": "Quản lý tài chính: Số dư ban đầu, quỹ tiền mặt, phiếu thu - chi, hóa đơn GTGT mua/bán, cấn trừ công nợ và sổ chi tiết nợ."}, "供应商管理平台": {"icon": "🌐", "badge_bg": "bg-amber-50", "badge_text": "text-amber-800", "badge_border": "border-amber-200", "accent": "#b45309", "desc": "Cổng SRM tương tác trực tiếp với nhà cung cấp: Báo giá trực tuyến, nhận đơn PO, thông báo xe giao hàng và đối soát cuối tháng."}, "报表中心": {"icon": "📊", "badge_bg": "bg-emerald-50", "badge_text": "text-emerald-800", "badge_border": "border-emerald-200", "accent": "#047857", "desc": "Trung tâm báo cáo quản trị điều hành (Boss Report): Doanh số bán hàng nhiều năm, dòng tiền thu chi và xếp hạng nhà cung ứng."}, "BI报表平台": {"icon": "📈", "badge_bg": "bg-pink-50", "badge_text": "text-pink-800", "badge_border": "border-pink-200", "accent": "#db2777", "desc": "Công cụ thiết kế mẫu báo cáo động và màn hình Dashboard trực quan hóa chỉ số sản xuất theo thời gian thực."}, "配置文件管理": {"icon": "⚙️", "badge_bg": "bg-zinc-100", "badge_text": "text-zinc-800", "badge_border": "border-zinc-300", "accent": "#52525b", "desc": "Cài đặt quy tắc sinh mã chứng từ tự động, hệ thống tài khoản kế toán, vị trí kệ kho (Bin/Rack), tỷ giá và cảnh báo sớm."}, "系统设置": {"icon": "🔒", "badge_bg": "bg-gray-100", "badge_text": "text-gray-900", "badge_border": "border-gray-300", "accent": "#18181b", "desc": "Quản trị hệ thống: Nhật ký bảo mật (Audit Logs), phân quyền vai trò (RBAC), quản lý cây menu, từ điển và kết chuyển năm."}};
+
+function switchMainTab(tab) {
+  try {
+    currentMainTab = tab;
+    var isWorkflow = (tab === 'workflow');
+
+    var btnWf = document.getElementById('tab-nav-workflow');
+    var btnPg = document.getElementById('tab-nav-pages');
+    if (btnWf) {
+      if (isWorkflow) btnWf.classList.add('active');
+      else btnWf.classList.remove('active');
+    }
+    if (btnPg) {
+      if (!isWorkflow) btnPg.classList.add('active');
+      else btnPg.classList.remove('active');
+    }
+
+    var wfView = document.getElementById('workflow-tab-view');
+    var pgView = document.getElementById('pages-tab-view');
+    if (wfView) wfView.style.display = isWorkflow ? 'block' : 'none';
+    if (pgView) {
+      pgView.classList.remove('hidden');
+      pgView.style.display = isWorkflow ? 'none' : 'block';
+    }
+
+    var wfControls = document.getElementById('workflow-mode-controls');
+    var pgControls = document.getElementById('pages-top-controls');
+    if (wfControls) wfControls.style.display = isWorkflow ? 'flex' : 'none';
+    if (pgControls) {
+      pgControls.classList.remove('hidden');
+      pgControls.style.display = isWorkflow ? 'none' : 'flex';
+    }
+
+    if (!isWorkflow) {
+      if (typeof closePanel === 'function') closePanel();
+      if (!tabPagesInitialized) {
+        initTabPages();
+        tabPagesInitialized = true;
+      }
+    }
+  } catch (err) {
+    console.error('Error switching tab:', err);
+    alert('Có lỗi khi chuyển tab: ' + err.message);
+  }
+}
+
+function initTabPages() {
+  buildTabSidebar();
+  applyTabFilters();
+}
+
+function buildTabSidebar() {
+  var container = document.getElementById('tab-sidebar-module-list');
+  if (!container || typeof ERP_PAGES_DATA === 'undefined') return;
+
+  var counts = {};
+  ERP_PAGES_DATA.forEach(function(p) {
+    counts[p.module_zh] = (counts[p.module_zh] || 0) + 1;
+  });
+
+  var uniqueModules = [];
+  ERP_PAGES_DATA.forEach(function(p) {
+    if (uniqueModules.indexOf(p.module_zh) === -1) {
+      uniqueModules.push(p.module_zh);
+    }
+  });
+  
+  var html = '<a href="javascript:void(0)" onclick="filterByTabModule(\'\')" class="sidebar-link active" data-mod="">' +
+    '<span class="flex items-center gap-2 truncate">' +
+      '<span>🌟</span>' +
+      '<span>Tất Cả Phân Hệ</span>' +
+    '</span>' +
+    '<span class="text-[10px] bg-slate-100 text-slate-600 font-bold px-1.5 py-0.5 rounded-full">285</span>' +
+  '</a>';
+
+  uniqueModules.forEach(function(modZh) {
+    var theme = TAB_MODULE_THEMES[modZh] || { icon: '📁', accent: '#2563eb' };
+    var sample = null;
+    for (var i = 0; i < ERP_PAGES_DATA.length; i++) {
+      if (ERP_PAGES_DATA[i].module_zh === modZh) {
+        sample = ERP_PAGES_DATA[i];
+        break;
+      }
+    }
+    var modVi = sample ? sample.module_vi.split('(')[0].trim() : modZh;
+    var cnt = counts[modZh] || 0;
+
+    html += '<a href="javascript:void(0)" onclick="filterByTabModule(\'' + modZh + '\')" class="sidebar-link" data-mod="' + modZh + '">' +
+      '<span class="flex items-center gap-2 truncate" title="' + modVi + ' (' + modZh + ')">' +
+        '<span class="text-sm">' + theme.icon + '</span>' +
+        '<span class="truncate">' + modVi + '</span>' +
+      '</span>' +
+      '<span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-1.5 py-0.5 rounded-full shrink-0">' + cnt + '</span>' +
+    '</a>';
+  });
+
+  container.innerHTML = html;
+}
+
+function filterByTabModule(modZh) {
+  tabSelectedModule = modZh;
+  var links = document.querySelectorAll('#tab-sidebar-module-list .sidebar-link');
+  for (var i = 0; i < links.length; i++) {
+    links[i].classList.toggle('active', links[i].getAttribute('data-mod') === modZh);
+  }
+  applyTabFilters();
+
+  if (modZh && currentTabView === 'cards') {
+    setTimeout(function() {
+      var sec = document.getElementById('tab-sec-mod-' + modZh);
+      if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }
+}
+
+function filterByTabDepartment(dept) {
+  tabSelectedDept = dept;
+  applyTabFilters();
+}
+
+/* ── SMART ROBUST SEARCH ENGINE ── */
+function normalizeSearchText(str) {
+  if (!str) return '';
+  str = ('' + str).toLowerCase().trim();
+  str = str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  str = str.replace(/[đĐ]/g, 'd');
+  return str;
+}
+
+function buildAccentRegexPattern(token) {
+  if (!token) return '';
+  var charMap = {
+    'a': '[aàáạảãâầấậẩẫăằắặẳẵAÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴ]',
+    'e': '[eèéẹẻẽêềếệểễEÈÉẸẺẼÊỀẾỆỂỄ]',
+    'i': '[iìíịỉĩIÌÍỊỈĨ]',
+    'o': '[oòóỏõọôồốổỗộơờớởỡợOÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢ]',
+    'u': '[uùúụủũưừứựửữUÙÚỤỦŨƯỪỨỰỬỮ]',
+    'y': '[yỳýỵỷỹYỲÝỴỶỸ]',
+    'd': '[dđDĐ]'
+  };
+  var unaccented = normalizeSearchText(token);
+  var pattern = '';
+  for (var i = 0; i < unaccented.length; i++) {
+    var c = unaccented[i];
+    if (charMap[c]) {
+      pattern += charMap[c];
+    } else if (/[.*+?^${}()|[\]\\]/.test(c)) {
+      pattern += '\\' + c;
+    } else {
+      pattern += c;
+    }
+  }
+  return pattern;
+}
+
+function highlightTabText(text) {
+  if (!tabSearchQuery || !text) return text;
+  try {
+    var rawTokens = tabSearchQuery.trim().split(/\s+/).filter(Boolean);
+    if (rawTokens.length === 0) return text;
+
+    var patterns = rawTokens.map(function(tok) {
+      return buildAccentRegexPattern(tok);
+    }).filter(Boolean);
+
+    if (patterns.length === 0) return text;
+
+    var combinedPattern = '(' + patterns.join('|') + ')';
+    var regex = new RegExp(combinedPattern, 'gi');
+    return text.replace(regex, '<mark class="bg-amber-200/90 text-slate-900 rounded px-0.5 font-bold">$1</mark>');
+  } catch (e) {
+    return text;
+  }
+}
+
+function handleTabSearchKeyDown(e) {
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    clearTabSearch();
+  }
+}
+
+// Global Ctrl+K / Cmd+K listener
+document.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+    var tabSearchInput = document.getElementById('tab-search-input');
+    if (tabSearchInput) {
+      e.preventDefault();
+      tabSearchInput.focus();
+      tabSearchInput.select();
+    }
+  }
+});
+
+function syncTabSearch(val) {
+  tabSearchQuery = (val || '').trim().toLowerCase();
+  var mainInput = document.getElementById('tab-search-input');
+  if (mainInput && mainInput.value !== val) mainInput.value = val;
+
+  var clearBtn = document.getElementById('tab-clear-search-btn');
+  if (clearBtn) clearBtn.classList.toggle('hidden', !tabSearchQuery);
+
+  applyTabFilters();
+}
+
+function clearTabSearch() {
+  var mainInput = document.getElementById('tab-search-input');
+  if (mainInput) mainInput.value = '';
+  syncTabSearch('');
+  if (mainInput) mainInput.focus();
+}
+
+function toggleTabSopFilter() {
+  tabOnlySop = !tabOnlySop;
+  applyTabFilters();
+}
+
+function resetAllTabFilters() {
+  tabSelectedModule = '';
+  tabSelectedDept = '';
+  tabSearchQuery = '';
+  tabOnlySop = false;
+  var mainInput = document.getElementById('tab-search-input');
+  if (mainInput) mainInput.value = '';
+  var clearBtn = document.getElementById('tab-clear-search-btn');
+  if (clearBtn) clearBtn.classList.add('hidden');
+  var deptSelect = document.getElementById('tab-sidebar-dept-select');
+  if (deptSelect) deptSelect.value = '';
+
+  var links = document.querySelectorAll('#tab-sidebar-module-list .sidebar-link');
+  for (var i = 0; i < links.length; i++) {
+    links[i].classList.toggle('active', links[i].getAttribute('data-mod') === '');
+  }
+
+  applyTabFilters();
+}
+
+function switchTabView(view) {
+  currentTabView = view;
+  var btnCards = document.getElementById('tab-btn-view-cards');
+  var btnTable = document.getElementById('tab-btn-view-table');
+  var cardsCont = document.getElementById('tab-cards-container');
+  var tableCont = document.getElementById('tab-table-container');
+  var expandCtrls = document.getElementById('tab-card-expand-controls');
+
+  if (btnCards) btnCards.classList.toggle('active', view === 'cards');
+  if (btnTable) btnTable.classList.toggle('active', view === 'table');
+  if (cardsCont) cardsCont.style.display = (view === 'cards') ? 'block' : 'none';
+  if (tableCont) tableCont.style.display = (view === 'table') ? 'block' : 'none';
+  if (expandCtrls) expandCtrls.style.display = (view === 'cards') ? 'flex' : 'none';
+}
+
+function applyTabFilters() {
+  if (typeof ERP_PAGES_DATA === 'undefined') return;
+
+  var rawQuery = (tabSearchQuery || '').trim().toLowerCase();
+  var normQuery = normalizeSearchText(rawQuery);
+  var tokens = normQuery.split(/\s+/).filter(Boolean);
+  var rawTokens = rawQuery.split(/\s+/).filter(Boolean);
+
+  var scoredItems = [];
+
+  for (var i = 0; i < ERP_PAGES_DATA.length; i++) {
+    var p = ERP_PAGES_DATA[i];
+
+    // Filter by SOP presence
+    if (tabOnlySop && (!p.sops || p.sops.length === 0)) continue;
+
+    // Filter by Module (if selected in sidebar)
+    if (tabSelectedModule && p.module_zh !== tabSelectedModule) continue;
+
+    // Filter by Department (if selected in dropdown)
+    if (tabSelectedDept && !p.dept.toLowerCase().includes(tabSelectedDept.toLowerCase())) continue;
+
+    if (tokens.length === 0) {
+      scoredItems.push({ item: p, score: 0 });
+      continue;
+    }
+
+    var idStr = String(p.id);
+    var normTitleVi = normalizeSearchText(p.title_vi);
+    var rawTitleZh = (p.title_zh || '').toLowerCase();
+    var normModVi = normalizeSearchText(p.module_vi);
+    var rawModZh = (p.module_zh || '').toLowerCase();
+    var normJump = normalizeSearchText(p.jump);
+    var rawJump = (p.jump || '').toLowerCase();
+    var normDept = normalizeSearchText(p.dept);
+    var normFunc = normalizeSearchText(p.func);
+    var sopsList = (p.sops || []);
+    var normSops = sopsList.map(normalizeSearchText).join(' ');
+    var rawSops = sopsList.join(' ').toLowerCase();
+
+    // Combined search string
+    var combinedNorm = idStr + ' ' + normTitleVi + ' ' + rawTitleZh + ' ' + normModVi + ' ' + rawModZh + ' ' + normJump + ' ' + rawJump + ' ' + normDept + ' ' + normFunc + ' ' + normSops + ' ' + rawSops;
+
+    // Check that EVERY token matches at least one field
+    var allMatch = true;
+    for (var k = 0; k < tokens.length; k++) {
+      var t = tokens[k];
+      var rawT = rawTokens[k] || t;
+      if (!combinedNorm.includes(t) && !combinedNorm.includes(rawT)) {
+        allMatch = false;
+        break;
+      }
+    }
+
+    if (!allMatch) continue;
+
+    // Relevance scoring
+    var score = 0;
+    // 1. Exact ID match (#15, 15, p15)
+    if (idStr === rawQuery || '#' + idStr === rawQuery || 'p' + idStr === rawQuery) {
+      score += 4000;
+    }
+
+    // 2. Exact or leading title match
+    if (normTitleVi === normQuery || rawTitleZh === rawQuery) {
+      score += 2000;
+    } else if (normTitleVi.indexOf(normQuery) === 0 || rawTitleZh.indexOf(rawQuery) === 0) {
+      score += 1000;
+    } else if (normTitleVi.includes(normQuery) || rawTitleZh.includes(rawQuery)) {
+      score += 600;
+    }
+
+    // 3. Short acronym word-boundary match (e.g. PO, SO, BOM, WIP, IQC, MRP)
+    if (rawQuery.length <= 4) {
+      var wordRegex = new RegExp('\\b' + rawQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+      if (wordRegex.test(p.title_vi) || wordRegex.test(p.jump) || wordRegex.test(p.title_zh)) {
+        score += 1200;
+      }
+    }
+
+    // 4. Jump URL match
+    if (rawJump === rawQuery || normJump === normQuery) {
+      score += 800;
+    } else if (rawJump.includes(rawQuery) || normJump.includes(normQuery)) {
+      score += 350;
+    }
+
+    // 5. Tokens in title
+    var tokensInTitle = 0;
+    for (var j = 0; j < tokens.length; j++) {
+      var tok = tokens[j];
+      var rTok = rawTokens[j] || tok;
+      if (normTitleVi.includes(tok) || rawTitleZh.includes(rTok)) {
+        tokensInTitle++;
+        score += 150;
+      }
+      if (rawJump.includes(rTok) || normJump.includes(tok)) score += 70;
+      if (normModVi.includes(tok) || rawModZh.includes(rTok)) score += 30;
+      if (normFunc.includes(tok)) score += 15;
+    }
+
+    if (tokensInTitle === tokens.length) {
+      score += 500;
+      score += Math.max(0, 150 - normTitleVi.length);
+    }
+
+    // Master document bonus (header sheets rank higher than detail/log sheets)
+    var isDetail = normTitleVi.indexOf('chi tiet') === 0 || normTitleVi.indexOf('lich su') === 0 || rawTitleZh.includes('明细') || rawTitleZh.includes('历史');
+    if (!isDetail) score += 180;
+
+    if (normFunc.includes(normQuery)) score += 80;
+    if (normSops.includes(normQuery)) score += 50;
+
+    scoredItems.push({ item: p, score: score });
+  }
+
+  // Sort by score descending, then by id ascending
+  if (tokens.length > 0) {
+    scoredItems.sort(function(a, b) {
+      if (b.score !== a.score) return b.score - a.score;
+      return a.item.id - b.item.id;
+    });
+  }
+
+  var filtered = scoredItems.map(function(s) { return s.item; });
+
+  var resCount = document.getElementById('tab-result-count');
+  if (resCount) resCount.textContent = filtered.length;
+
+  updateActiveTabFilterChips();
+  renderTabCardsView(filtered);
+  renderTabTableView(filtered);
+
+  var isEmpty = (filtered.length === 0);
+  var emptyState = document.getElementById('tab-empty-state');
+  var emptyTitle = document.getElementById('tab-empty-title');
+  var emptyDesc = document.getElementById('tab-empty-desc');
+  var cardsCont = document.getElementById('tab-cards-container');
+  var tableCont = document.getElementById('tab-table-container');
+  var expandCtrls = document.getElementById('tab-card-expand-controls');
+
+  if (emptyState) {
+    emptyState.classList.toggle('hidden', !isEmpty);
+    if (isEmpty && tabSearchQuery) {
+      if (emptyTitle) emptyTitle.innerHTML = 'Không tìm thấy trang nào phù hợp với từ khóa: <span class="text-blue-600 font-bold">"' + tabSearchQuery + '"</span>';
+      if (emptyDesc) emptyDesc.innerHTML = 'Thử tìm từ khóa ngắn hơn (VD: <em>don hang, xuat kho, bom, bao cong</em>), tìm kiếm không dấu hoặc theo mã tiếng Trung (<em>销售, 报工</em>) / số thứ tự trang (<em>#15, #31</em>).';
+    } else if (isEmpty) {
+      if (emptyTitle) emptyTitle.textContent = 'Không có trang nào phù hợp với bộ lọc hiện tại';
+      if (emptyDesc) emptyDesc.textContent = 'Vui lòng xóa bớt tiêu chí lọc phân hệ, phòng ban hoặc xem SOP để hiển thị trang.';
+    }
+  }
+
+  if (cardsCont) cardsCont.style.display = (currentTabView === 'cards' && !isEmpty) ? 'block' : 'none';
+  if (tableCont) {
+    tableCont.style.display = (currentTabView === 'table' && !isEmpty) ? 'block' : 'none';
+    tableCont.classList.remove('hidden');
+  }
+  if (expandCtrls) expandCtrls.style.display = (currentTabView === 'cards' && !isEmpty) ? 'flex' : 'none';
+}
+
+function updateActiveTabFilterChips() {
+  var chipsContainer = document.getElementById('tab-active-filter-chips');
+  var clearAllBtn = document.getElementById('tab-btn-clear-all');
+  if (!chipsContainer) return;
+
+  var chips = [];
+  if (tabOnlySop) {
+    chips.push('<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">' +
+      '📚 Có SOP / Biểu mẫu <button onclick="toggleTabSopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button>' +
+    '</span>');
+  }
+  if (tabSelectedModule) {
+    chips.push('<span class="inline-flex items-center gap-1 bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded-md border border-blue-200">' +
+      'Phân hệ: ' + tabSelectedModule + ' <button onclick="filterByTabModule(\'\')" class="hover:text-blue-900 font-bold ml-0.5">✕</button>' +
+    '</span>');
+  }
+  if (tabSelectedDept) {
+    chips.push('<span class="inline-flex items-center gap-1 bg-amber-50 text-amber-800 font-semibold px-2 py-0.5 rounded-md border border-amber-200">' +
+      'Phòng ban: ' + tabSelectedDept + ' <button onclick="filterByTabDepartment(\'\')" class="hover:text-amber-900 font-bold ml-0.5">✕</button>' +
+    '</span>');
+  }
+  if (tabSearchQuery) {
+    chips.push('<span class="inline-flex items-center gap-1 bg-slate-100 text-slate-700 font-semibold px-2 py-0.5 rounded-md border border-slate-200">' +
+      '🔍 Từ khóa: "' + tabSearchQuery + '" <button onclick="clearTabSearch()" class="hover:text-slate-900 font-bold ml-0.5">✕</button>' +
+    '</span>');
+  }
+
+  if (chips.length > 0) {
+    chipsContainer.innerHTML = chips.join('');
+    if (clearAllBtn) clearAllBtn.classList.remove('hidden');
+  } else {
+    chipsContainer.innerHTML = '<span class="text-slate-400 italic">Đang hiển thị toàn bộ 285 trang</span>';
+    if (clearAllBtn) clearAllBtn.classList.add('hidden');
+  }
+}
+
+
+// Helper function to format SOP badge with file icons & clean basename
+function getTabSopBadgeHtml(s, isTable) {
+  var fileName = s.split('/').pop();
+  var icon = '📄';
+  var ext = s.split('.').pop().toLowerCase();
+  if (ext === 'xlsx' || ext === 'xls' || ext === 'et') icon = '📊';
+  else if (ext === 'pptx') icon = '🗂️';
+  else if (ext === 'mp4') icon = '📽️';
+  else if (ext === 'pdf') icon = '📑';
+  else if (ext === 'doc' || ext === 'docx') icon = '📝';
+  else if (ext === '7z' || ext === 'zip') icon = '📦';
+
+  var label = fileName;
+  if (isTable && label.length > 22) {
+    label = label.substring(0, 20) + '...';
+  }
+  return '<a href="SOP/' + encodeURI(s) + '" target="_blank" class="badge-sop' + (isTable ? ' my-0.5 inline-flex items-center gap-1' : ' inline-flex items-center gap-1') + '" title="Mở tài liệu: ' + s + '">' + icon + ' ' + label + '</a>';
+}
+
+function renderTabCardsView(items) {
+  var container = document.getElementById('tab-cards-container');
+  if (!container) return;
+  if (items.length === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  var groups = {};
+  items.forEach(function(p) {
+    if (!groups[p.module_zh]) {
+      groups[p.module_zh] = {
+        module_zh: p.module_zh,
+        module_vi: p.module_vi,
+        pages: []
+      };
+    }
+    groups[p.module_zh].pages.push(p);
+  });
+
+  var html = '';
+  Object.keys(groups).forEach(function(modKey, gIdx) {
+    var g = groups[modKey];
+    var theme = TAB_MODULE_THEMES[g.module_zh] || {
+      icon: '📁',
+      badge_bg: 'bg-blue-50',
+      badge_text: 'text-blue-800',
+      badge_border: 'border-blue-200',
+      accent: '#2563eb',
+      desc: ''
+    };
+
+    html += '<section id="tab-sec-mod-' + g.module_zh + '" class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-2xs transition">' +
+      '<div class="px-5 py-4 bg-gradient-to-r from-slate-50 via-white to-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">' +
+        '<div class="flex items-center gap-3.5">' +
+          '<div class="w-11 h-11 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center justify-center text-2xl shrink-0">' +
+            theme.icon +
+          '</div>' +
+          '<div>' +
+            '<div class="flex items-center gap-2 flex-wrap">' +
+              '<h3 class="text-lg font-extrabold text-slate-900 tracking-tight">' + g.module_vi + '</h3>' +
+              '<span class="text-xs font-semibold px-2 py-0.5 rounded-md border ' + theme.badge_bg + ' ' + theme.badge_text + ' ' + theme.badge_border + '">' +
+                g.module_zh +
+              '</span>' +
+            '</div>' +
+            '<p class="text-xs text-slate-500 font-medium mt-0.5">' +
+              (theme.desc || 'Quản lý toàn bộ chức năng và chứng từ của phân hệ ' + g.module_vi) +
+            '</p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="flex items-center gap-2">' +
+          '<span class="page-count-pill text-xs font-bold px-3 py-1 rounded-full border">' +
+            g.pages.length + ' trang chức năng' +
+          '</span>' +
+          '<button onclick="toggleTabSection(\'tab-sec-body-' + gIdx + '\', this)" class="w-8 h-8 rounded-lg border border-slate-200 hover:bg-slate-100 flex items-center justify-center text-slate-400 font-bold text-xs transition" title="Thu gọn / Mở rộng">▼</button>' +
+        '</div>' +
+      '</div>' +
+      '<div id="tab-sec-body-' + gIdx + '" class="p-5">' +
+        '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+
+    g.pages.forEach(function(p) {
+      var groupBadge = p.group 
+        ? '<span class="group-badge text-[10px] font-semibold px-2 py-0.5 rounded">' + p.group + '</span>' 
+        : '';
+
+      var sopsHtml = '';
+      if (p.sops && p.sops.length > 0) {
+        sopsHtml = '<div class="mt-3 pt-2.5 border-t border-slate-100 flex flex-wrap items-center gap-1.5">' +
+          '<span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1"><span>📚 SOP:</span></span>';
+        p.sops.forEach(function(s) {
+          sopsHtml += getTabSopBadgeHtml(s, false);
+        });
+        sopsHtml += '</div>';
+      }
+
+      html += '<div class="page-card p-4 flex flex-col justify-between">' +
+        '<div>' +
+          '<div class="flex items-start justify-between gap-2 mb-2">' +
+            '<div class="flex items-center gap-1.5 flex-wrap">' +
+              '<span class="text-[11px] font-extrabold text-slate-400">#' + p.id + '</span>' +
+              groupBadge +
+              '<h4 class="text-base font-bold text-slate-900 leading-snug tracking-tight">' + highlightTabText(p.title_vi) + '</h4>' +
+            '</div>' +
+            '<span class="zh-badge text-xs font-bold px-2.5 py-1 rounded-md shrink-0 font-mono">' +
+              highlightTabText(p.title_zh) +
+            '</span>' +
+          '</div>' +
+          '<div class="text-xs font-semibold text-slate-600 mb-2.5 flex items-center gap-1.5">' +
+            '<span class="text-slate-400">🏢</span>' +
+            '<span class="truncate">' + highlightTabText(p.dept) + '</span>' +
+          '</div>' +
+          '<div class="func-box text-[14px] leading-[1.65] p-3.5 rounded-xl mb-3 font-normal">' +
+            highlightTabText(p.func) +
+          '</div>' +
+        '</div>' +
+        '<div>' +
+          '<div class="flex items-center justify-between gap-2 pt-1 text-xs">' +
+            '<div class="copy-chip truncate flex-1" onclick="copyPageUrl(\'' + p.jump + '\', this)" title="Bấm để chép mã đường dẫn ERP">' +
+              '<span class="text-slate-400">🔗</span>' +
+              '<span class="truncate">' + (p.jump || '(Đang cập nhật URL)') + '</span>' +
+            '</div>' +
+            '<button class="copy-chip shrink-0 font-bold" onclick="copyPageUrl(\'' + p.jump + '\', this)" title="Sao chép đường dẫn">📋 Copy</button>' +
+          '</div>' +
+          sopsHtml +
+        '</div>' +
+      '</div>';
+    });
+
+    html += '</div></div></section>';
+  });
+
+  container.innerHTML = html;
+}
+
+function renderTabTableView(items) {
+  var tbody = document.getElementById('tab-table-body');
+  if (!tbody) return;
+  if (items.length === 0) {
+    tbody.innerHTML = '';
+    return;
+  }
+
+  var html = '';
+  items.forEach(function(p) {
+    var sopsHtml = '-';
+    if (p.sops && p.sops.length > 0) {
+      sopsHtml = p.sops.map(function(s) {
+        return getTabSopBadgeHtml(s, true);
+      }).join('<br/>');
+    }
+
+    html += '<tr class="hover:bg-slate-50/80 transition border-b border-slate-100/80">' +
+      '<td class="py-3.5 px-3 text-center text-slate-400 font-extrabold text-xs">' + p.id + '</td>' +
+      '<td class="py-3.5 px-4 font-semibold">' +
+        '<div class="font-bold text-slate-900 text-sm">' + p.module_vi + '</div>' +
+        '<div class="text-[11px] text-slate-400 font-mono mt-0.5">' + p.module_zh + '</div>' +
+        (p.group ? '<span class="inline-block mt-1 text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-semibold">' + p.group + '</span>' : '') +
+      '</td>' +
+      '<td class="py-3.5 px-4">' +
+        '<div class="font-bold text-slate-900 text-[14.5px] leading-snug">' + highlightTabText(p.title_vi) + '</div>' +
+        '<div class="text-xs text-blue-600 dark:text-blue-300 font-bold font-mono mt-1">' + highlightTabText(p.title_zh) + '</div>' +
+      '</td>' +
+      '<td class="py-3.5 px-4 text-slate-700 text-xs font-medium">' +
+        '<div class="flex items-center gap-1.5"><span class="text-slate-400">🏢</span><span>' + highlightTabText(p.dept) + '</span></div>' +
+      '</td>' +
+      '<td class="py-3.5 px-4">' +
+        '<div class="copy-chip truncate max-w-[200px]" onclick="copyPageUrl(\'' + p.jump + '\', this)" title="Bấm để copy URL">' +
+          '<span class="text-slate-400">🔗</span> ' + (p.jump || '-') +
+        '</div>' +
+      '</td>' +
+      '<td class="py-3.5 px-4 text-slate-800 text-[13.5px] leading-relaxed max-w-[380px]">' +
+        highlightTabText(p.func) +
+      '</td>' +
+      '<td class="py-3.5 px-3 text-center text-xs whitespace-nowrap">' +
+        sopsHtml +
+      '</td>' +
+    '</tr>';
+  });
+  tbody.innerHTML = html;
+}
+
+function toggleTabSection(bodyId, btn) {
+  var body = document.getElementById(bodyId);
+  if (!body) return;
+  var isHidden = body.classList.contains('hidden');
+  body.classList.toggle('hidden', !isHidden);
+  btn.textContent = isHidden ? '▼' : '▶';
+}
+
+function toggleAllTabSections(expand) {
+  var bodies = document.querySelectorAll('[id^="tab-sec-body-"]');
+  for (var i = 0; i < bodies.length; i++) {
+    bodies[i].classList.toggle('hidden', !expand);
+  }
+}
+
+function copyPageUrl(url, el) {
+  if (!url) return;
+  navigator.clipboard.writeText(url).then(function() {
+    var orig = el.innerHTML;
+    el.innerHTML = '✅ Đã chép!';
+    el.classList.add('copied');
+    setTimeout(function() {
+      el.innerHTML = orig;
+      el.classList.remove('copied');
+    }, 1500);
+  }).catch(function() {
+    prompt('Sao chép đường dẫn:', url);
+  });
+}
+
+function exportToCSV() {
+  if (typeof ERP_PAGES_DATA === 'undefined') return;
+  var csv = '\uFEFF';
+  csv += 'STT,Phân Hệ,Tên Tiếng Trung,Tên Tiếng Việt,Bộ Phận,Đường Dẫn URL,Mô Tả Chức Năng Chi Tiết\n';
+  ERP_PAGES_DATA.forEach(function(p) {
+    var cleanFunc = (p.func || '').replace(/"/g, '""').replace(/\n/g, ' ');
+    var cleanDept = (p.dept || '').replace(/"/g, '""');
+    csv += '"' + p.id + '","' + p.module_vi + '","' + p.title_zh + '","' + p.title_vi + '","' + cleanDept + '","' + p.jump + '","' + cleanFunc + '"\n';
+  });
+
+  var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  var link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.setAttribute('download', 'Danh_Muc_285_Trang_ERP_ChenKai.csv');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+
+// ── THEME TOGGLE LOGIC ──
+function toggleTheme() {
+  var isDark = document.body.classList.toggle('dark-theme');
+  var newTheme = isDark ? 'dark' : 'light';
+  try {
+    localStorage.setItem('erp_theme', newTheme);
+  } catch (e) {}
+  updateThemeButtonUI(isDark);
+}
+
+function updateThemeButtonUI(isDark) {
+  var btns = document.querySelectorAll('.btn-theme-toggle-el');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].innerHTML = isDark ? '☀️ Giao diện Sáng' : '🌙 Giao diện Tối';
+    btns[i].title = isDark ? 'Chuyển sang giao diện Sáng' : 'Chuyển sang giao diện Tối';
+  }
+}
+
+// Auto init saved theme
+(function() {
+  try {
+    var savedTheme = localStorage.getItem('erp_theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+      window.addEventListener('DOMContentLoaded', function() {
+        updateThemeButtonUI(true);
+      });
+    }
+  } catch (e) {}
+})();
+
 </script>
 </body>
 </html>

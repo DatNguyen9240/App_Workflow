@@ -2,6 +2,12 @@
 *.mp4
 *.7z
 
-# Ignore python helper scripts
+# Ignore python helper scripts and cache
 *.py
+*.pyc
+__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db
 

@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full bg-slate-50">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Danh Mục 285 Trang & Chức Năng Hệ Thống ERP Chen Kai</title>
+<script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+    margin: 0; padding: 0;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.92rem; font-weight: 600;
+    font-weight: 500;
+    color: #475569;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .sidebar-link:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+  }
+  .sidebar-link.active {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 700;
+  }
+  .page-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .page-card:hover {
+    transform: translateY(-2px);
+    border-color: #93c5fd;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  }
+  .copy-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .copy-chip:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #0f172a;
+  }
+  .copy-chip.copied {
+    background: #dcfce7 !important;
+    border-color: #86efac !important;
+    color: #15803d !important;
+    font-weight: 600;
+  }
+  .badge-sop {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    font-size: 0.72rem;
+    padding: 2px 7px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.15s;
+  }
+  .badge-sop:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+    color: #1e40af;
+  }
+  .view-tab-btn {
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: 1px solid transparent;
+  }
+  .view-tab-btn.active {
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .view-tab-btn:not(.active) {
+    background: #ffffff;
+    color: #475569;
+    border-color: #e2e8f0;
+  }
+  .view-tab-btn:not(.active):hover {
+    background: #f8fafc;
+    color: #0f172a;
+  }
+  @media print {
+    #top-navbar, #left-sidebar, #search-filter-controls, .no-print { display: none !important; }
+    #main-content { width: 100% !important; margin: 0 !important; padding: 0 !important; }
+    .page-card { break-inside: avoid; border: 1px solid #ccc !important; box-shadow: none !important; }
+  }
+
+  /* ══════════════════════════════════════════════════
+     DARK THEME STYLES
+  ══════════════════════════════════════════════════ */
+  body.dark-theme {
+    background-color: #0b0f19 !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-theme #header {
+    background: #0b0f19 !important;
+    border-bottom: 1px solid #1e293b !important;
+  }
+  body.dark-theme #workflow-tab-view {
+    background-color: #0b0f19 !important;
+  }
+  body.dark-theme #story-banner {
+    background: #0f172a !important;
+    border-bottom: 1px solid #1e293b !important;
+  }
+  body.dark-theme .story-step-card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+  }
+  body.dark-theme .story-step-card p {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .node {
+    background: #0f172a !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme .node .n-ex {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme .node:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6) !important;
+  }
+  body.dark-theme .stage {
+    border-color: rgba(255,255,255,0.18) !important;
+  }
+  body.dark-theme #panel {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme #panel-title-zh { color: #f8fafc !important; }
+  body.dark-theme #panel-title-vi { color: #cbd5e1 !important; }
+  body.dark-theme #panel-close { background: #1e293b !important; color: #94a3b8 !important; }
+  body.dark-theme .story-box {
+    background: #0b1120 !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .story-box-title { color: #38bdf8 !important; }
+  body.dark-theme .story-box-text { color: #cbd5e1 !important; }
+  body.dark-theme .sop-box {
+    background: #0b1120 !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .sop-item {
+    background: #131c2e !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .sop-link { color: #60a5fa !important; }
+  body.dark-theme .sop-btn {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme .sop-btn-primary {
+    background: #1e3a8a !important;
+    border-color: #2563eb !important;
+    color: #bfdbfe !important;
+  }
+  body.dark-theme #panel-list li {
+    background: #131c2e !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #panel-list .pg-name { color: #f8fafc !important; }
+  body.dark-theme #panel-list .pg-url { color: #94a3b8 !important; }
+  body.dark-theme #panel-list .copy-btn { background: #1e293b !important; color: #cbd5e1 !important; }
+
+  
+  /* ══════════════════════════════════════════════════
+     HIGH-CONTRAST THEME SYSTEM (LIGHT & DARK MODES)
+  ══════════════════════════════════════════════════ */
+  .theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #ffffff;
+    color: #0f172a !important;
+    border: 1.5px solid #cbd5e1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .theme-toggle-btn:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #0284c7 !important;
+  }
+  body.dark-theme .theme-toggle-btn {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+    border: 1.5px solid #475569 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  }
+  body.dark-theme .theme-toggle-btn:hover {
+    background: #334155 !important;
+    border-color: #64748b !important;
+    color: #38bdf8 !important;
+  }
+
+  /* Light Mode Specifics */
+  .tab-sec-header {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+  }
+  .zh-badge {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+  }
+  .group-badge {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+  }
+  .func-box {
+    background: #f8fafc;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+  }
+  .page-count-pill {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+  }
+
+  /* Dark Mode Comprehensive Overrides */
+  body.dark-theme #pages-tab-view {
+    background-color: #0b0f19 !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-theme #pages-tab-view .bg-white {
+    background-color: #0f172a !important;
+  }
+  body.dark-theme #pages-tab-view .bg-slate-50,
+  body.dark-theme #pages-tab-view [class*="bg-slate-50"] {
+    background-color: #0b1120 !important;
+  }
+  body.dark-theme #pages-tab-view .bg-slate-100 {
+    background-color: #1e293b !important;
+  }
+  body.dark-theme #pages-tab-view .border-slate-200,
+  body.dark-theme #pages-tab-view .border-slate-100 {
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-900 {
+    color: #f8fafc !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-800 {
+    color: #e2e8f0 !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-700 {
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-600 {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-500 {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .tab-sec-header {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .tab-sec-header h3 {
+    color: #f8fafc !important;
+  }
+  body.dark-theme .page-count-pill {
+    background: #1e293b !important;
+    color: #93c5fd !important;
+    border-color: #334155 !important;
+  }
+  body.dark-theme .page-card {
+    background: #131c2e !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .page-card:hover {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5) !important;
+  }
+  body.dark-theme .page-card h4,
+  body.dark-theme .page-card h3 {
+    color: #f8fafc !important;
+  }
+  body.dark-theme .zh-badge {
+    background: #1e293b !important;
+    color: #93c5fd !important;
+    border-color: #334155 !important;
+  }
+  body.dark-theme .group-badge {
+    background: #1e293b !important;
+    color: #cbd5e1 !important;
+    border-color: #334155 !important;
+  }
+  body.dark-theme .func-box {
+    background: #0b1120 !important;
+    color: #e2e8f0 !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .copy-chip {
+    background: #1e293b !important;
+    color: #93c5fd !important;
+    border-color: #334155 !important;
+  }
+  body.dark-theme .copy-chip:hover {
+    background: #334155 !important;
+    color: #ffffff !important;
+  }
+  body.dark-theme .badge-sop {
+    background: #1e3a8a !important;
+    color: #bfdbfe !important;
+    border-color: #2563eb !important;
+  }
+  body.dark-theme .badge-sop:hover {
+    background: #2563eb !important;
+    color: #ffffff !important;
+  }
+  body.dark-theme #tab-left-sidebar,
+  body.dark-theme #sidebar {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-sidebar-dept-select,
+  body.dark-theme #sidebar-dept-select {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-theme .sidebar-link {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .sidebar-link:hover {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme .sidebar-link.active {
+    background: #1e3a8a !important;
+    color: #93c5fd !important;
+    font-weight: 700;
+  }
+  body.dark-theme #tab-controls-bar,
+  body.dark-theme #search-filter-controls {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-search-input,
+  body.dark-theme #main-search-input {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme #tab-search-input::placeholder,
+  body.dark-theme #main-search-input::placeholder {
+    color: #64748b !important;
+  }
+  body.dark-theme .stat-card-box {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+
+  /* Dark Theme for Pages Tab */
+  body.dark-theme #pages-tab-view {
+    background-color: #0b0f19 !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-theme #tab-left-sidebar {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-left-sidebar select {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+  }
+  body.dark-theme .sidebar-link {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .sidebar-link:hover {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme .sidebar-link.active {
+    background: #1e3a8a !important;
+    color: #93c5fd !important;
+  }
+  body.dark-theme #pages-tab-view .bg-white {
+    background-color: #0f172a !important;
+  }
+  body.dark-theme #pages-tab-view .bg-gradient-to-r {
+    background-image: linear-gradient(to right, #0f172a, #131c2e, #0f172a) !important;
+  }
+  body.dark-theme #pages-tab-view .border-slate-200,
+  body.dark-theme #pages-tab-view .border-slate-100 {
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-900 {
+    color: #f8fafc !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-800 {
+    color: #e2e8f0 !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-700 {
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme #pages-tab-view .text-slate-500 {
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .page-card {
+    background: #131c2e !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme .page-card:hover {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5) !important;
+  }
+  body.dark-theme .page-card .bg-slate-50\/70, body.dark-theme .page-card .bg-slate-50\/90 {
+    background: #0b1120 !important;
+    border-color: #1e293b !important;
+    color: #e2e8f0 !important;
+  }
+  body.dark-theme .copy-chip {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #cbd5e1 !important;
+  }
+    body.dark-theme .badge-sop {
+    background: #1e3a8a !important;
+    color: #93c5fd !important;
+    border-color: #2563eb !important;
+  }
+  body.dark-theme .badge-sop:hover {
+    background: #1d4ed8 !important;
+    color: #ffffff !important;
+  }
+  body.dark-theme .copy-chip:hover {
+    background: #334155 !important;
+    color: #ffffff !important;
+  }
+  body.dark-theme #tab-controls-bar input {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f8fafc !important;
+  }
+  body.dark-theme #tab-table-container {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-table-container table thead {
+    background: #1e293b !important;
+  }
+  body.dark-theme #tab-table-container table tbody {
+    background: #0f172a !important;
+  }
+  body.dark-theme #tab-table-container table tbody tr:hover {
+    background: #1e293b !important;
+  }
+  body.dark-theme .view-tab-btn:not(.active) {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #94a3b8 !important;
+  }
+  body.dark-theme .view-tab-btn.active {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+  }
+
+
+  /* ── View Switcher Buttons (Dạng Thẻ & Dạng Bảng) ── */
+  .view-tab-btn {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .view-tab-btn.active {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border: 1.5px solid #1d4ed8 !important;
+    box-shadow: 0 2px 6px rgba(37,99,235,0.25) !important;
+  }
+  .view-tab-btn:not(.active) {
+    background: #ffffff !important;
+    color: #334155 !important;
+    border: 1.5px solid #cbd5e1 !important;
+  }
+  .view-tab-btn:not(.active):hover {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-color: #94a3b8 !important;
+  }
+  body.dark-theme .view-tab-btn.active {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border: 1.5px solid #3b82f6 !important;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.45) !important;
+  }
+  body.dark-theme .view-tab-btn:not(.active) {
+    background: #1e293b !important;
+    color: #94a3b8 !important;
+    border: 1.5px solid #334155 !important;
+  }
+  body.dark-theme .view-tab-btn:not(.active):hover {
+    background: #334155 !important;
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+  }
+
+
+  /* High-Contrast Dark Mode Table Rows */
+  body.dark-theme #tab-table-container,
+  body.dark-theme #table-container {
+    background-color: #0f172a !important;
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-table-container table thead,
+  body.dark-theme #table-container table thead {
+    background-color: #1e293b !important;
+    color: #93c5fd !important;
+    border-color: #334155 !important;
+  }
+  body.dark-theme #tab-table-container table thead th,
+  body.dark-theme #table-container table thead th {
+    color: #93c5fd !important;
+  }
+  body.dark-theme #tab-table-container table tbody,
+  body.dark-theme #table-container table tbody {
+    background-color: #0f172a !important;
+  }
+  body.dark-theme #tab-table-container table tbody tr,
+  body.dark-theme #table-container table tbody tr {
+    border-color: #1e293b !important;
+  }
+  body.dark-theme #tab-table-container table tbody tr:hover,
+  body.dark-theme #table-container table tbody tr:hover {
+    background-color: #1e293b !important;
+  }
+  body.dark-theme #tab-table-container table tbody td,
+  body.dark-theme #table-container table tbody td {
+    color: #cbd5e1 !important;
+  }
+  body.dark-theme #tab-table-container table tbody .text-slate-900,
+  body.dark-theme #table-container table tbody .text-slate-900 {
+    color: #f8fafc !important;
+  }
+  body.dark-theme #tab-table-container table tbody .text-slate-800,
+  body.dark-theme #table-container table tbody .text-slate-800 {
+    color: #e2e8f0 !important;
+  }
+  body.dark-theme #tab-table-container table tbody .text-slate-700,
+  body.dark-theme #table-container table tbody .text-slate-700 {
+    color: #cbd5e1 !important;
+  }
+
+</style>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 antialiased min-h-screen flex flex-col">
+
+<!-- ════════════════════════════════════════
+     TOP NAVBAR (STICKY)
+════════════════════════════════════════ -->
+<header id="top-navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xs">
+  <div class="max-w-[1600px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    
+    <!-- Brand / Title -->
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center font-bold text-xl shadow-sm shadow-blue-500/20">
+        📑
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight leading-none">
+            Hệ Thống ERP Chen Kai
+          </h1>
+          <span class="text-[11px] bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded-full border border-blue-200">
+            285 Trang
+          </span>
+        </div>
+        <p class="text-xs text-slate-500 font-medium mt-0.5 hidden sm:block">
+          Danh mục 20 phân hệ, mã định tuyến ERP, song ngữ Trung - Việt & chức năng nghiệp vụ
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick Search Input in Navbar -->
+    <div class="flex-1 max-w-md hidden md:block">
+      <div class="relative">
+        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 text-sm">
+          🔍
+        </span>
+        <input
+          type="text"
+          id="nav-search-input"
+          oninput="syncSearch(this.value)"
+          placeholder="Tìm theo tên tiếng Việt, tiếng Trung, mã URL, hoặc chức năng (Ctrl+K)..."
+          class="w-full pl-9 pr-16 py-2 text-xs bg-slate-50 hover:bg-slate-100/80 focus:bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-slate-800 placeholder-slate-400 font-medium shadow-2xs"
+        />
+        <div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none">
+          <kbd class="px-1.5 py-0.5 text-[10px] font-semibold text-slate-400 bg-white border border-slate-200 rounded shadow-2xs">Ctrl K</kbd>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Actions -->
+    <div class="flex items-center gap-2">
+      <a href="index.html" class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition" title="Quay lại sơ đồ lưu đồ luồng sản xuất">
+        🌿 Sơ Đồ Quy Trình
+      </a>
+      <button onclick="toggleTheme()" class="btn-theme-toggle-el inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition" title="Chuyển đổi giao diện Sáng / Tối">
+        🌙 Giao diện Tối
+      </button>
+      
+      
+    </div>
+
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════
+     MAIN CONTAINER (SIDEBAR + CONTENT CANVAS)
+════════════════════════════════════════ -->
+<div class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 py-6 flex-1 flex items-start gap-6">
+
+  <!-- ── LEFT SIDEBAR (STICKY NAVIGATION) ── -->
+  <aside id="left-sidebar" class="w-80 shrink-0 sticky top-22 hidden lg:flex flex-col max-h-[calc(100vh-100px)] bg-white rounded-2xl border border-slate-200 p-4 shadow-sm">
+    <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+      <span class="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+        📂 20 Phân Hệ Quản Trị
+      </span>
+      <span class="text-[11px] font-semibold bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full">
+        285 Trang
+      </span>
+    </div>
+
+    <!-- Department Quick Filter inside Sidebar -->
+    <div class="mb-3">
+      <label class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">
+        🏢 Lọc theo phòng ban:
+      </label>
+      <select id="sidebar-dept-select" onchange="filterByDepartment(this.value)" class="w-full text-xs py-2 px-2.5 bg-slate-50 border border-slate-200 rounded-lg text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
+        <option value="">Tất cả phòng ban (10+)</option>
+        <option value="Nghiệp vụ">Bộ phận Nghiệp vụ / Kinh doanh (Sales)</option>
+        <option value="Kỹ thuật">Bộ phận Kỹ thuật & Công trình (BOM)</option>
+        <option value="Sinh Quản">Bộ phận Kế hoạch & Sinh Quản (PMC)</option>
+        <option value="Thu Mua">Bộ phận Thu Mua (Procurement)</option>
+        <option value="Vật tư">Bộ phận Quản lý Kho & Vật tư (Warehouse)</option>
+        <option value="Chế tạo">Bộ phận Phân xưởng Chế tạo (Workshop)</option>
+        <option value="Chất lượng">Bộ phận Quản lý Chất lượng (QC/QA)</option>
+        <option value="Kế toán">Bộ phận Kế toán & Tài chính (Finance)</option>
+        <option value="Nhân sự">Bộ phận Nhân sự & Hành chính (HR/OA)</option>
+        <option value="ERP">Ban Quản trị ERP & IT</option>
+      </select>
+    </div>
+
+    <!-- Modules Navigation Scroll List -->
+    <div class="flex-1 overflow-y-auto space-y-1 pr-1 scrollbar-thin" id="sidebar-module-list">
+      <!-- Built dynamically in JS -->
+    </div>
+
+    <!-- Sidebar footer info -->
+    <div class="pt-3 mt-3 border-t border-slate-100 text-[11px] text-slate-400 flex items-center justify-between">
+      <span>ERP QiZhu · Chen Kai</span>
+      <button onclick="resetAllFilters()" class="text-blue-600 hover:underline font-semibold">
+        Xóa lọc
+      </button>
+    </div>
+  </aside>
+
+  <!-- ── RIGHT MAIN CONTENT AREA ── -->
+  <main id="main-content" class="flex-1 min-w-0">
+
+    <!-- Hero Stats Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3.5 mb-6">
+      <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-2xs flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-bold shrink-0">
+          🏢
+        </div>
+        <div>
+          <div class="text-2xl font-black text-slate-900 leading-tight">20</div>
+          <div class="text-xs font-semibold text-slate-500 mt-0.5">Phân Hệ Quản Trị</div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-2xs flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl font-bold shrink-0">
+          📑
+        </div>
+        <div>
+          <div class="text-2xl font-black text-slate-900 leading-tight">285</div>
+          <div class="text-xs font-semibold text-slate-500 mt-0.5">Trang & Chứng Từ ERP</div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-2xs flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl font-bold shrink-0">
+          👥
+        </div>
+        <div>
+          <div class="text-2xl font-black text-slate-900 leading-tight">10+</div>
+          <div class="text-xs font-semibold text-slate-500 mt-0.5">Phòng Ban Vận Hành</div>
+        </div>
+      </div>
+
+      <div onclick="toggleOnlySopFilter()" title="Bấm để lọc các trang có SOP/Biểu mẫu" class="bg-white border border-slate-200 rounded-2xl p-4 shadow-2xs flex items-center gap-3.5 cursor-pointer hover:border-purple-300 transition">
+        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl font-bold shrink-0">
+          📚
+        </div>
+        <div>
+          <div id="stat-sop-count" class="text-2xl font-black text-purple-600 leading-tight">125</div>
+          <div class="text-xs font-semibold text-slate-500 mt-0.5">Trang Có SOP & Biểu Mẫu ↗</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls Bar (Search + View Switcher + Quick Actions) -->
+    <div id="search-filter-controls" class="bg-white border border-slate-200 rounded-2xl p-4 mb-6 shadow-2xs">
+      <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+        
+        <!-- Mobile/Main Search Box -->
+        <div class="relative flex-1">
+          <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 text-sm">
+            🔍
+          </span>
+          <input
+            type="text"
+            id="main-search-input"
+            oninput="syncSearch(this.value)"
+            onkeydown="handleSearchKeyDown(event)"
+            placeholder="Tìm kiếm thông minh: Không dấu (don hang, xuat kho), tiếng Trung (销售, 报工), mã SO/BOM, STT #15..."
+            class="w-full pl-10 pr-24 py-2.5 text-xs sm:text-sm bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-slate-800 placeholder-slate-400 font-medium"
+          />
+          <button id="clear-search-btn" onclick="clearSearch()" class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 hidden text-sm font-bold">
+            ✕
+          </button>
+        </div>
+
+        <!-- View Switcher -->
+          <div class="flex items-center gap-2 self-end md:self-auto shrink-0">
+            <button id="btn-view-cards" onclick="switchView('cards')" class="view-tab-btn active" title="Xem dạng thẻ phân hệ chi tiết">
+              🗂️ Dạng Thẻ
+            </button>
+            <button id="btn-view-table" onclick="switchView('table')" class="view-tab-btn" title="Xem dạng bảng 1 hàng ngang">
+              📋 Dạng Bảng
+            </button>
+          </div>
+
+        
+        </div>
+
+      <!-- Active Filter Tags / Pills -->
+      <div id="active-filters-bar" class="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-slate-100 text-xs">
+        <span class="text-slate-400 font-semibold text-[11px] uppercase tracking-wider">Bộ lọc:</span>
+        <span id="active-filter-chips" class="flex flex-wrap items-center gap-1.5">
+          <span class="text-slate-500 italic">Đang hiển thị tất cả 285 trang</span>
+        </span>
+        <button id="btn-clear-all" onclick="resetAllFilters()" class="hidden ml-auto text-blue-600 hover:text-blue-800 text-[11px] font-bold">
+          Xóa toàn bộ lọc
+        </button>
+      </div>
+    </div>
+
+    <!-- Result summary bar -->
+    <div class="flex items-center justify-between text-xs text-slate-500 px-1 mb-4">
+      <div>
+        Hiển thị: <strong id="result-count" class="text-blue-600 font-bold text-sm">285</strong> / 285 trang ERP
+      </div>
+      <div class="flex items-center gap-2 text-xs" id="accordion-expand-controls" style="display: none;">
+        <button onclick="toggleAllSections(true)" class="text-blue-600 hover:underline font-semibold">Mở rộng tất cả</button>
+        <span class="text-slate-300">|</span>
+        <button onclick="toggleAllSections(false)" class="text-slate-500 hover:underline">Thu gọn tất cả</button>
+      </div>
+    </div>
+
+    <!-- ── VIEW 1: CARDS / SECTION VIEW ── -->
+    <div id="cards-container" class="space-y-6" style="display: block;"></div>
+
+    <!-- ── VIEW 2: TABLE VIEW ── -->
+    <div id="table-container" class="overflow-x-auto bg-white border border-slate-200 rounded-2xl shadow-2xs" style="display: none;">
+      <table class="min-w-full divide-y divide-slate-200 text-left text-[13.5px]">
+        <thead class="bg-slate-50/80 text-slate-700 font-bold uppercase tracking-wider text-[11px]">
+          <tr>
+            <th scope="col" class="py-3.5 px-3 w-12 text-center">STT</th>
+            <th scope="col" class="py-3.5 px-4 w-48">Phân Hệ (Module)</th>
+            <th scope="col" class="py-3.5 px-4 w-52">Tên Trang (Việt / Trung)</th>
+            <th scope="col" class="py-3.5 px-4 w-48">Bộ Phận Phụ Trách</th>
+            <th scope="col" class="py-3.5 px-4 w-48">Đường Dẫn (URL)</th>
+            <th scope="col" class="py-3.5 px-4 min-w-[280px]">Mô Tả Chức Năng Nghiệp Vụ</th>
+            <th scope="col" class="py-3.5 px-3 w-28 text-center">Tài Liệu SOP</th>
+          </tr>
+        </thead>
+        <tbody id="table-body" class="divide-y divide-slate-100 text-slate-700 bg-white"></tbody>
+      </table>
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden py-20 text-center bg-white border border-slate-200 rounded-2xl">
+      <div class="text-4xl mb-3">🔍</div>
+      <h3 class="text-base font-bold text-slate-800">Không tìm thấy trang ERP nào phù hợp</h3>
+      <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Vui lòng thử lại với từ khóa khác hoặc bấm nút bên dưới để xem lại toàn bộ 285 trang.</p>
+      <button onclick="resetAllFilters()" class="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition shadow-sm">
+        🔄 Xem Lại Toàn Bộ 285 Trang
+      </button>
+    </div>
+
+  </main>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     DATA & APPLICATION SCRIPTS
+════════════════════════════════════════ -->
+<script src="erp_pages_data.js"></script>
+<script>
+// Module Themes
+const MODULE_THEMES = {"CRM管理": {"icon": "🤝", "badge_bg": "bg-indigo-50", "badge_text": "text-indigo-700", "badge_border": "border-indigo-200", "accent": "#4f46e5", "desc": "Quản lý quan hệ đối tác khách hàng, phân loại khách hàng, theo dõi cơ hội và bảng báo giá thương mại."}, "工程信息管理": {"icon": "📐", "badge_bg": "bg-cyan-50", "badge_text": "text-cyan-800", "badge_border": "border-cyan-200", "accent": "#0891b2", "desc": "Quản lý dữ liệu kỹ thuật gốc, định mức cấu thành sản phẩm (BOM), công đoạn sản xuất và thay đổi kỹ thuật ECN."}, "工模具设备管理": {"icon": "⚙️", "badge_bg": "bg-slate-100", "badge_text": "text-slate-800", "badge_border": "border-slate-300", "accent": "#475569", "desc": "Quản lý lý lịch máy dập, khuôn dập, đồ gá (Jig), mượn/trả khuôn, kiểm tra định kỳ hàng ngày (TPM) và bảo dưỡng."}, "销售管理": {"icon": "💼", "badge_bg": "bg-blue-50", "badge_text": "text-blue-800", "badge_border": "border-blue-200", "accent": "#2563eb", "desc": "Quản lý tiếp nhận đơn đặt hàng bán (SO), điều chỉnh đơn, chính sách giá bán, kế hoạch xuất giao và xử lý khiếu nại."}, "计划管理": {"icon": "📋", "badge_bg": "bg-amber-50", "badge_text": "text-amber-800", "badge_border": "border-amber-200", "accent": "#d97706", "desc": "Thẩm định đơn hàng (MPS), tính toán nhu cầu vật liệu MRP, lệnh sản xuất (MO), đề nghị mua hàng (PR) và điều độ xưởng."}, "APS排程管理": {"icon": "⚡", "badge_bg": "bg-violet-50", "badge_text": "text-violet-800", "badge_border": "border-violet-200", "accent": "#7c3aed", "desc": "Xếp lịch sản xuất tự động nâng cao (APS), tối ưu hóa thời gian đổi khuôn và thứ tự gia công trên từng máy móc."}, "采购管理": {"icon": "🛒", "badge_bg": "bg-orange-50", "badge_text": "text-orange-800", "badge_border": "border-orange-200", "accent": "#ea580c", "desc": "Hỏi giá (RFQ), duyệt bảng giá nhà cung cấp, phát hành đơn mua hàng chính thức (PO) và theo dõi tiến độ giao hàng."}, "仓库管理": {"icon": "📦", "badge_bg": "bg-sky-50", "badge_text": "text-sky-800", "badge_border": "border-sky-200", "accent": "#0284c7", "desc": "Quản lý Nhập - Xuất - Tồn, nhận hàng mua, xuất giao khách, trả hàng lỗi, điều chuyển nội bộ, kiểm kê và in tem nhãn."}, "委外管理": {"icon": "🏭", "badge_bg": "bg-purple-50", "badge_text": "text-purple-800", "badge_border": "border-purple-200", "accent": "#9333ea", "desc": "Quản lý gia công ngoài (mạ vàng, sơn, nhiệt luyện), xuất cấp phôi, thu hồi liệu thừa, nghiệm thu và theo dõi tồn kho thầu phụ."}, "品质管理": {"icon": "🔍", "badge_bg": "bg-rose-50", "badge_text": "text-rose-800", "badge_border": "border-rose-200", "accent": "#e11d48", "desc": "Kiểm tra mẫu đầu/cuối ca, nghiệm thu NVL đầu vào (IQC), kiểm tra chuyền (IPQC), thử nghiệm phun muối, phán định lỗi (MRB) và OQC."}, "车间管理": {"icon": "🛠️", "badge_bg": "bg-emerald-50", "badge_text": "text-emerald-800", "badge_border": "border-emerald-200", "accent": "#059669", "desc": "Lĩnh - trả vật tư ra chuyền, quét mã barcode báo công sản lượng (WIP), in nhãn thùng, kiểm kê dở dang và tính lương sản phẩm."}, "人事管理": {"icon": "👥", "badge_bg": "bg-teal-50", "badge_text": "text-teal-800", "badge_border": "border-teal-200", "accent": "#0d9488", "desc": "Hồ sơ cán bộ nhân viên, sơ đồ tổ chức phòng ban, cấu hình ca kíp làm việc, đồng bộ máy chấm công và tổng hợp ngày công."}, "OA办公": {"icon": "📂", "badge_bg": "bg-slate-100", "badge_text": "text-slate-800", "badge_border": "border-slate-300", "accent": "#334155", "desc": "Quy trình phê duyệt trực tuyến: Đơn xin nghỉ phép, tăng ca, chi phí công tác, mua sắm vật tư, thanh lý tài sản và đóng dấu."}, "个人中心": {"icon": "👤", "badge_bg": "bg-blue-50", "badge_text": "text-blue-800", "badge_border": "border-blue-200", "accent": "#3b82f6", "desc": "Bàn làm việc cá nhân, danh sách các chứng từ và đơn từ đang chờ xử lý phê duyệt (To-Do List) cùng sổ tay ghi chú."}, "应收应付管理": {"icon": "💰", "badge_bg": "bg-violet-50", "badge_text": "text-violet-800", "badge_border": "border-violet-200", "accent": "#8b5cf6", "desc": "Quản lý tài chính: Số dư ban đầu, quỹ tiền mặt, phiếu thu - chi, hóa đơn GTGT mua/bán, cấn trừ công nợ và sổ chi tiết nợ."}, "供应商管理平台": {"icon": "🌐", "badge_bg": "bg-amber-50", "badge_text": "text-amber-800", "badge_border": "border-amber-200", "accent": "#b45309", "desc": "Cổng SRM tương tác trực tiếp với nhà cung cấp: Báo giá trực tuyến, nhận đơn PO, thông báo xe giao hàng và đối soát cuối tháng."}, "报表中心": {"icon": "📊", "badge_bg": "bg-emerald-50", "badge_text": "text-emerald-800", "badge_border": "border-emerald-200", "accent": "#047857", "desc": "Trung tâm báo cáo quản trị điều hành (Boss Report): Doanh số bán hàng nhiều năm, dòng tiền thu chi và xếp hạng nhà cung ứng."}, "BI报表平台": {"icon": "📈", "badge_bg": "bg-pink-50", "badge_text": "text-pink-800", "badge_border": "border-pink-200", "accent": "#db2777", "desc": "Công cụ thiết kế mẫu báo cáo động và màn hình Dashboard trực quan hóa chỉ số sản xuất theo thời gian thực."}, "配置文件管理": {"icon": "⚙️", "badge_bg": "bg-zinc-100", "badge_text": "text-zinc-800", "badge_border": "border-zinc-300", "accent": "#52525b", "desc": "Cài đặt quy tắc sinh mã chứng từ tự động, hệ thống tài khoản kế toán, vị trí kệ kho (Bin/Rack), tỷ giá và cảnh báo sớm."}, "系统设置": {"icon": "🔒", "badge_bg": "bg-gray-100", "badge_text": "text-gray-900", "badge_border": "border-gray-300", "accent": "#18181b", "desc": "Quản trị hệ thống: Nhật ký bảo mật (Audit Logs), phân quyền vai trò (RBAC), quản lý cây menu, từ điển và kết chuyển năm."}};
+
+let currentView = 'cards';
+let selectedModule = '';
+let selectedDept = '';
+let searchQuery = '';
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+  buildSidebar();
+  applyFilters();
+
+  // Keyboard shortcut Ctrl+K
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      const navInput = document.getElementById('nav-search-input');
+      const mainInput = document.getElementById('main-search-input');
+      if (window.innerWidth >= 768 && navInput) {
+        navInput.focus();
+        navInput.select();
+      } else if (mainInput) {
+        mainInput.focus();
+        mainInput.select();
+      }
+    }
+  });
+});
+
+function buildSidebar() {
+  const container = document.getElementById('sidebar-module-list');
+  if (!container || typeof ERP_PAGES_DATA === 'undefined') return;
+
+  const counts = {};
+  ERP_PAGES_DATA.forEach(p => {
+    counts[p.module_zh] = (counts[p.module_zh] || 0) + 1;
+  });
+
+  const uniqueModules = Array.from(new Set(ERP_PAGES_DATA.map(p => p.module_zh)));
+  
+  let html = `
+    <a href="javascript:void(0)" onclick="filterByModule('')" class="sidebar-link active" data-mod="">
+      <span class="flex items-center gap-2 truncate">
+        <span>🌟</span>
+        <span>Tất Cả Phân Hệ</span>
+      </span>
+      <span class="text-[10px] bg-slate-100 text-slate-600 font-bold px-1.5 py-0.5 rounded-full">
+        285
+      </span>
+    </a>
+  `;
+
+  uniqueModules.forEach(modZh => {
+    const theme = MODULE_THEMES[modZh] || { icon: '📁', accent: '#2563eb' };
+    const sample = ERP_PAGES_DATA.find(p => p.module_zh === modZh);
+    const modVi = sample ? sample.module_vi.split('(')[0].trim() : modZh;
+    const cnt = counts[modZh] || 0;
+
+    html += `
+      <a href="javascript:void(0)" onclick="filterByModule('${modZh}')" class="sidebar-link" data-mod="${modZh}">
+        <span class="flex items-center gap-2 truncate" title="${modVi} (${modZh})">
+          <span class="text-sm">${theme.icon}</span>
+          <span class="truncate">${modVi}</span>
+        </span>
+        <span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-1.5 py-0.5 rounded-full shrink-0">
+          ${cnt}
+        </span>
+      </a>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+function filterByModule(modZh) {
+  selectedModule = modZh;
+  document.querySelectorAll('#sidebar-module-list .sidebar-link').forEach(link => {
+    link.classList.toggle('active', link.getAttribute('data-mod') === modZh);
+  });
+  applyFilters();
+
+  // If specific module clicked and in cards view, scroll to that section
+  if (modZh && currentView === 'cards') {
+    setTimeout(() => {
+      const sec = document.getElementById(`sec-mod-${modZh}`);
+      if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }
+}
+
+function filterByDepartment(dept) {
+  selectedDept = dept;
+  applyFilters();
+}
+
+function syncSearch(val) {
+  searchQuery = (val || '').trim().toLowerCase();
+  const navInput = document.getElementById('nav-search-input');
+  const mainInput = document.getElementById('main-search-input');
+  if (navInput && navInput.value !== val) navInput.value = val;
+  if (mainInput && mainInput.value !== val) mainInput.value = val;
+
+  const clearBtn = document.getElementById('clear-search-btn');
+  if (clearBtn) clearBtn.classList.toggle('hidden', !searchQuery);
+
+  applyFilters();
+}
+
+function clearSearch() {
+  syncSearch('');
+}
+
+function toggleOnlySopFilter() {
+  onlySop = !onlySop;
+  applyFilters();
+}
+
+function resetAllFilters() {
+  selectedModule = '';
+  selectedDept = '';
+  searchQuery = '';
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  onlySop = false;
+  const navInput = document.getElementById('nav-search-input');
+  const mainInput = document.getElementById('main-search-input');
+  if (navInput) navInput.value = '';
+  if (mainInput) mainInput.value = '';
+  const clearBtn = document.getElementById('clear-search-btn');
+  if (clearBtn) clearBtn.classList.add('hidden');
+  const deptSelect = document.getElementById('sidebar-dept-select');
+  if (deptSelect) deptSelect.value = '';
+
+  document.querySelectorAll('#sidebar-module-list .sidebar-link').forEach(link => {
+    link.classList.toggle('active', link.getAttribute('data-mod') === '');
+  });
+
+  applyFilters();
+}
+
+function switchView(view) {
+  currentView = view;
+  var btnCards = document.getElementById('btn-view-cards');
+  var btnTable = document.getElementById('btn-view-table');
+  var cardsCont = document.getElementById('cards-container');
+  var tableCont = document.getElementById('table-container');
+  var expandCtrls = document.getElementById('accordion-expand-controls');
+
+  if (btnCards) btnCards.classList.toggle('active', view === 'cards');
+  if (btnTable) btnTable.classList.toggle('active', view === 'table');
+  if (cardsCont) cardsCont.style.display = (view === 'cards') ? 'block' : 'none';
+  if (tableCont) tableCont.style.display = (view === 'table') ? 'block' : 'none';
+  if (expandCtrls) expandCtrls.style.display = (view === 'cards') ? 'flex' : 'none';
+}
+
+function applyFilters() {
+  if (typeof ERP_PAGES_DATA === 'undefined') return;
+
+  const filtered = ERP_PAGES_DATA.filter(p => {
+    if (onlySop && (!p.sops || p.sops.length === 0)) return false;
+    if (selectedModule && p.module_zh !== selectedModule) return false;
+    if (selectedDept && !p.dept.toLowerCase().includes(selectedDept.toLowerCase())) return false;
+    if (searchQuery) {
+      const matchZh = (p.title_zh || '').toLowerCase().includes(searchQuery);
+      const matchVi = (p.title_vi || '').toLowerCase().includes(searchQuery);
+      const matchModZh = (p.module_zh || '').toLowerCase().includes(searchQuery);
+      const matchModVi = (p.module_vi || '').toLowerCase().includes(searchQuery);
+      const matchJump = (p.jump || '').toLowerCase().includes(searchQuery);
+      const matchFunc = (p.func || '').toLowerCase().includes(searchQuery);
+      const matchDept = (p.dept || '').toLowerCase().includes(searchQuery);
+      const matchSop = p.sops && p.sops.some(s => s.toLowerCase().includes(searchQuery));
+      if (!matchZh && !matchVi && !matchModZh && !matchModVi && !matchJump && !matchFunc && !matchDept && !matchSop) {
+        return false;
+      }
+    }
+    return true;
+  });
+
+  // Update counter
+  document.getElementById('result-count').textContent = filtered.length;
+
+  // Update active filter chips
+    updateActiveFilterChips();
+  renderCardsView(filtered);
+  renderTableView(filtered);
+
+  const isEmpty = filtered.length === 0;
+  const emptyEl = document.getElementById('empty-state');
+  const cardsEl = document.getElementById('cards-container');
+  const tableEl = document.getElementById('table-container');
+  const expandCtrls = document.getElementById('accordion-expand-controls');
+
+  if (emptyEl) emptyEl.classList.toggle('hidden', !isEmpty);
+  if (cardsEl) cardsEl.style.display = (currentView === 'cards' && !isEmpty) ? 'block' : 'none';
+  if (tableEl) {
+    tableEl.style.display = (currentView === 'table' && !isEmpty) ? 'block' : 'none';
+    tableEl.classList.remove('hidden');
+  }
+  if (expandCtrls) expandCtrls.style.display = (currentView === 'cards') ? 'flex' : 'none';
+}
+
+function updateActiveFilterChips() {
+  const chipsContainer = document.getElementById('active-filter-chips');
+  const clearAllBtn = document.getElementById('btn-clear-all');
+  if (!chipsContainer) return;
+
+  let chips = [];
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (onlySop) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-purple-50 text-purple-700 font-semibold px-2 py-0.5 rounded-md border border-purple-200">📚 Có SOP / Biểu mẫu <button onclick="toggleOnlySopFilter()" class="hover:text-purple-900 font-bold ml-0.5">✕</button></span>`);
+  }
+  if (selectedModule) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-blue-50 text-blue-700 font-semibold px-2 py-0.5 rounded-md border border-blue-200">
+      Phân hệ: ${selectedModule} <button onclick="filterByModule('')" class="hover:text-blue-900 font-bold ml-0.5">✕</button>
+    </span>`);
+  }
+  if (selectedDept) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-amber-50 text-amber-800 font-semibold px-2 py-0.5 rounded-md border border-amber-200">
+      Phòng ban: ${selectedDept} <button onclick="filterByDepartment('')" class="hover:text-amber-900 font-bold ml-0.5">✕</button>
+    </span>`);
+  }
+  if (searchQuery) {
+    chips.push(`<span class="inline-flex items-center gap-1 bg-slate-100 text-slate-700 font-semibold px-2 py-0.5 rounded-md border border-slate-200">
+      Từ khóa: "${searchQuery}" <button onclick="clearSearch()" class="hover:text-slate-900 font-bold ml-0.5">✕</button>
+    </span>`);
+  }
+
+  if (chips.length > 0) {
+    chipsContainer.innerHTML = chips.join('');
+    clearAllBtn.classList.remove('hidden');
+  } else {
+    chipsContainer.innerHTML = `<span class="text-slate-400 italic">Đang hiển thị toàn bộ 285 trang</span>`;
+    clearAllBtn.classList.add('hidden');
+  }
+}
+
+
+// Helper function to format SOP badge with file icons & clean basename
+function getSopBadgeHtml(s, isTable) {
+  var fileName = s.split('/').pop();
+  var icon = '📄';
+  var ext = s.split('.').pop().toLowerCase();
+  if (ext === 'xlsx' || ext === 'xls' || ext === 'et') icon = '📊';
+  else if (ext === 'pptx') icon = '🗂️';
+  else if (ext === 'mp4') icon = '📽️';
+  else if (ext === 'pdf') icon = '📑';
+  else if (ext === 'doc' || ext === 'docx') icon = '📝';
+  else if (ext === '7z' || ext === 'zip') icon = '📦';
+
+  var label = fileName;
+  if (isTable && label.length > 22) {
+    label = label.substring(0, 20) + '...';
+  }
+  return '<a href="SOP/' + encodeURI(s) + '" target="_blank" class="badge-sop' + (isTable ? ' my-0.5 inline-flex items-center gap-1' : ' inline-flex items-center gap-1') + '" title="Mở tài liệu: ' + s + '">' + icon + ' ' + label + '</a>';
+}
+
+function renderCardsView(items) {
+  const container = document.getElementById('cards-container');
+  if (!container) return;
+  if (items.length === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  // Group by module
+  const groups = {};
+  items.forEach(p => {
+    if (!groups[p.module_zh]) {
+      groups[p.module_zh] = {
+        module_zh: p.module_zh,
+        module_vi: p.module_vi,
+        pages: []
+      };
+    }
+    groups[p.module_zh].pages.push(p);
+  });
+
+  let html = '';
+  Object.values(groups).forEach((g, gIdx) => {
+    const theme = MODULE_THEMES[g.module_zh] || {
+      icon: '📁',
+      badge_bg: 'bg-blue-50',
+      badge_text: 'text-blue-800',
+      badge_border: 'border-blue-200',
+      accent: '#2563eb',
+      desc: ''
+    };
+
+    html += `
+      <section id="sec-mod-${g.module_zh}" class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-2xs transition">
+        
+        <!-- Module Header Banner -->
+        <div class="px-5 py-4 bg-gradient-to-r from-slate-50 via-white to-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center justify-center text-2xl shrink-0">
+              ${theme.icon}
+            </div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h2 class="text-lg font-extrabold text-slate-900 tracking-tight">
+                  ${g.module_vi}
+                </h2>
+                <span class="text-xs font-semibold px-2 py-0.5 rounded-md border ${theme.badge_bg} ${theme.badge_text} ${theme.badge_border}">
+                  ${g.module_zh}
+                </span>
+              </div>
+              <p class="text-xs text-slate-600 font-medium mt-0.5">
+                ${theme.desc || 'Quản lý toàn bộ chức năng và chứng từ của phân hệ ' + g.module_vi}
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="page-count-pill text-xs font-bold px-3 py-1 rounded-full border">
+              ${g.pages.length} trang chức năng
+            </span>
+            <button onclick="toggleSection('sec-body-${gIdx}', this)" class="w-8 h-8 rounded-lg border border-slate-200 hover:bg-slate-100 flex items-center justify-center text-slate-400 font-bold text-xs transition" title="Thu gọn / Mở rộng">
+              ▼
+            </button>
+          </div>
+        </div>
+
+        <!-- Module Page Cards Grid -->
+        <div id="sec-body-${gIdx}" class="p-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    `;
+
+    g.pages.forEach(p => {
+      const groupBadge = p.group 
+        ? `<span class="group-badge text-[10px] font-semibold px-2 py-0.5 rounded">${p.group}</span>` 
+        : '';
+
+      let sopsHtml = '';
+      if (p.sops && p.sops.length > 0) {
+        sopsHtml = `
+          <div class="mt-3 pt-2.5 border-t border-slate-100 flex flex-wrap items-center gap-1.5">
+            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1">
+              <span>📚 SOP:</span>
+            </span>
+            ${p.sops.map(s => getSopBadgeHtml(s, false)).join('')}
+          </div>
+        `;
+      }
+
+      html += `
+        <div class="page-card p-4 flex flex-col justify-between">
+          <div>
+            <!-- Top Card Row -->
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="text-[11px] font-extrabold text-slate-400">#${p.id}</span>
+                ${groupBadge}
+                <h3 class="text-base font-bold text-slate-900 leading-snug tracking-tight">
+                  ${highlightText(p.title_vi)}
+                </h3>
+              </div>
+              <span class="zh-badge text-xs font-bold px-2.5 py-1 rounded-md shrink-0 font-mono">
+                ${highlightText(p.title_zh)}
+              </span>
+            </div>
+
+            <!-- Department Info -->
+            <div class="text-xs font-semibold text-slate-600 mb-2.5 flex items-center gap-1.5">
+              <span class="text-slate-400">🏢</span>
+              <span class="truncate">${highlightText(p.dept)}</span>
+            </div>
+
+            <!-- Detailed Function -->
+            <div class="func-box text-[14px] leading-[1.65] p-3.5 rounded-xl mb-3 font-normal">
+              ${highlightText(p.func)}
+            </div>
+          </div>
+
+          <!-- Bottom Actions: Route URL & Copy -->
+          <div>
+            <div class="flex items-center justify-between gap-2 pt-1 text-xs">
+              <div class="copy-chip truncate flex-1 text-xs" onclick="copyPageUrl('${p.jump}', this)" title="Bấm để chép mã đường dẫn ERP">
+                <span class="text-slate-400">🔗</span>
+                <span class="truncate">${p.jump || '(Đang cập nhật URL)'}</span>
+              </div>
+              <button class="copy-chip shrink-0 font-bold" onclick="copyPageUrl('${p.jump}', this)" title="Sao chép đường dẫn">
+                📋 Copy
+              </button>
+            </div>
+            ${sopsHtml}
+          </div>
+        </div>
+      `;
+    });
+
+    html += `
+          </div>
+        </div>
+      </section>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+function renderTableView(items) {
+  const tbody = document.getElementById('table-body');
+  if (!tbody) return;
+  if (items.length === 0) {
+    tbody.innerHTML = '';
+    return;
+  }
+
+  let html = '';
+  items.forEach(p => {
+    const sopsHtml = (p.sops && p.sops.length > 0)
+      ? p.sops.map(s => getSopBadgeHtml(s, true)).join('<br/>')
+      : '<span class="text-slate-300">-</span>';
+
+    html += `
+      <tr class="hover:bg-slate-50/80 transition">
+        <td class="py-3 px-3 text-center text-slate-400 font-extrabold text-xs">${p.id}</td>
+        <td class="py-3 px-4 font-semibold text-slate-800">
+          <div class="font-bold text-slate-900">${p.module_vi}</div>
+          <div class="text-[10px] text-slate-400">${p.module_zh}</div>
+          ${p.group ? `<span class="inline-block mt-0.5 text-[9px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-semibold">${p.group}</span>` : ''}
+        </td>
+        <td class="py-3 px-4">
+          <div class="font-extrabold text-slate-900 text-xs">${highlightText(p.title_vi)}</div>
+          <div class="text-[11px] text-slate-500 font-medium mt-0.5 font-mono">${highlightText(p.title_zh)}</div>
+        </td>
+        <td class="py-3 px-4 text-slate-600 text-xs">
+          ${highlightText(p.dept)}
+        </td>
+        <td class="py-3 px-4">
+          <div class="flex items-center gap-1.5">
+            <span class="copy-chip truncate max-w-[200px]" onclick="copyPageUrl('${p.jump}', this)" title="Copy URL">
+              ${p.jump || '-'}
+            </span>
+          </div>
+        </td>
+        <td class="py-3 px-4 text-slate-700 leading-relaxed text-xs">
+          ${highlightText(p.func)}
+        </td>
+        <td class="py-3 px-3 text-center text-xs">
+          ${sopsHtml}
+        </td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = html;
+}
+
+function highlightText(text) {
+  if (!searchQuery || !text) return text;
+  try {
+    const escaped = searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${escaped})`, 'gi');
+    return text.replace(regex, '<mark class="bg-amber-200/80 text-slate-900 rounded px-1 font-semibold">$1</mark>');
+  } catch (e) {
+    return text;
+  }
+}
+
+function toggleSection(bodyId, btn) {
+  const body = document.getElementById(bodyId);
+  if (!body) return;
+  const isHidden = body.classList.contains('hidden');
+  body.classList.toggle('hidden', !isHidden);
+  btn.textContent = isHidden ? '▼' : '▶';
+}
+
+function toggleAllSections(expand) {
+  document.querySelectorAll('[id^="sec-body-"]').forEach(b => {
+    b.classList.toggle('hidden', !expand);
+  });
+}
+
+function copyPageUrl(url, el) {
+  if (!url) return;
+  navigator.clipboard.writeText(url).then(() => {
+    const orig = el.innerHTML;
+    el.innerHTML = '✅ Đã chép!';
+    el.classList.add('copied');
+    setTimeout(() => {
+      el.innerHTML = orig;
+      el.classList.remove('copied');
+    }, 1500);
+  }).catch(() => {
+    prompt('Sao chép đường dẫn:', url);
+  });
+}
+
+function exportToCSV() {
+  if (typeof ERP_PAGES_DATA === 'undefined') return;
+  let csv = '\uFEFF';
+  csv += 'STT,Phân Hệ,Tên Tiếng Trung,Tên Tiếng Việt,Bộ Phận,Đường Dẫn URL,Mô Tả Chức Năng Chi Tiết\n';
+  ERP_PAGES_DATA.forEach(p => {
+    const cleanFunc = (p.func || '').replace(/"/g, '""').replace(/\n/g, ' ');
+    const cleanDept = (p.dept || '').replace(/"/g, '""');
+    csv += `"${p.id}","${p.module_vi}","${p.title_zh}","${p.title_vi}","${cleanDept}","${p.jump}","${cleanFunc}"\n`;
+  });
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.setAttribute('download', 'Danh_Muc_285_Trang_ERP_ChenKai.csv');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// ── THEME TOGGLE LOGIC ──
+function toggleTheme() {
+  var isDark = document.body.classList.toggle('dark-theme');
+  var newTheme = isDark ? 'dark' : 'light';
+  try {
+    localStorage.setItem('erp_theme', newTheme);
+  } catch (e) {}
+  updateThemeButtonUI(isDark);
+}
+
+function updateThemeButtonUI(isDark) {
+  var btns = document.querySelectorAll('.btn-theme-toggle-el');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].innerHTML = isDark ? '☀️ Giao diện Sáng' : '🌙 Giao diện Tối';
+    btns[i].title = isDark ? 'Chuyển sang giao diện Sáng' : 'Chuyển sang giao diện Tối';
+  }
+}
+
+// Auto init saved theme
+(function() {
+  try {
+    var savedTheme = localStorage.getItem('erp_theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+      window.addEventListener('DOMContentLoaded', function() {
+        updateThemeButtonUI(true);
+      });
+    }
+  } catch (e) {}
+})();
+
+</script>
+
+</body>
+</html>

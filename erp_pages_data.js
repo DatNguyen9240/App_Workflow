@@ -1,0 +1,3819 @@
+var _global = typeof window !== 'undefined' ? window : (typeof global !== 'undefined' ? global : this);
+_global.erpPagesData = _global.ERP_PAGES_DATA = [
+  {
+    "id": 1,
+    "module_zh": "CRM管理",
+    "module_vi": "Quản lý Quan hệ Khách hàng (CRM)",
+    "group": "",
+    "title_zh": "客户类别",
+    "title_vi": "Phân loại khách hàng",
+    "dept": "Bộ phận Nghiệp vụ / Kinh doanh (Sales)",
+    "jump": "./CRMManage/CRMCustomerTypeManage/",
+    "func": "Thiết lập danh mục phân nhóm khách hàng (đại lý, đối tác chiến lược, khách hàng VIP, khách dự án...). Giúp áp dụng các chính sách chiết khấu, hạn mức công nợ và điều khoản thanh toán riêng biệt cho từng nhóm đối tượng.",
+    "sops": [
+      "报工时间/我是胡文松/sop các bô phận/SOP tạo loại hình và tạo khách hàng.pptx"
+    ]
+  },
+  {
+    "id": 2,
+    "module_zh": "CRM管理",
+    "module_vi": "Quản lý Quan hệ Khách hàng (CRM)",
+    "group": "",
+    "title_zh": "客户信息",
+    "title_vi": "Hồ sơ thông tin khách hàng",
+    "dept": "Bộ phận Nghiệp vụ / Kinh doanh (Sales)",
+    "jump": "./CRMManage/CRMCustomerManage/",
+    "func": "Quản lý toàn bộ hồ sơ pháp lý, thông tin liên hệ, mã số thuế, địa chỉ giao hàng và hạn mức tín dụng của từng khách hàng. Đây là dữ liệu gốc quan trọng để khởi tạo đơn hàng bán (SO) và phát hành hóa đơn tài chính.",
+    "sops": [
+      "报工时间/我是胡文松/sop các bô phận/SOP tạo loại hình và tạo khách hàng.pptx",
+      "销售管理ERP操作流程.pdf"
+    ]
+  },
+  {
+    "id": 3,
+    "module_zh": "CRM管理",
+    "module_vi": "Quản lý Quan hệ Khách hàng (CRM)",
+    "group": "",
+    "title_zh": "联系人管理",
+    "title_vi": "Quản lý người liên hệ đối tác",
+    "dept": "Bộ phận Nghiệp vụ / Kinh doanh (Sales)",
+    "jump": "./CRMManage/CRMContactsManage/",
+    "func": "Quản lý thông tin chi tiết danh bạ nhân sự đại diện của khách hàng (người phụ trách thu mua, giám đốc, kế toán thanh toán, cán bộ kỹ thuật nhận hàng) kèm số điện thoại và email trao đổi công việc.",
+    "sops": [
+      "销售管理ERP操作流程.pdf"
+    ]
+  },
+  {
+    "id": 4,
+    "module_zh": "CRM管理",
+    "module_vi": "Quản lý Quan hệ Khách hàng (CRM)",
+    "group": "",
+    "title_zh": "客户跟进",
+    "title_vi": "Theo dõi & Chăm sóc khách hàng",
+    "dept": "Bộ phận Nghiệp vụ / Kinh doanh (Sales)",
+    "jump": "./CRMManage/CRMTrackRecordManage/",
+    "func": "Nhật ký theo dõi quá trình tiếp cận, đàm phán và chăm sóc khách hàng định kỳ của nhân viên kinh doanh. Ghi nhận lịch sử làm việc, nhu cầu mẫu thử và các phản hồi sơ bộ trước khi chốt hợp đồng.",
+    "sops": []
+  },
+  {
+    "id": 5,
+    "module_zh": "CRM管理",
+    "module_vi": "Quản lý Quan hệ Khách hàng (CRM)",
+    "group": "",
+    "title_zh": "客户报价单",
+    "title_vi": "Bảng báo giá khách hàng (CRM)",
+    "dept": "Bộ phận Nghiệp vụ / Kinh doanh (Sales)",
+    "jump": "./CRMManage/CRMQuotation/",
+    "func": "Soạn thảo và gửi bảng báo giá bán hàng sơ bộ cho khách hàng tiềm năng. Kiểm soát lịch sử các lần chào giá, thời hạn hiệu lực của báo giá và tỷ suất lợi nhuận kỳ vọng trước khi chuyển hóa thành đơn đặt hàng chính thức.",
+    "sops": []
+  },
+  {
+    "id": 6,
+    "module_zh": "工程信息管理",
+    "module_vi": "Quản lý Kỹ thuật & Công trình (BOM & Kỹ thuật)",
+    "group": "",
+    "title_zh": "物料类别",
+    "title_vi": "Phân loại nhóm vật tư",
+    "dept": "工程部 Bộ phận công trình (Bộ phận Kỹ thuật & Công trình (Engineering / R&D))",
+    "jump": "./EngManage/TypeManage/",
+    "func": "Phân cấp danh mục cấu trúc nhóm vật tư trong toàn nhà máy: Nguyên liệu thô (Raw Materials), Bán thành phẩm (WIP), Thành phẩm hoàn chỉnh (FG), Phụ liệu tiêu hao, Công cụ dụng cụ và Phế liệu. Định hướng quy chuẩn đặt mã số vật tư thống nhất.",
+    "sops": [
+      "物料编码分类 -VCK新.xls",
+      "进口来料分类及编码规则-更新20230804.xlsx",
+      "物料进销存分类使用规则-VCK Hỏi CT.xlsx"
+    ]
+  },
+  {
+    "id": 7,
+    "module_zh": "工程信息管理",
+    "module_vi": "Quản lý Kỹ thuật & Công trình (BOM & Kỹ thuật)",
+    "group": "",
+    "title_zh": "工序档案",
+    "title_vi": "Hồ sơ quy trình công đoạn sản xuất",
+    "dept": "工程部 Bộ phận công trình (Bộ phận Kỹ thuật & Công trình (Engineering / R&D))",
+    "jump": "./EngManage/BolcodeManage/",
+    "func": "Khai báo danh mục các bước công đoạn sản xuất (Cắt phôi, Dập khuôn, Mạ vàng/Mạ niken, Hàn ráp, Đánh bóng, Đóng gói...). Xác định định mức giờ công tiêu chuẩn (Cycle Time) và chỉ định máy móc/chuyền gia công tương ứng.",
+    "sops": [
+      "报工时间/我是胡文松/sop các bô phận/SOP tạo công đoạn mới.pptx",
+      "4. SRD-01產品編碼辦法-250409 MÃ CÔNG ĐOẠN.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/工程/生产工艺流程图-XK-E-008.xls",
+      "(已翻译完成）VCK振凯表单格式20230614/工程/流程卡-XK-E-020.xlsx"
+    ]
+  },
+  {
+    "id": 8,
+    "module_zh": "工程信息管理",
+    "module_vi": "Quản lý Kỹ thuật & Công trình (BOM & Kỹ thuật)",
+    "group": "",
+    "title_zh": "物料档案",
+    "title_vi": "Hồ sơ nguyên vật liệu & Thành phẩm",
+    "dept": "工程部 Bộ phận công trình (Bộ phận Kỹ thuật & Công trình (Engineering / R&D))",
+    "jump": "./EngManage/ItemManage/",
+    "func": "Hồ sơ lý lịch cốt lõi của từng mã hàng (Item Master Data): Tên gọi quy cách kỹ thuật, đơn vị tính, kho lưu trữ mặc định, nguồn cung cấp (Tự sản xuất hay Mua ngoài), hạn mức tồn kho an toàn và quy cách đóng gói tiêu chuẩn.",
+    "sops": [
+      "VCK-产品档案-BOM明细.xlsx",
+      "物料编码分类 -VCK新.xls",
+      "报工时间/我是胡文松/sop các bô phận/SOP tạo chất liệu mới.pptx",
+      "物料编码分类 -VCK新.xls",
+      "(已翻译完成）VCK振凯表单格式20230614/工程/产品基础资料-XK-E-012.xls"
+    ]
+  },
+  {
+    "id": 9,
+    "module_zh": "工程信息管理",
+    "module_vi": "Quản lý Kỹ thuật & Công trình (BOM & Kỹ thuật)",
+    "group": "",
+    "title_zh": "工程参数",
+    "title_vi": "Thông số kỹ thuật kỹ nghệ",
+    "dept": "工程部 Bộ phận công trình (Bộ phận Kỹ thuật & Công trình (Engineering / R&D))",
+    "jump": "./EngManage/EDPManage/",
+    "func": "Cấu hình các thông số kỹ thuật dung sai, tiêu chuẩn kỹ nghệ dung tích, kích thước độ dày mạ, nhiệt độ xử lý nhiệt và tỷ lệ hao hụt kỹ thuật cho phép trong quá trình gia công cơ khí.",
+    "sops": [
+      "报工时间/我是胡文松/sop các bô phận/SOP làm bom.pptx",
+      "VCK-产品档案-BOM明细.xlsx",
+      "ERP培训视屏/工程培训视屏.mp4"
+    ]
+  },
+  {
+    "id": 10,
+    "module_zh": "工程信息管理",
+    "module_vi": "Quản lý Kỹ thuật & Công trình (BOM & Kỹ thuật)",
+    "group": "",
+    "title_zh": "物料档案明细",
+    "title_vi": "Chi tiết hồ sơ danh mục vật liệu",
+    "dept": "工程部 Bộ phận công trình (Bộ phận Kỹ thuật & Công trình (Engineering / R&D))",
+    "jump": "./EngManage/ItemListManage/",
+    "func": "Tra cứu và chỉnh sửa thông tin mở rộng của mã hàng: Bản vẽ kỹ thuật đính kèm, danh sách nhà cung ứng được phê duyệt (AVL), các thuộc tính quản lý đặc thù và lịch sử thay đổi phiên bản.",
+    "sops": [
+      "报工时间/我是胡文松/sop các bô phận/SOP công trình.pptx",
+      "(已翻译完成）VCK振凯表单格式20230614/工程/生产工艺流程图-XK-E-008.xls"
+    ]
+  },
+  {
+    "id": 11,
+    "module_zh": "工程信息管理",
+    "module_vi": "Quản lý Kỹ thuật & Công trình (BOM & Kỹ thuật)",
+    "group": "",
+    "title_zh": "产品报价单",
+    "title_vi": "Bảng báo giá sản phẩm kỹ thuật",
+    "dept": "Bộ phận Kỹ thuật & Công trình (Engineering / R&D)",
+    "jump": "./EngManage/PriceProductManage/",
+    "func": "Tính toán giá thành sản phẩm kỹ thuật dựa trên định mức nguyên vật liệu tiêu hao (BOM), đơn giá mua dự kiến, chi phí nhân công theo công đoạn và chi phí máy móc khấu hao để chào giá cho bộ phận kinh doanh.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/工程/工程变更联络书A4（210X297mm）.xls"
+    ]
+  },
+  {
+    "id": 12,
+    "module_zh": "工程信息管理",
+    "module_vi": "Quản lý Kỹ thuật & Công trình (BOM & Kỹ thuật)",
+    "group": "",
+    "title_zh": "BOM成本表",
+    "title_vi": "Bảng định mức kết cấu & Giá thành BOM",
+    "dept": "Bộ phận Kỹ thuật & Công trình (Engineering / R&D)",
+    "jump": "./EngManage/PriceProductListManage/",
+    "func": "Khai báo bảng định mức cấu thành sản phẩm (Bill of Materials): Liệt kê chi tiết tỷ lệ định mức các loại nguyên vật liệu, phụ liệu cần thiết để sản xuất ra 1 đơn vị sản phẩm và tự động tổng hợp chi phí giá thành định mức vật tư.",
+    "sops": [
+      "SOP làm bom.pptx",
+      "VCK-产品档案-BOM明细.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/工程/样品记录表A4（210X297mm）.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/工程/样品跟踪表A4（210X297mm）.xls"
+    ]
+  },
+  {
+    "id": 13,
+    "module_zh": "工程信息管理",
+    "module_vi": "Quản lý Kỹ thuật & Công trình (BOM & Kỹ thuật)",
+    "group": "",
+    "title_zh": "物料档案反查",
+    "title_vi": "Tra cứu ngược định mức sử dụng vật liệu",
+    "dept": "查询部门 bộ phận tra cứu thông tin (Bộ phận Kỹ thuật & Công trình (Engineering / R&D))",
+    "jump": "/EngManage/ItemReverseLookupManage/",
+    "func": "Công cụ tra cứu ngược (Where-Used Query): Cho phép kiểm tra nhanh xem một loại nguyên phụ liệu hoặc linh kiện cụ thể đang tham gia vào những cấu trúc BOM của các sản phẩm thành phẩm nào. Cực kỳ hữu ích khi nguyên liệu bị hết hàng hoặc cần thay thế kỹ thuật.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/工程/样品转正常交货入库单A4（210X297mm）.xls"
+    ]
+  },
+  {
+    "id": 14,
+    "module_zh": "工程信息管理",
+    "module_vi": "Quản lý Kỹ thuật & Công trình (BOM & Kỹ thuật)",
+    "group": "",
+    "title_zh": "ECN变更单",
+    "title_vi": "Phiếu thông báo thay đổi kỹ thuật (ECN)",
+    "dept": "Bộ phận Kỹ thuật & Công trình (Engineering / R&D)",
+    "jump": "./EngManage/EngChangeBill/",
+    "func": "Phiếu thông báo thay đổi kỹ thuật (Engineering Change Notice - ECN): Quản lý quy trình kiểm soát phiên bản thiết kế, cập nhật bổ sung/thay thế nguyên vật liệu trong BOM hoặc thay đổi quy trình công nghệ nhằm tránh sai sót sản xuất hàng loạt.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/工程/量产风险评估表A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 15,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "",
+    "title_zh": "工模具设备分类",
+    "title_vi": "Phân loại khuôn mẫu & Thiết bị máy móc",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/MachineTypeManage/",
+    "func": "Phân loại nhóm tài sản công nghệ: Máy dập cơ, máy dập thủy lực, máy phay CNC, khuôn đột dập liên hoàn, khuôn đúc áp lực, đồ gá (Jig) và dụng cụ đo lường chuyên dụng.",
+    "sops": [
+      "Tên TSCD固定资产/Tên TSCD固定资产.xlsx",
+      "报工时间/我是胡文松/sop các bô phận/SOP tạo mã tài sản trong công ty.pptx"
+    ]
+  },
+  {
+    "id": 16,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "",
+    "title_zh": "工模具设备档案",
+    "title_vi": "Hồ sơ quản lý khuôn mẫu & Thiết bị máy",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/MachineArchivesManage/",
+    "func": "Hồ sơ quản lý chi tiết từng bộ khuôn và thiết bị máy: Mã định danh, nguồn gốc xuất xứ, ngày đưa vào vận hành, thông số tải trọng, số nhát dập định mức tối đa và vị trí lưu trữ trên giá kệ khuôn.",
+    "sops": [
+      "报工时间/我是胡文松/sop các bô phận/SOP tạo mã tài sản trong công ty.pptx",
+      "PDA-工业平板（资产）使用清单--VCK.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/设备履历卡-XK-M-006.xls"
+    ]
+  },
+  {
+    "id": 17,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "",
+    "title_zh": "模具工具通知单",
+    "title_vi": "Thông báo nhu cầu khuôn & Dụng cụ sản xuất",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/RequireBillManage/",
+    "func": "Thông báo nhu cầu khuôn & dụng cụ: Căn cứ vào lệnh sản xuất đã duyệt, hệ thống thông báo cho tổ quản lý khuôn chuẩn bị, lau dầu, rà soát tình trạng sẵn sàng của bộ khuôn trước khi chuyền lên máy dập.",
+    "sops": [
+      "企助ERP系统业务流程图-信凯.docx",
+      "PDA-工业平板（资产）使用清单--VCK.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/模具保养记录表-XK-M-002.xls"
+    ]
+  },
+  {
+    "id": 18,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "",
+    "title_zh": "机台产品定价单",
+    "title_vi": "Bảng đơn giá gia công theo máy móc",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/MachineProducts/",
+    "func": "Thiết lập bảng đơn giá vận hành theo từng dòng máy móc: Chi phí khấu hao theo giờ chạy máy, định mức điện năng tiêu thụ và chi phí gia công trên một đơn vị sản phẩm.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/设备保养点检表(2019)车床，加工中心- XK-M-009.xls",
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/CNC-XK-M-008.xls",
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/冲床-XK-M-008.xls",
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/搓牙机-XK-M-008.xls"
+    ]
+  },
+  {
+    "id": 19,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "",
+    "title_zh": "模具工具领用单",
+    "title_vi": "Phiếu mượn / Xuất sử dụng khuôn & Dụng cụ",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/ReceiveManage/",
+    "func": "Ghi nhận việc phân xưởng xuất mượn khuôn/dụng cụ từ kho khuôn ra chuyền sản xuất: Lưu vết thời gian nhận, tình trạng ban đầu và người chịu trách nhiệm bảo quản trong ca làm việc.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/日常保养点检表-XK-M-009/日常保养点检表(磨床，铣床)-XK-M-009.xls",
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/模具保养记录表-XK-M-002.xls"
+    ]
+  },
+  {
+    "id": 20,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "",
+    "title_zh": "模具工具归还单",
+    "title_vi": "Phiếu trả hoàn kho khuôn & Dụng cụ",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/ReturnManage/",
+    "func": "Xác nhận việc thợ máy hoàn trả bộ khuôn/dụng cụ về lại kho khuôn sau khi hoàn tất lệnh gia công: Kèm biên bản kiểm tra tình trạng độ mòn, sứt mẻ lưỡi cắt để quyết định bảo dưỡng hay lưu kho.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/设备维修单A4（210X297mm）.xls"
+    ]
+  },
+  {
+    "id": 21,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "",
+    "title_zh": "模具设备维修保养单",
+    "title_vi": "Phiếu bảo trì & Sửa chữa khuôn thiết bị",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/ModelMaintainManage/",
+    "func": "Lập kế hoạch và phê duyệt lệnh bảo trì định kỳ (bảo dưỡng cấp 1, cấp 2) hoặc phiếu yêu cầu sửa chữa khẩn cấp khi máy móc bị sự cố dừng chuyền.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/设备维修单A4（210X297mm）.xls",
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/设备履历卡-XK-M-006.xls"
+    ]
+  },
+  {
+    "id": 22,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "",
+    "title_zh": "模具设备检修",
+    "title_vi": "Biên bản khám nghiệm kiểm tra khuôn thiết bị",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "/IPQManage/InspectionProductManage/",
+    "func": "Ghi nhận chi tiết kết quả khám nghiệm máy/khuôn, chẩn đoán nguyên nhân hư hỏng, phương án phục hồi kỹ thuật, danh mục linh kiện thay thế và số giờ máy dừng hoạt động.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/5S检查表-XK-M-017.xls",
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/切削液点检表- XK-M-009.xls"
+    ]
+  },
+  {
+    "id": 23,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "",
+    "title_zh": "模具设备点检单",
+    "title_vi": "Phiếu kiểm tra điểm định kỳ hàng ngày (Checklist)",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/Mouldthetally/",
+    "func": "Biên bản kiểm tra điểm an toàn định kỳ hàng ngày (Daily TPM Checklist): Thợ máy kiểm tra hệ thống bôi trơn, áp suất khí nén, công tắc an toàn và độ rơ cơ khí trước khi mở máy vận hành ca mới.",
+    "sops": []
+  },
+  {
+    "id": 24,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "",
+    "title_zh": "报损换新单",
+    "title_vi": "Phiếu báo hỏng & Đề nghị đổi mới khuôn dụng cụ",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/WornRenewManage/",
+    "func": "Phiếu đề nghị thanh lý hoặc làm mới khuôn mẫu/dụng cụ đã hết niên hạn sử dụng, mòn quá dung sai cho phép hoặc hỏng nứt vỡ không thể sửa chữa.",
+    "sops": []
+  },
+  {
+    "id": 25,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "模具设备明细",
+    "title_zh": "模具设备保养明细",
+    "title_vi": "Nhật ký chi tiết bảo dưỡng khuôn thiết bị",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/MaintainSelectListManage/",
+    "func": "Báo cáo thống kê nhật ký lịch sử toàn bộ các lần bảo dưỡng, thay dầu mỡ và thay thế phụ tùng hao mòn của từng máy móc thiết bị.",
+    "sops": []
+  },
+  {
+    "id": 26,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "模具设备明细",
+    "title_zh": "模具工具领用明细",
+    "title_vi": "Chi tiết lịch sử xuất mượn khuôn dụng cụ",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/ReceiveManage/ReceiveSonManage/",
+    "func": "Báo cáo tổng hợp tình hình mượn xuất khuôn dụng cụ: Theo dõi tần suất sử dụng, thời lượng chạy máy và đơn vị đang mượn khuôn.",
+    "sops": []
+  },
+  {
+    "id": 27,
+    "module_zh": "工模具设备管理",
+    "module_vi": "Quản lý Khuôn mẫu & Thiết bị máy móc",
+    "group": "模具设备明细",
+    "title_zh": "模具工具归还明细",
+    "title_vi": "Chi tiết lịch sử hoàn trả khuôn dụng cụ",
+    "dept": "Bộ phận Quản lý Thiết bị & Khuôn mẫu (Tooling / Equipment)",
+    "jump": "./MachineManage/ReturnManage/ReturnSonManage/",
+    "func": "Báo cáo theo dõi tiến độ hoàn trả khuôn dụng cụ về kho, cảnh báo các trường hợp khuôn mượn ra xưởng quá hạn quy định mà chưa hoàn trả.",
+    "sops": []
+  },
+  {
+    "id": 28,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "",
+    "title_zh": "客户分类",
+    "title_vi": "Phân loại đối tượng khách hàng",
+    "dept": "业务部 Bộ phận nghiệp vụ (Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept))",
+    "jump": "./SalesManage/CustomerTypeManage/",
+    "func": "Phân loại nhóm khách hàng thương mại theo thị trường (nội địa, xuất khẩu, FDI) hoặc kênh bán buôn để quản lý chính sách bán hàng thống nhất.",
+    "sops": [
+      "报工时间/我是胡文松/sop các bô phận/SOP tạo loại hình và tạo khách hàng.pptx"
+    ]
+  },
+  {
+    "id": 29,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "",
+    "title_zh": "客户档案",
+    "title_vi": "Hồ sơ khách hàng thương mại",
+    "dept": "业务部 Bộ phận nghiệp vụ (Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept))",
+    "jump": "./SalesManage/CustomerManage/",
+    "func": "Hồ sơ danh bạ khách hàng chính thức: Quản lý thông tin hợp đồng khung, tài khoản ngân hàng, thông tin giao hàng và hạn mức công nợ được phê duyệt.",
+    "sops": [
+      "报工时间/我是胡文松/sop các bô phận/SOP tạo loại hình và tạo khách hàng.pptx",
+      "销售管理ERP操作流程.pdf"
+    ]
+  },
+  {
+    "id": 30,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "",
+    "title_zh": "销售报价单",
+    "title_vi": "Bảng báo giá bán hàng chính thức",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/QuotationTableManage/",
+    "func": "Lập và ban hành bảng báo giá bán hàng chính thức cho khách hàng: Gồm mã hàng, số lượng chào, đơn giá, thời gian giao hàng dự kiến và hiệu lực báo giá.",
+    "sops": [
+      "销售管理ERP操作流程.pdf"
+    ]
+  },
+  {
+    "id": 31,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "",
+    "title_zh": "销售订单",
+    "title_vi": "Đơn đặt hàng bán (Sales Order - SO)",
+    "dept": "业务部 Bộ phận nghiệp vụ (Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept))",
+    "jump": "./SalesManage/SoheadManage/",
+    "func": "Khởi tạo đơn đặt hàng bán chính thức (Sales Order - SO): Căn cứ vào PO của khách hàng, ghi nhận chi tiết mặt hàng, số lượng đặt, đơn giá thỏa thuận, lịch giao hàng cam kết và địa điểm nhận hàng. Đây là điểm khởi đầu kích hoạt toàn bộ chuỗi cung ứng sản xuất.",
+    "sops": [
+      "报工时间/我是胡文松/sop các bô phận/SOP tạo đơn bán hàng thông thường.pptx",
+      "SOP tạo loại hình và tạo khách hàng.pptx",
+      "销售管理ERP操作流程.pdf",
+      "ERP培训视屏/业务ERP培训.mp4"
+    ]
+  },
+  {
+    "id": 32,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "",
+    "title_zh": "销售变更单",
+    "title_vi": "Phiếu thay đổi đơn hàng bán",
+    "dept": "业务部 Bộ phận nghiệp vụ (Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept))",
+    "jump": "./SalesManage/SalesChangeManage/",
+    "func": "Xử lý các phát sinh sửa đổi đơn hàng bán: Điều chỉnh tăng/giảm số lượng, đổi ngày giao hàng hoặc hủy đơn hàng theo đề nghị bằng văn bản từ phía khách hàng.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/业务/销售出库送货单-VCK-A4（纵向）-更新.xlsx"
+    ]
+  },
+  {
+    "id": 33,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "",
+    "title_zh": "客户产品定价单",
+    "title_vi": "Bảng giá thỏa thuận riêng theo khách hàng",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/PricingTableManage/",
+    "func": "Thiết lập bảng giá bán sản phẩm riêng biệt cho từng đối tác khách hàng (Customer Price Matrix): Lưu giữ mức giá ưu đãi theo hợp đồng khung dài hạn.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/业务/销售出库送货单-VCK-A4（纵向）-更新.xlsx",
+      "销售管理ERP操作流程.pdf"
+    ]
+  },
+  {
+    "id": 34,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "",
+    "title_zh": "客户客诉",
+    "title_vi": "Phiếu tiếp nhận & Xử lý khiếu nại khách hàng",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/IssueManage/",
+    "func": "Phiếu tiếp nhận và xử lý khiếu nại của khách hàng (Customer Complaint): Ghi nhận phản ánh chất lượng (móp méo, trầy xước, giao thiếu số lượng) để kích hoạt phòng QC điều tra nguyên nhân và bồi thường.",
+    "sops": [
+      "销售管理ERP操作流程.pdf"
+    ]
+  },
+  {
+    "id": 35,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "",
+    "title_zh": "发货计划单",
+    "title_vi": "Kế hoạch điều độ giao hàng bán",
+    "dept": "业务部 Bộ phận nghiệp vụ (Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept))",
+    "jump": "./SalesManage/DeliveryPlansTableManage/",
+    "func": "Lập kế hoạch xuất giao hàng bán: Căn cứ vào tiến độ nhập kho thành phẩm từ xưởng và hạn giao của đơn SO để điều phối xe tải vận chuyển giao hàng cho khách.",
+    "sops": []
+  },
+  {
+    "id": 36,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "销售管理报表",
+    "title_zh": "订单选配明细",
+    "title_vi": "Chi tiết lựa chọn cấu hình theo đơn hàng",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/MatchingDetails/",
+    "func": "Theo dõi các yêu cầu đóng gói hoặc phối màu đặc thù theo từng đơn hàng cụ thể của khách (in ấn tem riêng, thùng carton riêng, đóng pallet xuất khẩu).",
+    "sops": []
+  },
+  {
+    "id": 37,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "销售管理报表",
+    "title_zh": "销售统计报表",
+    "title_vi": "Báo cáo thống kê phân tích doanh số bán hàng",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/SalesStatisticsManage/",
+    "func": "Báo cáo tổng hợp và phân tích doanh số bán hàng: Thống kê doanh thu theo nhân viên kinh doanh, theo từng nhóm mặt hàng, theo vùng thị trường và tỷ suất lợi nhuận bán hàng.",
+    "sops": []
+  },
+  {
+    "id": 38,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "销售管理报表",
+    "title_zh": "订单批次追踪",
+    "title_vi": "Truy xuất hành trình lô đơn hàng sản xuất",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/OrderBatchTracking/",
+    "func": "Truy xuất toàn bộ hành trình của một lô đơn hàng bán (Order Tracking): Theo dõi tức thì xem đơn hàng đang ở bước nào (Chờ mua vật tư, Đang dập phôi, Đang mạ ngoài, Đang lắp ráp hay Đã nhập kho thành phẩm).",
+    "sops": []
+  },
+  {
+    "id": 39,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "销售管理报表",
+    "title_zh": "销售变更明细",
+    "title_vi": "Chi tiết lịch sử điều chỉnh đơn hàng bán",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/SalesDetailManage/SalesChangeDetail/",
+    "func": "Báo cáo nhật ký lưu vết toàn bộ các lần chỉnh sửa thay đổi trên đơn hàng bán: Người sửa, nội dung sửa đổi, lý do và thời điểm cập nhật.",
+    "sops": []
+  },
+  {
+    "id": 40,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "销售管理报表",
+    "title_zh": "客户档案明细",
+    "title_vi": "Chi tiết tổng hợp hồ sơ thương mại khách hàng",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/SalesDetailManage/CustomerDetailsManage/",
+    "func": "Danh mục tổng hợp thông tin chi tiết của tất cả khách hàng trong hệ thống: Phục vụ phòng kinh doanh và ban giám đốc tra cứu quan hệ đối tác.",
+    "sops": []
+  },
+  {
+    "id": 41,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "销售管理报表",
+    "title_zh": "客户产品定价明细",
+    "title_vi": "Chi tiết lịch sử biến động giá theo khách hàng",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/SalesDetailManage/SalesPricingDetailtManage/",
+    "func": "Chi tiết lịch sử điều chỉnh giá bán sản phẩm cho từng khách hàng qua các thời kỳ, giúp kiểm soát tính nhất quán của chính sách giá.",
+    "sops": []
+  },
+  {
+    "id": 42,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "销售管理报表",
+    "title_zh": "销售报价明细",
+    "title_vi": "Chi tiết theo dõi các lần gửi báo giá bán",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/SalesDetailManage/SalesQuotationDetailManage/",
+    "func": "Báo cáo chi tiết các bảng báo giá đã phát hành, tỷ lệ chuyển đổi thành công từ báo giá sang đơn hàng đặt mua thực tế.",
+    "sops": []
+  },
+  {
+    "id": 43,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "销售管理报表",
+    "title_zh": "发货计划明细",
+    "title_vi": "Chi tiết theo dõi kế hoạch xuất giao hàng",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/SalesDetailManage/DeliveryPlansDetailsManage/",
+    "func": "Báo cáo theo dõi chi tiết tình hình thực hiện kế hoạch giao hàng: So sánh số lượng thành phẩm đã lên lịch xuất với số lượng thực tế đã xuất kho.",
+    "sops": []
+  },
+  {
+    "id": 44,
+    "module_zh": "销售管理",
+    "module_vi": "Quản lý Bán hàng & Đơn hàng (Sales)",
+    "group": "销售管理报表",
+    "title_zh": "销售订单执行表",
+    "title_vi": "Bảng tổng hợp tiến độ thực hiện đơn hàng bán",
+    "dept": "Bộ phận Nghiệp vụ & Bán hàng (Sales / Business Dept)",
+    "jump": "./SalesManage/SalesListManage/",
+    "func": "Bảng tổng hợp tình trạng thực hiện đơn hàng bán: Đối chiếu số lượng đặt hàng, số lượng xưởng đã sản xuất, số lượng kho đã xuất giao và số lượng còn nợ lại chưa giao.",
+    "sops": []
+  },
+  {
+    "id": 45,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "",
+    "title_zh": "物料需求评估表",
+    "title_vi": "Bảng đánh giá mức độ đáp ứng nhu cầu vật tư",
+    "dept": "生管部 Bộ phận Sinh Quản (Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部))",
+    "jump": "./MRPManage/MRPProductionAssessment/",
+    "func": "Đánh giá sơ bộ lượng nguyên vật liệu khả dụng trong kho đối với các đơn hàng bán chuẩn bị đưa vào sản xuất: Cảnh báo những vật tư đang bị thiếu hụt trước khi phê duyệt đơn.",
+    "sops": [
+      "企助ERP系统业务流程图-信凯.docx",
+      "PMC计划管理.7z"
+    ]
+  },
+  {
+    "id": 46,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "",
+    "title_zh": "订单评审(MPS)",
+    "title_vi": "Đánh giá đơn hàng & Kế hoạch tổng thể (MPS)",
+    "dept": "生管部 Bộ phận Sinh Quản (Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部))",
+    "jump": "./MRPManage/BillReviewManage/",
+    "func": "Đánh giá khả thi đơn hàng và thiết lập lịch trình sản xuất tổng thể (Master Production Schedule - MPS): Cuộc họp duyệt chốt năng lực giữa Kinh doanh, Kế hoạch PMC, Kỹ thuật và Mua hàng để cam kết ngày giao hàng cuối cùng.",
+    "sops": [
+      "企助ERP系统业务流程图-信凯.docx",
+      "计划管理（生管）生产加工单操作流程 - 新.pdf",
+      "报工时间/我是胡文松/sop các bô phận/SOP KHAI ĐƠN SẢN XUẤT.pptx"
+    ]
+  },
+  {
+    "id": 47,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "",
+    "title_zh": "物料需求计算",
+    "title_vi": "Tính toán nhu cầu nguyên vật liệu (MRP)",
+    "dept": "生管部 Bộ phận Sinh Quản (Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部))",
+    "jump": "./MRPManage/MRPProductionPlan/",
+    "func": "Chạy thuật toán tính toán nhu cầu nguyên vật liệu (MRP Engine): Bóc tách kết cấu định mức BOM nhân với số lượng đơn hàng, khấu trừ tồn kho thực tế và hàng đang trên đường về để tính ra chính xác lượng nguyên liệu cần mua ngoài và lượng bán thành phẩm cần xưởng gia công.",
+    "sops": [
+      "报工时间/我是胡文松/sop các bô phận/SOP làm bom.pptx",
+      "VCK-产品档案-BOM明细.xlsx",
+      "企助ERP系统业务流程图-信凯.docx",
+      "计划管理（生管）生产加工单操作流程 - 新.pdf"
+    ]
+  },
+  {
+    "id": 48,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "",
+    "title_zh": "批量MRP",
+    "title_vi": "Chạy tính toán MRP hàng loạt đơn hàng",
+    "dept": "Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部)",
+    "jump": "./MRPManage/BatchMRP/",
+    "func": "Công cụ chạy thuật toán MRP đồng thời cho nhiều đơn hàng bán gom lại: Tối ưu hóa kích thước lô sản xuất (Economic Order Quantity) và giảm thiểu số lần đổi khuôn máy.",
+    "sops": [
+      "计划管理（生管）生产加工单操作流程 - 新.pdf",
+      "报工时间/我是胡文松/sop các bô phận/SOP KHAI ĐƠN SẢN XUẤT.pptx",
+      "(已翻译完成）VCK振凯表单格式20230614/生管/製造通知單A4（210X297mm）.xlsx",
+      "车间工单、生产领料、报工管理操作流程202307.pdf"
+    ]
+  },
+  {
+    "id": 49,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "",
+    "title_zh": "生产加工单",
+    "title_vi": "Lệnh sản xuất gia công (Manufacturing Order - MO)",
+    "dept": "生管部 Bộ phận Sinh Quản (Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部))",
+    "jump": "./MRPManage/MRPProductionBill/",
+    "func": "Lệnh sản xuất gia công chính thức (Manufacturing Order - MO): Chứng từ pháp lệnh chỉ đạo phân xưởng tiến hành chế tạo số lượng thành phẩm/bán thành phẩm cụ thể kèm thời hạn bắt đầu và thời hạn hoàn tất.",
+    "sops": [
+      "SOP KHAI ĐƠN SẢN XUẤT.pptx",
+      "计划管理（生管）生产加工单操作流程 - 新.pdf",
+      "车间工单、生产领料、报工管理操作流程202307.pdf"
+    ]
+  },
+  {
+    "id": 50,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "",
+    "title_zh": "采购申请",
+    "title_vi": "Phiếu đề nghị mua hàng (Purchase Requisition - PR)",
+    "dept": "Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部)",
+    "jump": "./MRPManage/PurchaseApplyManage/",
+    "func": "Phiếu đề nghị mua nguyên vật liệu (Purchase Requisition - PR): Kết quả tự động sinh ra từ tính toán MRP đối với các nguyên phụ liệu bị thiếu hụt, chuyển giao cho phòng Thu mua tiến hành mở đơn mua hàng PO.",
+    "sops": [
+      "采购申请 操作流程规范SOP THU  MUA.docx",
+      "VCK物品采购申请--辅料领用操作流程(越文).pdf"
+    ]
+  },
+  {
+    "id": 51,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "",
+    "title_zh": "备货单",
+    "title_vi": "Đơn đặt hàng sản xuất lưu kho dự phòng (Forecast)",
+    "dept": "生管部 Bộ phận Sinh Quản (Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部))",
+    "jump": "./SalesManage/FocastManage/",
+    "func": "Đơn đặt hàng sản xuất lưu kho dự phòng (Build-to-Stock / Forecast): Lập kế hoạch gia công trước các sản phẩm tiêu chuẩn bán chạy hoặc hàng trữ mùa vụ cao điểm.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/生管/生管发料清单A4（210X297mm）.xlsx",
+      "车间管理（生产）生产领料操作流程.pdf",
+      "车间工单、生产领料、报工管理操作流程202307.pdf"
+    ]
+  },
+  {
+    "id": 52,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "",
+    "title_zh": "生产派工单",
+    "title_vi": "Phiếu giao việc / Lệnh điều độ phân xưởng",
+    "dept": "生管部 Bộ phận Sinh Quản (Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部))",
+    "jump": "./MRPManage/Dispatching/",
+    "func": "Lệnh điều độ sản xuất chi tiết: Phân chia lệnh sản xuất lớn thành các phần việc nhỏ giao trực tiếp xuống từng chuyền máy, từng ca làm việc hoặc thợ cụ thể kèm mã vạch Barcode để quét báo công.",
+    "sops": [
+      "车间工单、生产领料、报工管理操作流程202307.pdf",
+      "车间生产报工（PDA扫码）操作流程 - 派工单报工（WIP管理202501）.pptx"
+    ]
+  },
+  {
+    "id": 53,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "生产进度表",
+    "title_vi": "Bảng giám sát tiến độ thực hiện sản xuất",
+    "dept": "Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部)",
+    "jump": "./MRPManage/MRPReportManage/ProductionProgress/",
+    "func": "Bảng điều khiển giám sát tiến độ sản xuất: Theo dõi tỷ lệ % hoàn thành của từng lệnh gia công so với thời hạn cam kết để kịp thời can thiệp khi có nguy cơ trễ hạn.",
+    "sops": []
+  },
+  {
+    "id": 54,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "采购申请执行明细",
+    "title_vi": "Báo cáo chi tiết thực hiện đề nghị mua hàng",
+    "dept": "Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部)",
+    "jump": "./MRPManage/MRPReportManage/PurchaseApplyReportManage/",
+    "func": "Theo dõi tình hình xử lý các phiếu đề nghị mua hàng từ PMC: Kiểm tra xem phòng Mua hàng đã ký hợp đồng PO mua vật tư hay chưa, dự kiến ngày nào vật tư về xưởng.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/生产（有几份重复不需要翻译）/设备保养点检表(2019)车床，加工中心- XK-M-009.xls"
+    ]
+  },
+  {
+    "id": 55,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "发料清单",
+    "title_vi": "Danh sách cấp phát nguyên vật liệu (Picking List)",
+    "dept": "生管部 Bộ phận Sinh Quản (Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部))",
+    "jump": "./MRPManage/SelectItemPlanBillManage/DispatchListManage/",
+    "func": "Bảng kê cấp phát nguyên vật liệu (Picking List): Cung cấp định mức chi tiết các loại nguyên phụ liệu mà thủ kho cần chuẩn bị xuất cấp cho phân xưởng để thực hiện lệnh sản xuất.",
+    "sops": [
+      "企助ERP系统业务流程图-信凯.docx",
+      "车间管理（生产）生产领料操作流程.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/生管/生管发料清单A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 56,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "备货单明细",
+    "title_vi": "Chi tiết thực hiện đơn hàng tồn kho dự phòng",
+    "dept": "生管部 Bộ phận Sinh Quản (Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部))",
+    "jump": "./SalesManage/FocastSonManage/",
+    "func": "Báo cáo theo dõi chi tiết tình trạng thực hiện các đơn hàng sản xuất gom lưu kho dự phòng.",
+    "sops": []
+  },
+  {
+    "id": 57,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "物料供需明细表",
+    "title_vi": "Bảng cân đối cung cầu vật tư dự kiến",
+    "dept": "Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部)",
+    "jump": "./MRPManage/MRPReportManage/MaterialSupplyAndDemand/",
+    "func": "Bảng cân đối cung cầu vật tư đa chiều: Thống kê tổng nhu cầu sử dụng (từ đơn hàng SO và lệnh MO) đối chiếu với tổng nguồn cung (tồn kho an toàn, đơn PO đang đặt mua, hàng đang dở dang).",
+    "sops": []
+  },
+  {
+    "id": 58,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "订单生产跟进记录",
+    "title_vi": "Nhật ký ghi nhận tiến trình sản xuất đơn hàng",
+    "dept": "生管部 Bộ phận Sinh Quản (Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部))",
+    "jump": "./MRPManage/MRPReportManage/OrderProductionTrackRecord/",
+    "func": "Nhật ký theo dõi các sự kiện chính trong vòng đời sản xuất của đơn hàng tại nhà xưởng: Thời điểm bắt đầu dập, hoàn tất mạ, đóng gói và nhập kho.",
+    "sops": []
+  },
+  {
+    "id": 59,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "时段库存",
+    "title_vi": "Dự báo biến động tồn kho theo lát cắt thời gian",
+    "dept": "Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部)",
+    "jump": "./SalesManage/TimeSlotStock/",
+    "func": "Dự báo biến động lượng hàng tồn kho theo từng mốc thời gian trong tương lai (Time-phased Stock): Giúp phát hiện trước nguy cơ đứt gãy nguồn vật tư phục vụ đơn hàng.",
+    "sops": []
+  },
+  {
+    "id": 60,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "工段负荷统计表",
+    "title_vi": "Báo cáo phân tích phụ tải năng lực công đoạn máy",
+    "dept": "Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部)",
+    "jump": "./MRPManage/MRPReportManage/SectionLoadManage/",
+    "func": "Phân tích phụ tải năng lực công đoạn máy (Capacity Load): Đánh giá công suất quá tải hoặc thời gian nhàn rỗi của từng tổ máy để cân bằng dây chuyền.",
+    "sops": []
+  },
+  {
+    "id": 61,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "未派工明细",
+    "title_vi": "Danh mục lệnh sản xuất còn tồn chưa điều độ",
+    "dept": "Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部)",
+    "jump": "./MRPManage/NotDispatchingDetail/",
+    "func": "Thống kê danh mục các lệnh sản xuất MO đã phát hành nhưng chưa phân bổ điều độ thợ máy hoặc chưa xếp lịch chuyền.",
+    "sops": []
+  },
+  {
+    "id": 62,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "生产计划执行表",
+    "title_vi": "Bảng theo dõi thực hiện kế hoạch sản xuất (Kế hoạch vs Thực tế)",
+    "dept": "生管部 Bộ phận Sinh Quản (Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部))",
+    "jump": "./MRPManage/MRPReportManage/ProductionPlanImplement/",
+    "func": "Báo cáo đánh giá hiệu suất thực hiện kế hoạch sản xuất: So sánh tỷ lệ hoàn thành kế hoạch theo sản lượng và tiến độ thời gian cam kết.",
+    "sops": []
+  },
+  {
+    "id": 63,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "生产工单日报表",
+    "title_vi": "Báo cáo nhật ký sản lượng theo lệnh sản xuất",
+    "dept": "Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部)",
+    "jump": "./MRPManage/MRPProductionBill/MRPProductionBillSon/",
+    "func": "Báo cáo nhật ký tổng hợp sản lượng và tiến độ theo từng lệnh sản xuất phát sinh trong ngày.",
+    "sops": []
+  },
+  {
+    "id": 64,
+    "module_zh": "计划管理",
+    "module_vi": "Quản lý Kế hoạch sản xuất & Nhu cầu vật tư (PMC)",
+    "group": "物料计划单据查询",
+    "title_zh": "生产良率统计",
+    "title_vi": "Báo cáo thống kê tỷ lệ thành phẩm đạt chuẩn (Yield Rate)",
+    "dept": "Bộ phận Kế hoạch Sản xuất & Nhu cầu Vật tư (PMC / 生管部)",
+    "jump": "/MRPManage/ProductionYieldManage/",
+    "func": "Thống kê tỷ lệ sản phẩm đạt chuẩn chất lượng (Yield Rate / Scrap Rate) theo từng công đoạn, từng tổ xưởng và từng dòng sản phẩm.",
+    "sops": []
+  },
+  {
+    "id": 65,
+    "module_zh": "APS排程管理",
+    "module_vi": "Quản lý Xếp lịch sản xuất tự động (APS)",
+    "group": "",
+    "title_zh": "APS排程明细",
+    "title_vi": "Chi tiết xếp lịch sản xuất tự động nâng cao (APS)",
+    "dept": "Bộ phận Kế hoạch & Điều độ sản xuất (PMC / APS)",
+    "jump": "./SchedulingManage/APSSchedulingDetail/",
+    "func": "Bảng xếp lịch sản xuất tự động nâng cao (Advanced Planning & Scheduling): Thuật toán tự động tối ưu hóa thứ tự gia công các đơn hàng trên từng máy CNC/máy dập dựa trên hạn giao hàng, thứ tự đổi khuôn và giảm thời gian dừng máy.",
+    "sops": []
+  },
+  {
+    "id": 66,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "",
+    "title_zh": "供应商分类",
+    "title_vi": "Phân loại nhóm nhà cung cấp",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "./VendorManage/TypeManage/",
+    "func": "Phân loại nhà cung ứng theo nhóm mặt hàng cung cấp (Nhà cung cấp thép tấm, nhà cung cấp keo, xưởng mạ ngoài, đơn vị cung cấp bao bì hộp giấy).",
+    "sops": [
+      "VCK采购建档及流程说明.pdf"
+    ]
+  },
+  {
+    "id": 67,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "",
+    "title_zh": "供应商档案",
+    "title_vi": "Hồ sơ thông tin nhà cung cấp",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "./VendorManage/InfoManage/",
+    "func": "Hồ sơ pháp nhân nhà cung cấp: Lưu trữ giấy phép kinh doanh, tài khoản ngân hàng, điều khoản công nợ (trả trước hay nợ 30 ngày) và chứng chỉ chất lượng ISO.",
+    "sops": [
+      "VCK采购建档及流程说明.pdf",
+      "(采购)供应商平台操作手册20251215--中越文.pptx"
+    ]
+  },
+  {
+    "id": 68,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "",
+    "title_zh": "采购询价单",
+    "title_vi": "Phiếu yêu cầu chào giá mua hàng (RFQ)",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "./VendorManage/InquiryManage/",
+    "func": "Phiếu yêu cầu báo giá mua hàng (Request for Quotation - RFQ): Soạn thảo và gửi bảng yêu cầu báo giá vật tư tới nhiều nhà cung cấp để đối chiếu so sánh giá cả và điều kiện giao hàng.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/采购/报价单格式-采购A4（210X297mm）.xls"
+    ]
+  },
+  {
+    "id": 69,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "",
+    "title_zh": "供应商产品定价单",
+    "title_vi": "Bảng giá phê duyệt sản phẩm của nhà cung cấp",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "./VendorManage/PriceDecisionManage/",
+    "func": "Bảng đơn giá phê duyệt mua hàng: Lưu giữ đơn giá chính thức đã ký kết với từng nhà cung ứng cho từng mã nguyên vật liệu làm căn cứ tự động điền giá trên đơn PO.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/采购/报价单格式-采购A4（210X297mm）.xls"
+    ]
+  },
+  {
+    "id": 70,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "",
+    "title_zh": "采购订单录入",
+    "title_vi": "Lập đơn đặt hàng mua (Purchase Order - PO)",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "./VendorManage/OrderManage/",
+    "func": "Lập đơn đặt hàng mua sắm chính thức (Purchase Order - PO): Chuyển hóa từ đề nghị mua hàng PR sang đơn PO gửi nhà cung cấp, xác định rõ số lượng, đơn giá, ngày cam kết giao hàng về xưởng Chen Kai.",
+    "sops": [
+      "(采购)供应商平台操作手册20251215--中越文.pptx",
+      "VCK采购建档及流程说明.pdf",
+      "企助_供应商平台操作手册.pptx",
+      "采购申请 操作流程规范SOP THU  MUA.docx",
+      "VCK物品采购申请--辅料领用操作流程(越文).pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/采购申请单（新）A5（217X140mm）.xlsx"
+    ]
+  },
+  {
+    "id": 71,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "",
+    "title_zh": "采购变更单",
+    "title_vi": "Phiếu thay đổi đơn đặt hàng mua",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "/VendorManage/PurchaseChangeManage/",
+    "func": "Quản lý các thay đổi trên đơn mua hàng PO: Xử lý các trường hợp điều chỉnh số lượng mua, thay đổi ngày hẹn giao hàng hoặc hủy dòng hàng do thay đổi kế hoạch sản xuất.",
+    "sops": [
+      "采购申请 操作流程规范SOP THU  MUA.docx",
+      "VCK采购建档及流程说明.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/采购/采 購 單A4（210X297mm）.xls",
+      "ERP培训视屏/采购培训视屏.mp4"
+    ]
+  },
+  {
+    "id": 72,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "采购管理报表",
+    "title_zh": "供应商统计报表",
+    "title_vi": "Báo cáo đánh giá hiệu suất nhà cung cấp",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "./VendorManage/VendorReport/",
+    "func": "Báo cáo đánh giá năng lực nhà cung cấp: Phân tích kim ngạch mua sắm, tỷ lệ giao hàng đúng hẹn (OTD) và điểm đánh giá chất lượng nguyên liệu.",
+    "sops": [
+      "(采购)供应商平台操作手册20251215--中越文.pptx",
+      "企助_供应商平台操作手册.pptx"
+    ]
+  },
+  {
+    "id": 73,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "采购管理报表",
+    "title_zh": "采购变更明细",
+    "title_vi": "Chi tiết lịch sử chỉnh sửa đơn mua hàng PO",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "./VendorManage/PurchaseChangeDetail/",
+    "func": "Báo cáo nhật ký lưu vết chi tiết các lần sửa đổi điều chỉnh trên các đơn đặt hàng mua PO.",
+    "sops": []
+  },
+  {
+    "id": 74,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "采购管理报表",
+    "title_zh": "供应商档案明细",
+    "title_vi": "Chi tiết tổng hợp hồ sơ thương mại nhà cung cấp",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "./VendorManage/InfoListManage/",
+    "func": "Danh mục tổng hợp hồ sơ thương mại của toàn bộ các nhà cung ứng trong hệ thống ERP.",
+    "sops": []
+  },
+  {
+    "id": 75,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "采购管理报表",
+    "title_zh": "采购询价明细",
+    "title_vi": "Chi tiết so sánh giá giữa các nhà cung cấp",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "./VendorManage/VendorBomInfoManage/InquiryDetailManage/",
+    "func": "Báo cáo so sánh mức giá chào của các nhà cung ứng khác nhau cho cùng một loại nguyên vật liệu qua các thời điểm.",
+    "sops": []
+  },
+  {
+    "id": 76,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "采购管理报表",
+    "title_zh": "采购订单执行表",
+    "title_vi": "Bảng theo dõi tiến độ giao hàng đơn mua PO",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "./VendorManage/VendorListManage/",
+    "func": "Bảng theo dõi tiến độ giao hàng của đơn mua PO: Đối chiếu số lượng đã đặt, số lượng kho Chen Kai đã nhận, số lượng nhà cung ứng còn nợ thiếu.",
+    "sops": []
+  },
+  {
+    "id": 77,
+    "module_zh": "采购管理",
+    "module_vi": "Quản lý Mua hàng & Nhà cung cấp (Procurement)",
+    "group": "采购管理报表",
+    "title_zh": "采购定价明细",
+    "title_vi": "Chi tiết lịch sử biến động giá nguyên vật liệu mua vào",
+    "dept": "采购课 Khoa Thu Mua (Bộ phận Mua sắm & Quản lý Nhà cung ứng (Procurement / 采购课))",
+    "jump": "./VendorManage/VendorBomInfoManage/PriceDecisionListManage/",
+    "func": "Báo cáo phân tích lịch sử biến động giá mua vào của các chủng loại vật tư để tối ưu hóa chi phí đầu vào.",
+    "sops": []
+  },
+  {
+    "id": 78,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "库存查询",
+    "title_vi": "Tra cứu số lượng tồn kho khả dụng tức thời",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "./DepotManage/StockManage/",
+    "func": "Tra cứu tức thời số lượng tồn kho thực tế của từng mã hàng theo từng kho (Kho nguyên liệu, Kho bao bì, Kho thành phẩm, Kho phế liệu) và từng vị trí kệ hàng.",
+    "sops": [
+      "kiểm tra tồn kho.docx",
+      "仓库管理流程图-及ERP系统单据.pdf",
+      "ERP培训视屏/仓库ERP培训视屏.mp4"
+    ]
+  },
+  {
+    "id": 79,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "动态库存查询",
+    "title_vi": "Tra cứu tồn kho động (Đang kiểm / Giữ chỗ / Dự kiến về)",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "./DepotManage/DynamicStockManage/",
+    "func": "Tra cứu tồn kho động đa chiều: Hiển thị đồng thời số lượng tồn thực tế, số lượng đang đợi kiểm nghiệm IQC, số lượng đã bị phân bổ cho các lệnh sản xuất MO và số lượng đang đặt mua sắp về.",
+    "sops": [
+      "物料进销存分类使用规则-VCK Hỏi CT.xlsx",
+      "kiểm tra tồn kho.docx"
+    ]
+  },
+  {
+    "id": 80,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "采购收货",
+    "title_vi": "Phiếu tiếp nhận hàng mua từ nhà cung cấp",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/PurchaseCollectManage/",
+    "func": "Thủ kho lập phiếu tiếp nhận nguyên vật liệu giao đến từ đơn mua PO tại cổng kho: Ghi nhận số lượng thùng, số lượng kiện thực giao và chuyển thông báo cho QC tiến hành lấy mẫu kiểm tra.",
+    "sops": [
+      "仓库管理流程图-及ERP系统单据.pdf",
+      "VCK来料-成品规则及档案建立流程说明.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/请购验收单A5（217X140mm）.xls"
+    ]
+  },
+  {
+    "id": 81,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "采购退货",
+    "title_vi": "Phiếu xuất trả hàng mua lỗi cho nhà cung cấp",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/PurchaseReturnsManage/",
+    "func": "Phiếu xuất trả hàng mua bị lỗi cho nhà cung cấp: Căn cứ vào biên bản phán định chất lượng không đạt chuẩn của QC, thủ kho xuất trả hàng lỗi lại xe nhà cung ứng để trừ tiền hoặc đổi bù.",
+    "sops": [
+      "仓库管理流程图-及ERP系统单据.pdf",
+      "企助ERP系统业务流程图-信凯.docx",
+      "VCK来料-成品规则及档案建立流程说明.pdf"
+    ]
+  },
+  {
+    "id": 82,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "销售出货",
+    "title_vi": "Phiếu xuất kho thành phẩm bán giao cho khách",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/SalesShipmentManage/",
+    "func": "Phiếu xuất kho thành phẩm bán giao cho khách hàng: Xuất thành phẩm theo đơn hàng SO, in biên bản giao nhận hàng hóa kiêm phiếu xuất kho bàn giao cho tài xế vận chuyển.",
+    "sops": [
+      "仓库管理流程图-及ERP系统单据.pdf",
+      "销售管理ERP操作流程.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/采购入库（不良）退貨单A5（217X140mm）.xlsx"
+    ]
+  },
+  {
+    "id": 83,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "销售退货",
+    "title_vi": "Phiếu tiếp nhận hàng bán bị khách trả lại",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/SalesReturnsManage/",
+    "func": "Tiếp nhận hàng bán bị khách hàng trả lại: Tiếp nhận sản phẩm bị móp méo trong lúc vận chuyển hoặc không đạt yêu cầu để đưa vào khu cách ly thẩm định xử lý.",
+    "sops": [
+      "仓库管理流程图-及ERP系统单据.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/産品入庫單A5（217X140mm）.xlsx"
+    ]
+  },
+  {
+    "id": 84,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "其他出库单",
+    "title_vi": "Phiếu xuất kho nội bộ khác (Phi sản xuất)",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/OtherOutManage/",
+    "func": "Phiếu xuất kho cho các mục đích nội bộ phi sản xuất: Xuất mẫu thử nghiệm cho khách, xuất công cụ dụng cụ cho phòng ban, xuất hủy tài sản hoặc xuất phục vụ nghiên cứu R&D.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/工程/样品转正常交货入库单A4（210X297mm）.xls"
+    ]
+  },
+  {
+    "id": 85,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "其他入库单",
+    "title_vi": "Phiếu nhập kho nội bộ khác (Thu hồi / Phi mua hàng)",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/OtherEnterManage/",
+    "func": "Phiếu nhập kho các nguồn phi mua sắm: Nhập hàng thu hồi từ văn phòng, nhập sản phẩm quà tặng triển lãm hoặc nhập lại vật tư tồn không rõ nguồn gốc.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/領料單A5（217X140mm）.xlsx",
+      "车间管理（生产）生产领料操作流程.pdf",
+      "车间管理（生产）领料-退料单操作流程.pdf"
+    ]
+  },
+  {
+    "id": 86,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "调拨单",
+    "title_vi": "Phiếu điều chuyển vật tư / hàng hóa giữa các kho",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/AllocationDepot/",
+    "func": "Phiếu điều chuyển hàng hóa giữa các kho nội bộ: Chuyển nguyên vật liệu từ Kho Tổng sang Kho Phân Xưởng, hoặc chuyển thành phẩm từ Kho xưởng sang Kho xuất khẩu.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/退料單A5（217X140mm）.xlsx",
+      "车间管理（生产）领料-退料单操作流程.pdf"
+    ]
+  },
+  {
+    "id": 87,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "调整单",
+    "title_vi": "Phiếu điều chỉnh cân đối số liệu kho sau kiểm kê",
+    "dept": "物管课 khoa quản lý vật tư (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/AdjustDepot/",
+    "func": "Phiếu điều chỉnh số liệu tồn kho: Cập nhật tăng hoặc giảm số lượng/giá trị tồn kho trên phần mềm sau khi có biên bản đối soát kiểm kê hoặc hiệu chỉnh sai sót.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/委外发料单A5（217140mm）.xls",
+      "委外管理（生管-仓库）订单-发料-收回操作流程.pdf"
+    ]
+  },
+  {
+    "id": 88,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "报废单",
+    "title_vi": "Phiếu xuất hủy / Báo phế vật tư hư hỏng",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "./DepotManage/ScrapDepot/",
+    "func": "Phiếu xuất hủy báo phế: Xuất trừ vĩnh viễn khỏi sổ sách kho đối với các nguyên vật liệu quá hạn sử dụng, hỏng ẩm mốc hoặc thành phẩm lỗi nặng không thể tái chế.",
+    "sops": [
+      "委外管理（生管-仓库）订单-发料-收回操作流程.pdf"
+    ]
+  },
+  {
+    "id": 89,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "盘点单",
+    "title_vi": "Phiếu kiểm kê số lượng thực tế kho hàng",
+    "dept": "物管课 khoa quản lý vật tư (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/CountingTableManage/",
+    "func": "Lập phiếu kiểm kê kho định kỳ (tuần/tháng/quý): Nhập số lượng thực tế đếm được tại kệ hàng để hệ thống tự động so sánh đối chiếu với số liệu trên máy tính, xác định lượng chênh lệch Thừa/Thiếu.",
+    "sops": [
+      "VCK盘点20231216",
+      "仓库管理流程图-及ERP系统单据.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/委外加工件驗收單A5（217X140mm）.xlsx",
+      "委外管理（生管-仓库）订单-发料-收回操作流程.pdf"
+    ]
+  },
+  {
+    "id": 90,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "回炉转换单",
+    "title_vi": "Phiếu tái chế phế liệu / Chuyển đổi mã hàng",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "./DepotManage/BreakMmManager/",
+    "func": "Phiếu tái chế phế liệu: Ghi nhận việc gom các đầu mẩu kim loại, phôi dập hỏng đưa vào lò nung chảy tái sinh hoặc chuyển đổi mã hàng phế liệu sang mã vật tư sử dụng cấp thấp hơn.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/委外産品（返工）退貨单A5（217X140mm）.xlsx",
+      "委外管理（生管-仓库）订单-发料-收回操作流程.pdf"
+    ]
+  },
+  {
+    "id": 91,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "标签打印",
+    "title_vi": "In tem nhãn mã vạch (Barcode / QR Code)",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "./DepotManage/LabelImportManage/",
+    "func": "Công cụ in ấn tem nhãn mã vạch (Barcode / QR Code): Tạo tem nhãn chứa mã hàng, tên quy cách, số lô sản xuất (Batch No) để dán lên kiện hàng phục vụ quét mã PDA tại xưởng.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/业务/销售出库送货单-VCK-A4（纵向）-更新.xlsx",
+      "仓库管理流程图-及ERP系统单据.pdf"
+    ]
+  },
+  {
+    "id": 92,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "标识卡打印",
+    "title_vi": "In thẻ định danh luân chuyển lô công đoạn",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "/DepotManage/IdentificationCardManage/",
+    "func": "In thẻ định danh luân chuyển công đoạn (Flow Card / Route Sheet): Đi kèm với thùng chứa bán thành phẩm từ công đoạn này sang công đoạn khác để ghi nhận thông tin kiểm tra.",
+    "sops": [
+      "仓库管理流程图-及ERP系统单据.pdf"
+    ]
+  },
+  {
+    "id": 93,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "月结存",
+    "title_vi": "Khóa sổ kết chuyển số dư kho cuối kỳ tháng",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "./DepotManage/MonthlyBalanceManage/",
+    "func": "Thao tác chốt sổ tồn kho cuối tháng: Khóa các giao dịch xuất nhập phát sinh trong tháng cũ, tính toán giá vốn bình quân tồn kho và kết chuyển số dư đầu kỳ cho tháng tiếp theo.",
+    "sops": []
+  },
+  {
+    "id": 94,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "客供收料单",
+    "title_vi": "Phiếu tiếp nhận vật tư do khách hàng gửi gia công",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "/DepotManage/CustomerFeedManage/",
+    "func": "Phiếu tiếp nhận nguyên vật liệu do khách hàng tự cấp gửi sang để gia công riêng theo đơn hàng đặt trước của khách.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/报废单A5（217X140mm）.xlsx"
+    ]
+  },
+  {
+    "id": 95,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "客供退料单",
+    "title_vi": "Phiếu xuất trả nguyên vật liệu thừa cho khách hàng",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "/DepotManage/CustomerReturnManage/",
+    "func": "Phiếu xuất hoàn trả phần nguyên vật liệu do khách cung cấp còn dư thừa sau khi đã hoàn thành các hợp đồng gia công.",
+    "sops": [
+      "VCK物品采购申请--辅料领用操作流程(越文).pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/領料單A5（217X140mm）.xlsx"
+    ]
+  },
+  {
+    "id": 96,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "装/拆配单",
+    "title_vi": "Phiếu lắp ráp thành bộ Combo / Tháo rời chi tiết",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "/DepotManage/AssemblyOrderManage/",
+    "func": "Phiếu lệnh lắp ghép bộ Combo hoặc tháo rời cụm chi tiết: Ghi nhận thao tác gom nhiều linh kiện rời tạo thành 1 mã bộ sản phẩm hoàn chỉnh hoặc rã bộ thành linh kiện lẻ.",
+    "sops": []
+  },
+  {
+    "id": 97,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "",
+    "title_zh": "入库通知单",
+    "title_vi": "Phiếu thông báo nhập kho sau nghiệm thu QC đạt",
+    "dept": "物管课 Khoa quản lý vật tư (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/WarehousingNotice/",
+    "func": "Phiếu thông báo nhập kho chính thức: Chứng từ trung gian then chốt - sau khi phòng QC kiểm tra đạt chuẩn chất lượng (IQC hoặc FQC), phiếu này được duyệt để kho ghi nhận hàng hóa vào tồn kho khả dụng.",
+    "sops": [
+      "仓库管理流程图-及ERP系统单据.pdf",
+      "kiểm tra tồn kho.docx",
+      "VCK盘点20231216/VCK海关账平衡表.xls",
+      "VCK盘点20231216/原料仓盘点库存-导入20231217.xls",
+      "VCK盘点20231216/半制品仓盘点库存-导入20231217.xls"
+    ]
+  },
+  {
+    "id": 98,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "月结存统计表",
+    "title_vi": "Báo cáo thống kê số dư kho theo từng kỳ tháng",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "./DepotManage/StockBOMManage/MonthlyBalancesDetail/",
+    "func": "Báo cáo tổng hợp số liệu phân tích thống kê nghiệp vụ Báo cáo thống kê số dư kho theo từng kỳ tháng (月结存统计表). Cung cấp góc nhìn đa chiều về tiến độ, sản lượng và hiệu quả hoạt động phục vụ công tác điều hành quản trị.",
+    "sops": [
+      "VCK盘点20231216/原料仓盘点库存-导出20231217.xlsx",
+      "VCK盘点20231216/半制品仓盘点库存-导出20231217.xlsx",
+      "VCK盘点20231216/品保留样仓盘点库存-导出20231217.xlsx",
+      "VCK盘点20231216/线边仓盘点库存-导出20231217.xlsx"
+    ]
+  },
+  {
+    "id": 99,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "原材料仓进出月报表",
+    "title_vi": "Báo cáo xuất nhập tồn kho nguyên vật liệu tháng",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "./DepotManage/StockBOMManage/RawMaterialWarehouse/",
+    "func": "Báo cáo tổng hợp số liệu phân tích thống kê nghiệp vụ Báo cáo xuất nhập tồn kho nguyên vật liệu tháng (原材料仓进出月报表). Cung cấp góc nhìn đa chiều về tiến độ, sản lượng và hiệu quả hoạt động phục vụ công tác điều hành quản trị.",
+    "sops": [
+      "VCK盘点20231216/库存盘点账-20231216原料仓(盘盈盘亏)-ok.xlsx",
+      "VCK盘点20231216/库存盘点账-20231216半制品仓（盘盈盘亏）.xlsx"
+    ]
+  },
+  {
+    "id": 100,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "成品仓进销存月报表",
+    "title_vi": "Báo cáo xuất nhập tồn kho thành phẩm tháng",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "./DepotManage/StockBOMManage/FinishedProductBin/",
+    "func": "Báo cáo tổng hợp số liệu phân tích thống kê nghiệp vụ Báo cáo xuất nhập tồn kho thành phẩm tháng (成品仓进销存月报表). Cung cấp góc nhìn đa chiều về tiến độ, sản lượng và hiệu quả hoạt động phục vụ công tác điều hành quản trị.",
+    "sops": []
+  },
+  {
+    "id": 101,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "财务月度统计原材料报表",
+    "title_vi": "Báo cáo kế toán đối chiếu giá trị kho nguyên liệu",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "./DepotManage/StockBOMManage/MonthlyFinancialStatistics/",
+    "func": "Báo cáo tổng hợp số liệu phân tích thống kê nghiệp vụ Báo cáo kế toán đối chiếu giá trị kho nguyên liệu (财务月度统计原材料报表). Cung cấp góc nhìn đa chiều về tiến độ, sản lượng và hiệu quả hoạt động phục vụ công tác điều hành quản trị.",
+    "sops": []
+  },
+  {
+    "id": 102,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "进销存报表明细",
+    "title_vi": "Chi tiết nhật ký xuất nhập tồn của từng mã hàng",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "./DepotManage/StockBOMManage/ErpReport/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ nhật ký xuất nhập tồn của từng mã hàng (进销存报). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 103,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "进销存报表",
+    "title_vi": "Bảng tổng hợp báo cáo xuất nhập tồn toàn kho",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/StockBOMManage/ErpReportTotal/",
+    "func": "Bảng tổng hợp báo cáo Nhập - Xuất - Tồn toàn diện của toàn bộ các kho hàng trong một khoảng thời gian nhất định (Số dư đầu kỳ, Tổng nhập, Tổng xuất, Số dư cuối kỳ).",
+    "sops": []
+  },
+  {
+    "id": 104,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "销售出退货执行明细",
+    "title_vi": "Chi tiết các lần xuất giao và nhận trả hàng bán",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/StockBOMManage/SalesShipmentReturnList/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các lần xuất giao và nhận trả hàng bán (销售出退货执行). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 105,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "其他出入库明细",
+    "title_vi": "Chi tiết các giao dịch xuất nhập kho khác",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/StockBOMManage/OtherEnterOutList/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các giao dịch xuất nhập kho khác (其他出入库). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 106,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "调拨单执行明细",
+    "title_vi": "Chi tiết các chuyến điều chuyển nội bộ giữa các kho",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/StockBOMManage/AllocationListDepot/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các chuyến điều chuyển nội bộ giữa các kho (调拨单执行). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 107,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "调整单明细",
+    "title_vi": "Chi tiết các lý do và số lượng điều chỉnh tồn kho",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/StockBOMManage/AdJustOrderListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các lý do và số lượng điều chỉnh tồn kho (调整单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 108,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "报废明细",
+    "title_vi": "Chi tiết danh mục hàng hóa xuất hủy báo phế",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "/DepotManage/ScrapDepot/ScraoDepotSon/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ danh mục hàng hóa xuất hủy báo phế (报废). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 109,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "采购收退货执行明细",
+    "title_vi": "Chi tiết các lần nhận hàng và trả hàng cho nhà cung ứng",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/StockBOMManage/PurchaseCollectReturnList/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các lần nhận hàng và trả hàng cho nhà cung ứng (采购收退货执行). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 110,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "出入库流水账",
+    "title_vi": "Sổ nhật ký dòng tiền hàng xuất nhập kho tuần tự",
+    "dept": "物管课 (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/StockBOMManage/Outgoingandwarehousing/",
+    "func": "Trang chức năng quản lý nghiệp vụ Sổ nhật ký dòng tiền hàng xuất nhập kho tuần tự (出入库流水账) thuộc phân hệ 仓库管理. Đảm bảo chuẩn hóa dữ liệu, hỗ trợ tra cứu và phối hợp liên phòng ban trong hệ thống ERP.",
+    "sops": []
+  },
+  {
+    "id": 111,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "盘点单明细",
+    "title_vi": "Bảng kê chi tiết chênh lệch kiểm kê (Thừa / Thiếu)",
+    "dept": "物管课 Khoa quản lý vật tư (Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课))",
+    "jump": "./DepotManage/CountingListTableManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Bảng kê  chênh lệch kiểm kê (Thừa / Thiếu) (盘点单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 112,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "客供收料明细",
+    "title_vi": "Chi tiết lịch sử nhận vật tư của khách hàng",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "/DepotManage/CustomerFeedManage/CustomerFeedSonManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ lịch sử nhận vật tư của khách hàng (客供收料). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 113,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "客供退料明细",
+    "title_vi": "Chi tiết lịch sử trả lại vật tư dư thừa cho khách",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "/DepotManage/CustomerReturnManage/CustomerRetrunDetalisManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ lịch sử trả lại vật tư dư thừa cho khách (客供退料). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 114,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "回炉转换明细",
+    "title_vi": "Chi tiết số lượng phế liệu đưa vào tái chế quay vòng",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "/DepotManage/BreakMmManager/BreakMmsonManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ số lượng phế liệu đưa vào tái chế quay vòng (回炉转换). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 115,
+    "module_zh": "仓库管理",
+    "module_vi": "Quản lý Kho bãi & Nhập - Xuất - Tồn (Warehouse)",
+    "group": "仓库管理报表",
+    "title_zh": "拆/装配单明细",
+    "title_vi": "Chi tiết định mức linh kiện trong lệnh tháo lắp ráp",
+    "dept": "Bộ phận Quản lý Kho bãi & Vật tư (Warehouse / 物管课)",
+    "jump": "/DepotManage/AssemblyOrderDetail/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ định mức linh kiện trong lệnh tháo lắp ráp (拆/装配单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 116,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "",
+    "title_zh": "委外加工单",
+    "title_vi": "Lệnh đặt gia công ngoài / Thầu phụ (Subcontract Order)",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/MachiningManage/",
+    "func": "Lệnh đặt gia công ngoài (Subcontract Order): Phát hành hợp đồng giao khoán một hoặc một số công đoạn sản xuất (Mạ vàng, Sơn tĩnh điện, Tôi nhiệt luyện) cho cơ sở gia công vệ tinh bên ngoài.",
+    "sops": [
+      "委外管理（生管-仓库）订单-发料-收回操作流程.pdf",
+      "企助ERP系统业务流程图-信凯.docx",
+      "(已翻译完成）VCK振凯表单格式20230614/生管/委外加工單A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 117,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "",
+    "title_zh": "委外发料单",
+    "title_vi": "Phiếu xuất cấp nguyên vật liệu cho thầu phụ gia công",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/ExternalOutManage/",
+    "func": "Phiếu xuất kho nguyên phụ liệu hoặc phôi bán thành phẩm giao cho đơn vị thầu phụ để họ tiến hành gia công chế tác theo thỏa thuận.",
+    "sops": [
+      "委外管理（生管-仓库）订单-发料-收回操作流程.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/委外发料单A5（217140mm）.xls"
+    ]
+  },
+  {
+    "id": 118,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "",
+    "title_zh": "委外退料单",
+    "title_vi": "Phiếu nhận lại vật liệu thừa từ thầu phụ hoàn trả",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/ExternalEnterManage/",
+    "func": "Phiếu tiếp nhận lại phôi nguyên liệu mà xưởng gia công ngoài không dùng hết hoàn trả lại cho Chen Kai.",
+    "sops": [
+      "委外管理（生管-仓库）订单-发料-收回操作流程.pdf"
+    ]
+  },
+  {
+    "id": 119,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "",
+    "title_zh": "委外收货单",
+    "title_vi": "Phiếu tiếp nhận bán thành phẩm gia công ngoài hoàn thành",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/ExternalOutStockManage/",
+    "func": "Phiếu tiếp nhận bán thành phẩm đã gia công hoàn thành từ xưởng thầu phụ gửi về nhà máy: Thủ kho tiếp nhận và chuyển giao cho QC kiểm tra chất lượng lớp mạ/lớp sơn.",
+    "sops": [
+      "委外管理（生管-仓库）订单-发料-收回操作流程.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/委外加工件驗收單A5（217X140mm）.xlsx"
+    ]
+  },
+  {
+    "id": 120,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "",
+    "title_zh": "委外退货单",
+    "title_vi": "Phiếu xuất trả hàng gia công ngoài không đạt chuẩn",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/ExternalEnterStockManage/",
+    "func": "Phiếu xuất trả lại sản phẩm gia công ngoài bị lỗi kỹ thuật (lớp mạ bị ố, bong tróc, trầy xước) yêu cầu xưởng thầu phụ tẩy mạ làm lại hoặc trừ tiền công gia công.",
+    "sops": [
+      "委外管理（生管-仓库）订单-发料-收回操作流程.pdf",
+      "企助_品质判定及返修操作手册(1).pptx",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/委外産品（返工）退貨单A5（217X140mm）.xlsx"
+    ]
+  },
+  {
+    "id": 121,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "",
+    "title_zh": "委外变更单",
+    "title_vi": "Phiếu thay đổi thỏa thuận gia công ngoài",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "/OutsourcingManage/OutChangeManage/",
+    "func": "Phiếu thay đổi thỏa thuận gia công ngoài: Điều chỉnh số lượng hàng gửi, gia hạn tiến độ giao nhận hoặc thỏa thuận lại đơn giá gia công.",
+    "sops": [
+      "委外管理（生管-仓库）订单-发料-收回操作流程.pdf"
+    ]
+  },
+  {
+    "id": 122,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "委外管理明细",
+    "title_zh": "委外变更明细",
+    "title_vi": "Chi tiết lịch sử sửa đổi đơn hàng gia công ngoài",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/ExternalDeatailsManage/OutsourcingChangeDetail/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ lịch sử sửa đổi đơn hàng gia công ngoài (委外变更). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 123,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "委外管理明细",
+    "title_zh": "委外未加工明细",
+    "title_vi": "Theo dõi bán thành phẩm tồn chưa gia công tại thầu phụ",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/ExternalDeatailsManage/UndressedDetailsManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Theo dõi bán thành phẩm tồn chưa gia công tại thầu phụ (委外未加工). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 124,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "委外管理明细",
+    "title_zh": "委外管理报表",
+    "title_vi": "Báo cáo tổng hợp tình hình hợp tác gia công ngoài",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/ExternalDeatailsManage/OutsourcingReportform/",
+    "func": "Báo cáo tổng hợp số liệu phân tích thống kê nghiệp vụ Báo cáo tổng hợp tình hình hợp tác gia công ngoài (委外管理报表). Cung cấp góc nhìn đa chiều về tiến độ, sản lượng và hiệu quả hoạt động phục vụ công tác điều hành quản trị.",
+    "sops": []
+  },
+  {
+    "id": 125,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "委外管理明细",
+    "title_zh": "委外加工执行表",
+    "title_vi": "Bảng theo dõi tiến độ hoàn thành các lệnh gia công ngoài",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/ExternalDeatailsManage/MachiningDetailsManage/",
+    "func": "Chứng từ / Biểu mẫu nghiệp vụ phục vụ việc ghi nhận, xử lý và kiểm soát thông tin Bảng theo dõi tiến độ hoàn thành các lệnh gia công ngoài (委外加工执行表) trong quy trình vận hành 委外管理 của nhà máy.",
+    "sops": []
+  },
+  {
+    "id": 126,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "委外管理明细",
+    "title_zh": "委外发退料明细",
+    "title_vi": "Chi tiết luân chuyển cấp phát và hoàn trả vật tư thầu phụ",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/ExternalDeatailsManage/ExternalOutStockDetailsManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ luân chuyển cấp phát và hoàn trả vật tư thầu phụ (委外发退料). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 127,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "委外管理明细",
+    "title_zh": "委外收退货明细",
+    "title_vi": "Chi tiết các lần nhận hàng và trả hàng lỗi gia công ngoài",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/ExternalDeatailsManage/ExternalEnterStockDetailsManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các lần nhận hàng và trả hàng lỗi gia công ngoài (委外收退货). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 128,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "委外管理明细",
+    "title_zh": "委外发料清单",
+    "title_vi": "Bảng định mức vật liệu dự kiến cấp cho lệnh thầu ngoài",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/ExternalDeatailsManage/OutsourcingDispatchListManage/",
+    "func": "Chứng từ / Biểu mẫu nghiệp vụ phục vụ việc ghi nhận, xử lý và kiểm soát thông tin Bảng định mức vật liệu dự kiến cấp cho lệnh thầu ngoài (委外发料清单) trong quy trình vận hành 委外管理 của nhà máy.",
+    "sops": []
+  },
+  {
+    "id": 129,
+    "module_zh": "委外管理",
+    "module_vi": "Quản lý Gia công ngoài / Thầu phụ (Outsourcing)",
+    "group": "委外管理明细",
+    "title_zh": "委外存量表",
+    "title_vi": "Báo cáo theo dõi lượng vật tư Chen Kai đang lưu tại kho thầu phụ",
+    "dept": "Bộ phận Kế hoạch & Quản lý Gia công ngoài (Outsourcing / 生管-计划课)",
+    "jump": "./OutsourcingManage/OutsourcingInventory/",
+    "func": "Báo cáo theo dõi lượng vật tư và bán thành phẩm của Chen Kai đang nằm lưu giữ tại nhà xưởng của các đơn vị thầu phụ ngoài.",
+    "sops": []
+  },
+  {
+    "id": 130,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "",
+    "title_zh": "首/末件检验",
+    "title_vi": "Biên bản kiểm tra mẫu đầu ca & Cuối ca (First/Last Piece)",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "/IPQManage/FirstEndTestRecordSheet/",
+    "func": "Biên bản kiểm tra mẫu đầu ca & Cuối ca (First/Last Article Inspection): Đo kiểm kích thước sản phẩm đầu tiên khi mới lên khuôn máy dập để đảm bảo thông số chuẩn xác trước khi cho chạy hàng loạt, và kiểm tra sản phẩm cuối ca để phát hiện độ mòn khuôn.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/品质/品质部IPQC检验记录-XK-Q-010.xlsx",
+      "企助_品质判定及返修操作手册(1).pptx"
+    ]
+  },
+  {
+    "id": 131,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "",
+    "title_zh": "品质异常登记",
+    "title_vi": "Sổ ghi nhận sự cố bất thường về chất lượng",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "./IPQManage/AbnormalQualityManage/",
+    "func": "Sổ ghi nhận sự cố bất thường về chất lượng trên dây chuyền: Ghi nhận các trường hợp tỷ lệ lỗi tăng vọt hoặc nguyên liệu có vấn đề để kích hoạt họp khẩn cấp điều tra nguyên nhân.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/品质/品质异常矫正单（厂内）A4（210X297mm）.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/品质/品质异常联络单（供应商）A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 132,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "",
+    "title_zh": "品质判定单",
+    "title_vi": "Phiếu phán định chất lượng lô hàng nghi vấn / Lỗi (MRB)",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "./IPQManage/QualityDecideBillManage/",
+    "func": "Phiếu phán định chất lượng hàng lỗi (Material Review Board - MRB): Hội đồng chất lượng xét duyệt hướng giải quyết cho lô hàng nghi vấn: Cho phép dùng tạm (Concession), Sửa chữa lại (Rework), Hạ cấp hay Phế phẩm hủy bỏ.",
+    "sops": [
+      "车间不良品（NG废品）品质待判操作流程.pptx",
+      "企助_品质判定及返修操作手册(1).pptx"
+    ]
+  },
+  {
+    "id": 133,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "",
+    "title_zh": "来料检验单",
+    "title_vi": "Biên bản kiểm tra chất lượng nguyên vật liệu đầu vào (IQC)",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "./IPQManage/CheckIncomingManage/",
+    "func": "Biên bản kiểm tra chất lượng nguyên vật liệu đầu vào (Incoming Quality Control - IQC): Đo kiểm kích thước, độ cứng, thành phần hóa học của thép cuộn, bao bì từ nhà cung cấp trước khi cho nhập kho.",
+    "sops": [
+      "企助_品质判定及返修操作手册(1).pptx",
+      "VCK来料-成品规则及档案建立流程说明.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/品质/IQC-OQC品质部工作日志-XK-Q-004.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/品质/品质异常联络单（供应商）A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 134,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "",
+    "title_zh": "客诉问题跟进表",
+    "title_vi": "Bảng theo dõi hành động khắc phục khiếu nại (8D/CAPA)",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "./IPQManage/ReflexManage/",
+    "func": "Bảng theo dõi hành động khắc phục và phòng ngừa khiếu nại khách hàng (CAPA / 8D Report): Quản lý tiến độ triển khai giải pháp xử lý triệt để nguyên nhân gốc rễ để không tái diễn lỗi.",
+    "sops": [
+      "企助_品质判定及返修操作手册(1).pptx",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/委外産品（返工）退貨单A5（217X140mm）.xlsx"
+    ]
+  },
+  {
+    "id": 135,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "",
+    "title_zh": "制程检验单",
+    "title_vi": "Phiếu kiểm tra chất lượng công đoạn sản xuất (IPQC)",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "./IPQManage/ProcessInspectManage/",
+    "func": "Biên bản kiểm tra chất lượng công đoạn sản xuất (In-Process Quality Control - IPQC): Nhân viên QC tuần tra đo đạc định kỳ tại các bàn máy trong lúc thợ đang dập hoặc lắp ráp.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/品质/品质部IPQC检验记录-XK-Q-010.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/品质/品质异常矫正单（厂内）A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 136,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "",
+    "title_zh": "出货检验报告",
+    "title_vi": "Báo cáo nghiệm thu chất lượng xuất xưởng (OQC / FQC)",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "./IPQManage/InspectionReportManage/",
+    "func": "Báo cáo nghiệm thu chất lượng xuất xưởng (Outgoing Quality Control - OQC / FQC): Lấy mẫu kiểm tra thành phẩm hoàn chỉnh theo tiêu chuẩn chấp nhận AQL trước khi đóng thùng giao khách.",
+    "sops": [
+      "企助_品质判定及返修操作手册(1).pptx",
+      "VCK来料-成品规则及档案建立流程说明.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/品质/IQC-OQC品质部工作日志-XK-Q-004.xlsx"
+    ]
+  },
+  {
+    "id": 137,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "",
+    "title_zh": "盐雾检验报告",
+    "title_vi": "Báo cáo kiểm nghiệm ăn mòn phun sương muối",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "/IPQManage/SaltFogTestingManage/",
+    "func": "Báo cáo thử nghiệm phun sương muối (Salt Spray Test): Đo lường khả năng chống oxy hóa, chống rỉ sét và độ bám dính của lớp mạ kim loại theo số giờ thử nghiệm tiêu chuẩn.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/品质/IQC-OQC品质部工作日志-XK-Q-004.xlsx"
+    ]
+  },
+  {
+    "id": 138,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "",
+    "title_zh": "入仓检验报告",
+    "title_vi": "Biên bản nghiệm thu chất lượng trước khi nhập kho",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "/IPQManage/FinProductWarehouseReportManage/",
+    "func": "Biên bản nghiệm thu chất lượng thành phẩm từ phân xưởng chế tạo hoàn tất trước khi làm thủ tục nhập vào kho thành phẩm bán.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/品质/品质异常矫正单（厂内）A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 139,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "",
+    "title_zh": "库存检验单",
+    "title_vi": "Phiếu tái kiểm tra chất lượng hàng tồn kho định kỳ",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "./IPQManage/InventoryInspectManage/",
+    "func": "Phiếu tái kiểm tra chất lượng đối với các lô nguyên liệu hoặc thành phẩm đã lưu kho quá thời hạn bảo quản quy định trước khi xuất ra sử dụng.",
+    "sops": []
+  },
+  {
+    "id": 140,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "品质管理明细",
+    "title_zh": "入仓检验报告明细",
+    "title_vi": "Chi tiết kết quả đo kiểm nghiệm thu nhập kho",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "IPQManage/FinProductWarehouseReportManage/FinProductWarehouseReportManageSon/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ kết quả đo kiểm nghiệm thu nhập kho (入仓检验报告). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 141,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "品质管理明细",
+    "title_zh": "品质判定明细",
+    "title_vi": "Chi tiết phương án phán định xử lý hàng lỗi (Sửa/Hủy/Dùng tạm)",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "./IPQManage/QualityDecideBillManage/QualityDecideBillListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ phương án phán định xử lý hàng lỗi (Sửa/Hủy/Dùng tạm) (品质判定). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 142,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "品质管理明细",
+    "title_zh": "来料检验明细",
+    "title_vi": "Chi tiết các chỉ tiêu đo đạc kích thước & hóa tính IQC",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "./IPQManage/CheckIncomingListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các chỉ tiêu đo đạc kích thước & hóa tính IQC (来料检验). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 143,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "品质管理明细",
+    "title_zh": "首/末件检验明细",
+    "title_vi": "Chi tiết thông số kiểm tra mẫu đầu/cuối ca máy",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "/IPQManage/FirstEndTestRecordSheet/FirstEndTestRecordSheetSonManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ thông số kiểm tra mẫu đầu/cuối ca máy (首/末件检验). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 144,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "品质管理明细",
+    "title_zh": "不良分析统计",
+    "title_vi": "Báo cáo thống kê phân tích nguyên nhân lỗi (Biểu đồ Pareto)",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "/IPQManage/BadAnalysisManage/",
+    "func": "Báo cáo thống kê phân tích nguyên nhân lỗi sản phẩm (Biểu đồ Pareto): Xác định các dạng lỗi chiếm tỷ trọng cao nhất (móp méo, trầy xước, lem keo) để tập trung cải tiến năng suất.",
+    "sops": []
+  },
+  {
+    "id": 145,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "品质管理明细",
+    "title_zh": "品质异常登记明细",
+    "title_vi": "Chi tiết diễn biến và biện pháp xử lý sự cố chất lượng",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "/IPQManage/AbnormalQualityManage/AbnormalQualityDetailManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ diễn biến và biện pháp xử lý sự cố chất lượng (品质异常登记). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 146,
+    "module_zh": "品质管理",
+    "module_vi": "Quản lý Chất lượng (QC / QA / IQC / IPQC / OQC)",
+    "group": "品质管理明细",
+    "title_zh": "制程检验明细表",
+    "title_vi": "Chi tiết các lần tuần tra kiểm soát chất lượng chuyền may/dập",
+    "dept": "Bộ phận Quản lý Chất lượng (QC / QA / IQC / IPQC / 品管部)",
+    "jump": "/IPQManage/ProcessInspectManage/ProcessInspectSonManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các lần tuần tra kiểm soát chất lượng chuyền may/dập (制程检验). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 147,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "",
+    "title_zh": "生产领料单",
+    "title_vi": "Phiếu lĩnh nguyên vật liệu phục vụ sản xuất",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/ReceiveMateriel/",
+    "func": "Phiếu lĩnh nguyên vật liệu phục vụ sản xuất: Quản đốc hoặc tổ trưởng phân xưởng đề xuất và ký nhận nguyên vật liệu từ kho về chuyền để gia công theo lệnh sản xuất MO (Lĩnh theo đơn hoặc Lĩnh theo công đoạn).",
+    "sops": [
+      "车间管理（生产）生产领料操作流程.pdf",
+      "车间管理（生产）领料-退料单操作流程.pdf",
+      "车间工单、生产领料、报工管理操作流程202307.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/領料單A5（217X140mm）.xlsx"
+    ]
+  },
+  {
+    "id": 148,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "",
+    "title_zh": "生产退料单",
+    "title_vi": "Phiếu hoàn trả vật liệu thừa từ xưởng về kho",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/ReturnMateriel/",
+    "func": "Phiếu hoàn trả vật liệu thừa từ xưởng về kho: Trả lại kho phần nguyên vật liệu không dùng hết sau khi kết thúc đợt sản xuất để hoàn nhập số liệu tồn kho chính xác.",
+    "sops": [
+      "车间管理（生产）领料-退料单操作流程.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/退料單A5（217X140mm）.xlsx"
+    ]
+  },
+  {
+    "id": 149,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "",
+    "title_zh": "生产报工",
+    "title_vi": "Ghi nhận sản lượng & Báo công ca máy (Shop Floor WIP)",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/WorkReportManage/",
+    "func": "Ghi nhận sản lượng & Báo công ca máy (Shop Floor WIP): Thợ máy hoặc tổ trưởng quét mã barcode ghi nhận số lượng sản phẩm hoàn thành, số lượng phế phẩm và thời gian máy chạy của từng công đoạn.",
+    "sops": [
+      "工业平板扫码报工操作流程SOP-20260421.docx",
+      "车间生产报工（PDA扫码）操作流程-(越文).pdf",
+      "工业平板SOP操作流程20250403.docx",
+      "车间生产报工（WIP）异常数据查找操作.pptx",
+      "车间生产报工（PDA扫码）操作流程 - 派工单报工（WIP管理202501）.pptx"
+    ]
+  },
+  {
+    "id": 150,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "",
+    "title_zh": "报工确认单",
+    "title_vi": "Phiếu phê duyệt xác nhận sản lượng báo công của thợ",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/WorkReportConfirmManage/",
+    "func": "Phiếu phê duyệt xác nhận sản lượng báo công: Quản đốc xưởng hoặc bộ phận thống kê kiểm tra đối soát số liệu báo công thực tế trước khi kết chuyển dữ liệu tính lương sản phẩm.",
+    "sops": [
+      "CK台湾振凯--半制品编码明细表.xlsx",
+      "WIP流程与职能部门.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/工程/流程卡-XK-E-020.xlsx"
+    ]
+  },
+  {
+    "id": 151,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "",
+    "title_zh": "箱标单",
+    "title_vi": "In phiếu nhãn thùng định danh bán thành phẩm",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/BoxlabelManage/",
+    "func": "In phiếu nhãn thùng định danh bán thành phẩm: Dán bên ngoài thùng chứa hàng luân chuyển giữa các công đoạn gia công tại xưởng.",
+    "sops": [
+      "车间不良品（NG废品）品质待判操作流程.pptx",
+      "(已翻译完成）VCK振凯表单格式20230614/仓库/报废单A5（217X140mm）.xlsx"
+    ]
+  },
+  {
+    "id": 152,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "",
+    "title_zh": "车间在制盘点单",
+    "title_vi": "Phiếu kiểm kê hàng dở dang tại xưởng (WIP Inventory)",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/InProductionInventoryList/",
+    "func": "Phiếu kiểm kê hàng dở dang tại xưởng (Work in Progress - WIP): Thống kê thực tế số lượng bán thành phẩm đang nằm trên các máy gia công dang dở vào cuối ca/cuối tháng.",
+    "sops": [
+      "企助_品质判定及返修操作手册(1).pptx",
+      "车间不良品（NG废品）品质待判操作流程.pptx"
+    ]
+  },
+  {
+    "id": 153,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "",
+    "title_zh": "车间在制清单",
+    "title_vi": "Danh mục theo dõi trạng thái hàng dở dang trên chuyền",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/WorkInProductionListManage/",
+    "func": "Danh mục theo dõi trạng thái hàng dở dang trên chuyền: Giúp quản đốc nắm bắt dòng chảy sản phẩm và phát hiện các điểm nghẽn cổ chai (Bottlenecks) trong xưởng.",
+    "sops": []
+  },
+  {
+    "id": 154,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "",
+    "title_zh": "快速报工",
+    "title_vi": "Chế độ báo công quét mã Barcode siêu tốc trên PDA",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/FastWorkReportManage/",
+    "func": "Chế độ báo công quét mã Barcode/QR siêu tốc: Giao diện tối ưu cho màn hình cảm ứng hoặc máy tính bảng công nghiệp PDA tại sàn xưởng sản xuất khối lượng lớn.",
+    "sops": [
+      "车间生产报工（WIP）异常数据查找操作.pptx",
+      "报工时间/我是胡文松/THỜI GIAN BÁO CÔNG X1,2.xlsx",
+      "VCK盘点20231216/生产加工计划执行表-车间未完工结存20231217 OOK.xls"
+    ]
+  },
+  {
+    "id": 155,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "",
+    "title_zh": "计时计件核算单",
+    "title_vi": "Bảng hạch toán lương theo giờ & Sản lượng nghiệm thu",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/CheckManage/",
+    "func": "Bảng hạch toán tiền lương theo giờ và theo sản phẩm: Tổng hợp số lượng sản phẩm nghiệm thu đạt chuẩn của từng công nhân nhân với đơn giá công đoạn để tính thu nhập.",
+    "sops": []
+  },
+  {
+    "id": 156,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "生产日报表",
+    "title_vi": "Báo cáo tổng hợp sản lượng phân xưởng theo ngày",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/DailyProductionReport/",
+    "func": "Báo cáo tổng hợp sản lượng phân xưởng theo ngày: Thống kê số lượng nhập phôi, sản lượng hoàn thành, tỷ lệ phế phẩm và hiệu suất vận hành máy móc.",
+    "sops": []
+  },
+  {
+    "id": 157,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "箱标单明细",
+    "title_vi": "Chi tiết lịch sử cấp phát nhãn thùng sản phẩm",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/BoxlabelManage/BoxlabelTable/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ lịch sử cấp phát nhãn thùng sản phẩm (箱标单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 158,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "派工详情",
+    "title_vi": "Chi tiết phân bổ công việc xuống từng máy và thợ đứng chuyền",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/DispatchingDetailManage/",
+    "func": "Trang chức năng quản lý nghiệp vụ Chi tiết phân bổ công việc xuống từng máy và thợ đứng chuyền (派工详情) thuộc phân hệ 车间管理. Đảm bảo chuẩn hóa dữ liệu, hỗ trợ tra cứu và phối hợp liên phòng ban trong hệ thống ERP.",
+    "sops": []
+  },
+  {
+    "id": 159,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "计时计件统计表",
+    "title_vi": "Bảng thống kê giờ công và sản lượng theo công nhân",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/CheckStatistics/",
+    "func": "Báo cáo tổng hợp số liệu phân tích thống kê nghiệp vụ Bảng thống kê giờ công và sản lượng theo công nhân (计时计件统计表). Cung cấp góc nhìn đa chiều về tiến độ, sản lượng và hiệu quả hoạt động phục vụ công tác điều hành quản trị.",
+    "sops": []
+  },
+  {
+    "id": 160,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "生产报工明细",
+    "title_vi": "Chi tiết các lượt quét mã báo công hoàn thành từng công đoạn",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/WorkShopReportManage/WorkReportDetailsManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các lượt quét mã báo công hoàn thành từng công đoạn (生产报工). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 161,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "生产领料单明细",
+    "title_vi": "Chi tiết lượng nguyên vật liệu đã xuất cho các lệnh gia công",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/WorkShopReportManage/ReceiveMaterielReportManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ lượng nguyên vật liệu đã xuất cho các lệnh gia công (生产领料单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 162,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "生产退料单明细",
+    "title_vi": "Chi tiết các mã và số lượng vật liệu xưởng trả lại kho",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/WorkShopReportManage/ReturnMaterielRepotManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các mã và số lượng vật liệu xưởng trả lại kho (生产退料单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 163,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "生产可退料明细",
+    "title_vi": "Danh mục lượng vật liệu dư cho phép được trả về kho",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/WorkShopReportManage/CanReturnMaterielRepotManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Danh mục lượng vật liệu dư cho phép được trả về kho (生产可退料). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 164,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "生产统计表",
+    "title_vi": "Báo cáo thống kê năng suất tổng hợp toàn nhà máy",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "/WorkShopManage/ProductionDailyManage/",
+    "func": "Báo cáo tổng hợp số liệu phân tích thống kê nghiệp vụ Báo cáo thống kê năng suất tổng hợp toàn nhà máy (生产统计表). Cung cấp góc nhìn đa chiều về tiến độ, sản lượng và hiệu quả hoạt động phục vụ công tác điều hành quản trị.",
+    "sops": []
+  },
+  {
+    "id": 165,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "生产计件工资表",
+    "title_vi": "Bảng tổng hợp tiền lương sản phẩm theo công nhân",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "/WorkShopManage/PieceWorkWageManage/",
+    "func": "Chứng từ / Biểu mẫu nghiệp vụ phục vụ việc ghi nhận, xử lý và kiểm soát thông tin Bảng tổng hợp tiền lương sản phẩm theo công nhân (生产计件工资表) trong quy trình vận hành 车间管理 của nhà máy.",
+    "sops": []
+  },
+  {
+    "id": 166,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "计时计件核算明细",
+    "title_vi": "Chi tiết đối soát đơn giá và sản lượng tính lương công nhân",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "/WorkShopManage/CheckManage/CheckDetailsManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ đối soát đơn giá và sản lượng tính lương công nhân (计时计件核算). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 167,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "车间材料存量表",
+    "title_vi": "Báo cáo tồn kho nguyên vật liệu đang nằm trực tiếp tại sàn xưởng",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/WorkshopMaterialsManage/",
+    "func": "Chứng từ / Biểu mẫu nghiệp vụ phục vụ việc ghi nhận, xử lý và kiểm soát thông tin Báo cáo tồn kho nguyên vật liệu đang nằm trực tiếp tại sàn xưởng (车间材料存量表) trong quy trình vận hành 车间管理 của nhà máy.",
+    "sops": []
+  },
+  {
+    "id": 168,
+    "module_zh": "车间管理",
+    "module_vi": "Quản lý Phân xưởng sản xuất & Báo công (Shop Floor / WIP)",
+    "group": "车间管理报表",
+    "title_zh": "车间工艺存量表",
+    "title_vi": "Báo cáo số lượng bán thành phẩm đọng tại từng bước công nghệ",
+    "dept": "Bộ phận Phân xưởng Chế tạo & Sản xuất (Production / 制造部)",
+    "jump": "./WorkShopManage/WorkshopInventoryManage/",
+    "func": "Chứng từ / Biểu mẫu nghiệp vụ phục vụ việc ghi nhận, xử lý và kiểm soát thông tin Báo cáo số lượng bán thành phẩm đọng tại từng bước công nghệ (车间工艺存量表) trong quy trình vận hành 车间管理 của nhà máy.",
+    "sops": []
+  },
+  {
+    "id": 169,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "",
+    "title_zh": "人事档案",
+    "title_vi": "Hồ sơ lý lịch cán bộ công nhân viên",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/ArchivesManage/",
+    "func": "Lưu trữ lý lịch trích ngang, hợp đồng lao động, bằng cấp, số bảo hiểm xã hội, ảnh chụp và thông tin tài khoản ngân hàng chi lương của toàn bộ cán bộ công nhân viên.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/行政/员工入职履历表A4（210X297mm）.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/行政/職工轉正申請表A4（210X297mm）.xlsx",
+      "ERP培训视屏/公司，部门，人事档案，角色，仓位，人员账号_2021年7月23日 1.mp4"
+    ]
+  },
+  {
+    "id": 170,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "",
+    "title_zh": "公司管理",
+    "title_vi": "Quản lý thông tin pháp nhân & Chi nhánh công ty",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/CompanyManage/",
+    "func": "Quản lý thông tin pháp nhân doanh nghiệp, các chi nhánh, xưởng thành viên trực thuộc hệ thống.",
+    "sops": [
+      "ERP培训视屏/公司，部门，人事档案，角色，仓位，人员账号_2021年7月23日 1.mp4"
+    ]
+  },
+  {
+    "id": 171,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "",
+    "title_zh": "公告中心",
+    "title_vi": "Trung tâm thông báo & Phổ biến quy chế nội bộ",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/NoticeManage/",
+    "func": "Kênh phát hành thông báo nội bộ: Đăng tải các quy chế làm việc, lịch nghỉ lễ, quyết định khen thưởng của ban giám đốc tới nhân viên.",
+    "sops": [
+      "VCK-ERP系统OA办公流程说明.pdf"
+    ]
+  },
+  {
+    "id": 172,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "",
+    "title_zh": "部门管理",
+    "title_vi": "Thiết lập cơ cấu sơ đồ tổ chức & Phòng ban",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/DepartmentManage/",
+    "func": "Thiết lập cơ cấu sơ đồ tổ chức phòng ban: Tạo lập cây phân cấp phòng ban, phân xưởng, tổ sản xuất và chỉ định cán bộ quản lý phụ trách.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/行政/人力需求申請表A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 173,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "人事考勤",
+    "title_zh": "时间段维护",
+    "title_vi": "Thiết lập khung giờ làm việc theo ca kíp",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/AttTimePeriodMaintenance/",
+    "func": "Thiết lập khung thời gian làm việc ca kíp: Khai báo giờ vào ca, giờ tan ca, thời gian nghỉ giữa ca, quy tắc tính đi muộn về sớm cho ca hành chính và ca đêm.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/行政/員工辭職申請表A4（210X297mm）.xlsx",
+      "报工时间/bàn giao công việc.docx"
+    ]
+  },
+  {
+    "id": 174,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "人事考勤",
+    "title_zh": "考勤组维护",
+    "title_vi": "Cấu hình nhóm chấm công & Quy tắc quẹt thẻ",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/AttSchedulingManage/",
+    "func": "Cấu hình nhóm chấm công: Nhóm các vị trí công việc có chung quy chế quẹt thẻ (nhóm khối văn phòng, nhóm công nhân trực tiếp sản xuất).",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/行政/人員晉升（異動）申請表A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 175,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "人事考勤",
+    "title_zh": "人员排班",
+    "title_vi": "Lập lịch phân ca làm việc cho nhân sự",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/AttPersonnelScheduling/",
+    "func": "Lập bảng phân ca làm việc tuần/tháng: Phân công lịch trực ca cho công nhân và các tổ sản xuất.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/行政/培训签到表A4（210X297mm）.xls"
+    ]
+  },
+  {
+    "id": 176,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "人事考勤",
+    "title_zh": "奖惩登记",
+    "title_vi": "Sổ ghi nhận khen thưởng & Kỷ luật lao động",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/BonusPenaltyRegist/",
+    "func": "Ghi nhận quyết định khen thưởng thành tích xuất sắc hoặc xử lý kỷ luật vi phạm nội quy lao động làm căn cứ cộng/trừ tiền lương.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/行政/试用员工评价表新版A4（210X297mm）.xls",
+      "(已翻译完成）VCK振凯表单格式20230614/行政/職工轉正申請表A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 177,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "人事考勤",
+    "title_zh": "考勤统计",
+    "title_vi": "Báo cáo tổng hợp số liệu chấm công tháng",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/AttendanceStatistics/",
+    "func": "Báo cáo tổng hợp số liệu chấm công tháng: Tổng hợp số ngày công làm việc thực tế, số giờ làm thêm ca, số ngày nghỉ phép có lương/không lương.",
+    "sops": []
+  },
+  {
+    "id": 178,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "人事考勤",
+    "title_zh": "考勤联机",
+    "title_vi": "Kết nối đồng bộ dữ liệu từ máy quét vân tay / Khuôn mặt",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRmanage/AttendanceRecord/",
+    "func": "Kết nối đồng bộ dữ liệu thời gian thực từ các máy quét vân tay hoặc nhận diện khuôn mặt tại cổng bảo vệ về cơ sở dữ liệu ERP.",
+    "sops": []
+  },
+  {
+    "id": 179,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "人事考勤",
+    "title_zh": "考勤记录",
+    "title_vi": "Nhật ký quẹt thẻ ra vào chi tiết hàng ngày",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/DailyAttendanceManage/",
+    "func": "Sổ nhật ký quẹt thẻ ra vào chi tiết: Lưu vết thời gian từng lần chấm công của cán bộ công nhân viên.",
+    "sops": []
+  },
+  {
+    "id": 180,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "人事考勤",
+    "title_zh": "考勤登记",
+    "title_vi": "Ghi nhận bổ sung công (Đi muộn / Quên quẹt / Đi công tác)",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/AttRegistrationManage/",
+    "func": "Trang chức năng quản lý nghiệp vụ Ghi nhận bổ sung công (Đi muộn / Quên quẹt / Đi công tác) (考勤登记) thuộc phân hệ 人事管理. Đảm bảo chuẩn hóa dữ liệu, hỗ trợ tra cứu và phối hợp liên phòng ban trong hệ thống ERP.",
+    "sops": []
+  },
+  {
+    "id": 181,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "人事考勤",
+    "title_zh": "考勤工资明细",
+    "title_vi": "Chi tiết đối soát ngày công phục vụ tính lương",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/AttendancePayDetailsManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ đối soát ngày công phục vụ tính lương (考勤工资). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 182,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "人事考勤",
+    "title_zh": "核算工资考勤",
+    "title_vi": "Kết chuyển dữ liệu công chuẩn sang bảng tính lương",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "./HRManage/AccountingSalaryAttendanceData/",
+    "func": "Trang chức năng quản lý nghiệp vụ Kết chuyển dữ liệu công chuẩn sang bảng tính lương (核算工资考勤) thuộc phân hệ 人事管理. Đảm bảo chuẩn hóa dữ liệu, hỗ trợ tra cứu và phối hợp liên phòng ban trong hệ thống ERP.",
+    "sops": []
+  },
+  {
+    "id": 183,
+    "module_zh": "人事管理",
+    "module_vi": "Quản lý Nhân sự & Chấm công (HR)",
+    "group": "人事考勤",
+    "title_zh": "人员班次考勤明细",
+    "title_vi": "Báo cáo chi tiết giờ làm việc thực tế theo ca nhân viên",
+    "dept": "Bộ phận Nhân sự & Tiền lương (HR / 行政-人事课)",
+    "jump": "/HRManage/AttendanceRegistrationManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Báo cáo  giờ làm việc thực tế theo ca nhân viên (人员班次考勤). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 184,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "固定资产报废单",
+    "title_vi": "Phiếu trình duyệt thanh lý tài sản cố định",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/Fixedassetscrapdoc/",
+    "func": "Phiếu trình duyệt thanh lý tài sản cố định: Làm thủ tục đánh giá hư hỏng và thanh lý máy tính, thiết bị văn phòng, máy móc đã khấu hao hết.",
+    "sops": [
+      "Tên TSCD固定资产/Tên TSCD固定资产.xlsx",
+      "报工时间/我是胡文松/sop các bô phận/SOP tạo mã tài sản trong công ty.pptx"
+    ]
+  },
+  {
+    "id": 185,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "合同管理",
+    "title_vi": "Quản lý hồ sơ hợp đồng hành chính doanh nghiệp",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/ContractManagement/",
+    "func": "Quản lý hồ sơ hợp đồng hành chính: Lưu trữ văn bản hợp đồng thuê nhà xưởng, dịch vụ bảo vệ an ninh, xử lý chất thải công nghiệp.",
+    "sops": [
+      "OA办公操作及审批说明.xls",
+      "(已翻译完成）VCK振凯表单格式20230614/财务/21年c520421a1032手册2021（主合同）A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 186,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "费用报销单",
+    "title_vi": "Phiếu đề nghị thanh toán hoàn ứng chi phí",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/ExpenseAccountManage/",
+    "func": "Phiếu đề nghị thanh toán hoàn ứng chi phí: Nhân viên nộp chứng từ hóa đơn để thanh toán tiền tiếp khách, tiền mua văn phòng phẩm, chi phí xăng xe công tác.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/财务/费用报销单-VCK现金-A5(横向）.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/财务/费用报销单A5（210X148mm） - 新.xlsx"
+    ]
+  },
+  {
+    "id": 187,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "转正申请单",
+    "title_vi": "Phiếu đánh giá & Đề xuất ký hợp đồng chính thức",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/ConvertsionFromManage/",
+    "func": "Phiếu đánh giá hết thời gian thử việc: Quản lý trực tiếp nhận xét năng lực của nhân sự mới để ban giám đốc ký hợp đồng lao động chính thức.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/财务/借款单（现金借支）-VCK-A5(横向）.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/财务/借款申请单A5（210X148mm）.xlsx"
+    ]
+  },
+  {
+    "id": 188,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "工伤申报单",
+    "title_vi": "Phiếu khai báo & Giải quyết tai nạn lao động",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/WorkInjuryDeclaration/",
+    "func": "Phiếu khai báo tai nạn lao động trong nhà máy: Ghi nhận biên bản sự cố, mức độ thương tích để làm thủ tục thanh toán bảo hiểm tai nạn và hỗ trợ viện phí.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/财务/付款申请单-VCK(月结单或预付款项）-A5(横向）.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/财务/付款申请单A5（210X148mm）.xlsx"
+    ]
+  },
+  {
+    "id": 189,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "其他申请单",
+    "title_vi": "Phiếu trình duyệt đề xuất công việc hành chính khác",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OtherManage/",
+    "func": "Phiếu trình duyệt đề xuất công việc hành chính khác ngoài quy chuẩn: Trình ban giám đốc phê duyệt các sự vụ phát sinh đặc biệt.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/财务/异常成本扣款单A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 190,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "用人申请单",
+    "title_vi": "Phiếu đề xuất tuyển dụng bổ sung nhân sự",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/EmploymentApplicationManage/",
+    "func": "Phiếu đề xuất tuyển dụng bổ sung nhân sự: Trưởng phòng ban hoặc quản đốc xưởng đề xuất tuyển thêm công nhân hoặc chuyên viên chuyên môn.",
+    "sops": [
+      "VCK-ERP系统OA办公（请假单）流程说明-更新.pptx",
+      "VCK-ERP系统OA办公流程说明.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/行政/請假申請單A5（210X148mm）.xlsx"
+    ]
+  },
+  {
+    "id": 191,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "离职申请单",
+    "title_vi": "Đơn xin thôi việc & Bàn giao công việc",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OA_QuitApplyManage/",
+    "func": "Quy trình xử lý đơn xin thôi việc trực tuyến: Quản lý ký duyệt, kiểm soát thủ tục bàn giao tài sản, thẻ nhân viên và chốt công trước khi nhân sự rời công ty.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/行政/加班申請單A5（210X148mm）.xlsx",
+      "VCK-ERP系统OA办公流程说明.pdf"
+    ]
+  },
+  {
+    "id": 192,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "来访申请",
+    "title_vi": "Phiếu đăng ký khách & Đối tác đến làm việc tại nhà máy",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./HRManage/AccessManage/",
+    "func": "Phiếu đăng ký khách và đối tác vào thăm quan làm việc tại nhà máy: Thông báo trước cho phòng bảo vệ kiểm soát an ninh tại cổng ra vào.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/行政/出差申請單A5（210X148mm）.xlsx"
+    ]
+  },
+  {
+    "id": 193,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "请假单",
+    "title_vi": "Đơn xin nghỉ phép trực tuyến (Ốm / Phép năm / Việc riêng)",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./HRManage/LeaveTableManage/",
+    "func": "Đơn xin nghỉ phép trực tuyến: Nhân viên tạo phiếu xin nghỉ phép năm, nghỉ ốm, nghỉ việc riêng được cấp quản lý xét duyệt tự động qua phần mềm.",
+    "sops": [
+      "VCK-ERP系统OA办公（请假单）流程说明-更新.pptx",
+      "VCK-ERP系统OA办公流程说明.pdf",
+      "(已翻译完成）VCK振凯表单格式20230614/行政/用印申請表A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 194,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "加班申请单",
+    "title_vi": "Đề xuất kế hoạch làm thêm giờ / Tăng ca",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./HRManage/OvertimeManage/",
+    "func": "Phiếu đăng ký làm thêm giờ (Tăng ca): Quản đốc đăng ký danh sách công nhân và số giờ tăng ca của ca tối để bảo vệ và bếp ăn chuẩn bị suất ăn ca.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/行政/借用物品申請單A5（210X148mm）.xlsx"
+    ]
+  },
+  {
+    "id": 195,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "借款申请单",
+    "title_vi": "Phiếu đề nghị tạm ứng tiền mặt công tác / Sự vụ",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./HRManage/BorrowingManage/",
+    "func": "Phiếu đề xuất tạm ứng ngân sách: Nhân viên xin tạm ứng tiền mặt phục vụ chi phí đi công tác xa hoặc mua sắm vật tư khẩn cấp.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/行政/來訪登記表A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 196,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "出差申请单",
+    "title_vi": "Phiếu trình duyệt cử đi công tác ngoại tỉnh / Nước ngoài",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./HRManage/OutingManage/",
+    "func": "Phiếu trình duyệt cử đi công tác: Phê duyệt mục đích công tác, thời gian, phương tiện di chuyển và định mức phụ cấp lưu trú.",
+    "sops": []
+  },
+  {
+    "id": 197,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "用章申请单",
+    "title_vi": "Phiếu đăng ký sử dụng con dấu pháp nhân công ty",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./HRManage/ChapterTableManage/",
+    "func": "Phiếu đề nghị đóng dấu pháp nhân công ty: Trình duyệt sử dụng con dấu tròn công ty vào các tài liệu hợp đồng, văn bản gửi cơ quan nhà nước.",
+    "sops": []
+  },
+  {
+    "id": 198,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "付款申请单",
+    "title_vi": "Phiếu trình duyệt chi tiền thanh toán đối tác",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/PaymentTableManage/",
+    "func": "Phiếu trình duyệt thanh toán chi tiền: Các bộ phận đề xuất thanh toán tiền hàng cho đối tác trước khi phòng Kế toán lập lệnh chuyển tiền ngân hàng.",
+    "sops": []
+  },
+  {
+    "id": 199,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "优秀员工推荐单",
+    "title_vi": "Phiếu đề xuất bình bầu nhân viên xuất sắc kỳ",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/ExcellentStaffTableManage/",
+    "func": "Phiếu bình bầu nhân viên xuất sắc: Đề xuất khen thưởng cá nhân có sáng kiến cải tiến kỹ thuật hoặc năng suất lao động vượt trội trong tháng.",
+    "sops": []
+  },
+  {
+    "id": 200,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "",
+    "title_zh": "人员晋升(异动)申请单",
+    "title_vi": "Phiếu trình duyệt điều động / Bổ nhiệm / Thăng chức",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OA_PersonnelTransferManage/",
+    "func": "Phiếu trình duyệt điều động nhân sự: Quyết định thăng chức, tăng bậc lương hoặc luân chuyển vị trí công tác của người lao động.",
+    "sops": []
+  },
+  {
+    "id": 201,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "出差申请单明细",
+    "title_vi": "Chi tiết theo dõi các đợt đi công tác và phụ cấp",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/OutingListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ theo dõi các đợt đi công tác và phụ cấp (出差申请单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 202,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "转正申请单明细",
+    "title_vi": "Theo dõi tiến độ duyệt nhân viên thử việc lên chính thức",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/ConvertsionFromListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Theo dõi tiến độ duyệt nhân viên thử việc lên chính thức (转正申请单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 203,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "固定资产报废单明细",
+    "title_vi": "Chi tiết danh mục tài sản đã duyệt thanh lý",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/FixedassetscrapdocList/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ danh mục tài sản đã duyệt thanh lý (固定资产报废单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 204,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "其他申请单明细",
+    "title_vi": "Theo dõi tình trạng phê duyệt các tờ trình hành chính khác",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/OtherListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Theo dõi tình trạng phê duyệt các tờ trình hành chính khác (其他申请单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 205,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "费用报销单明细",
+    "title_vi": "Chi tiết danh mục hóa đơn chi phí đề nghị thanh toán",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/ExpenseAccountListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ danh mục hóa đơn chi phí đề nghị thanh toán (费用报销单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 206,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "优秀员工推荐明细单",
+    "title_vi": "Chi tiết danh sách cá nhân được đề xuất khen thưởng",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/ExcellentStaffListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ danh sách cá nhân được đề xuất khen thưởng (优秀员工推荐单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 207,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "用人申请单明细",
+    "title_vi": "Theo dõi tiến độ tuyển dụng nhân sự theo từng bộ phận",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/EmploymentApplicationList/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Theo dõi tiến độ tuyển dụng nhân sự theo từng bộ phận (用人申请单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 208,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "付款申请单明细",
+    "title_vi": "Chi tiết các khoản đề xuất thanh toán đã được phê duyệt",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/PaymentTableListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các khoản đề xuất thanh toán đã được phê duyệt (付款申请单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 209,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "离职申请单明细",
+    "title_vi": "Chi tiết theo dõi thủ tục bàn giao của nhân sự nghỉ việc",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/QuitApplyListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ theo dõi thủ tục bàn giao của nhân sự nghỉ việc (离职申请单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 210,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "工伤申报单明细",
+    "title_vi": "Chi tiết lưu trữ hồ sơ giải quyết tai nạn lao động",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/WorkInjuryDeclarationList/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ lưu trữ hồ sơ giải quyết tai nạn lao động (工伤申报单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 211,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "人员晋升(异动)申请单明细",
+    "title_vi": "Chi tiết lịch sử điều động vị trí công tác nhân sự",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/PersonnelTransferListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ lịch sử điều động vị trí công tác nhân sự (人员晋升(异动)申请单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 212,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "加班申请明细",
+    "title_vi": "Chi tiết giờ làm thêm thực tế đã được cấp quản lý duyệt",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/OvertimeListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ giờ làm thêm thực tế đã được cấp quản lý duyệt (加班申请). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 213,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "请假单明细",
+    "title_vi": "Báo cáo chi tiết các ngày nghỉ phép của toàn thể nhân sự",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/LeaveListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Báo cáo  các ngày nghỉ phép của toàn thể nhân sự (请假单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 214,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "用章申请单明细",
+    "title_vi": "Nhật ký lưu vết đóng dấu vào các văn bản tài liệu",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/ChapterTableListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Nhật ký lưu vết đóng dấu vào các văn bản tài liệu (用章申请单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 215,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "来访申请明细",
+    "title_vi": "Nhật ký an ninh theo dõi khách ra vào cổng nhà xưởng",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage\\OADetailManage/AccessListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Nhật ký an ninh theo dõi khách ra vào cổng nhà xưởng (来访申请). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 216,
+    "module_zh": "OA办公",
+    "module_vi": "Văn phòng điện tử OA & Phê duyệt trực tuyến",
+    "group": "OA管理报表",
+    "title_zh": "借款申请单明细",
+    "title_vi": "Theo dõi tình hình tạm ứng và hoàn ứng của nhân viên",
+    "dept": "Toàn thể các phòng ban trong công ty (All Departments)",
+    "jump": "./OAManage/OADetailManage/BorrowingListManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Theo dõi tình hình tạm ứng và hoàn ứng của nhân viên (借款申请单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 217,
+    "module_zh": "个人中心",
+    "module_vi": "Trung tâm Cá nhân & Bàn làm việc (Workspace)",
+    "group": "",
+    "title_zh": "待办事务",
+    "title_vi": "Danh sách công việc & Chứng từ chờ xử lý phê duyệt (To-Do)",
+    "dept": "Cá nhân cán bộ nhân viên sử dụng phần mềm",
+    "jump": "/MYManage/UpcomingManage/",
+    "func": "Bàn làm việc tổng hợp (To-Do Center): Hiển thị toàn bộ các phiếu chứng từ, đơn xin nghỉ, phiếu đề xuất mua hàng đang chờ chính người dùng hiện tại phê duyệt hoặc xử lý.",
+    "sops": []
+  },
+  {
+    "id": 218,
+    "module_zh": "个人中心",
+    "module_vi": "Trung tâm Cá nhân & Bàn làm việc (Workspace)",
+    "group": "",
+    "title_zh": "个人记事本",
+    "title_vi": "Sổ tay ghi chép công việc cá nhân",
+    "dept": "Cá nhân cán bộ nhân viên sử dụng phần mềm",
+    "jump": "./MYManage/NoteBookManage/",
+    "func": "Sổ tay ghi chú cá nhân: Không gian lưu trữ các ghi chép công việc nhanh, lời nhắc nhở nhiệm vụ hàng ngày của cán bộ nhân viên.",
+    "sops": []
+  },
+  {
+    "id": 219,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "期初收付款开账",
+    "title_zh": "期初应收应付",
+    "title_vi": "Khai báo số dư công nợ phải thu & Phải trả ban đầu",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./ARAPManage/ReceivingManage/BeginningReceivingManage/",
+    "func": "Khai báo số dư công nợ ban đầu: Khởi tạo số tiền nợ phải thu của từng khách hàng và nợ phải trả cho từng nhà cung cấp tại thời điểm bắt đầu vận hành ERP.",
+    "sops": []
+  },
+  {
+    "id": 220,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "期初收付款开账",
+    "title_zh": "银行期初登记",
+    "title_vi": "Khai báo số dư ban đầu các tài khoản ngân hàng",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./ARAPManage/ReceivingManage/BankOpeningManage/",
+    "func": "Khai báo số dư đầu kỳ tại các tài khoản ngân hàng của doanh nghiệp khi mở sổ kế toán trên phần mềm.",
+    "sops": []
+  },
+  {
+    "id": 221,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "",
+    "title_zh": "现金流水登记",
+    "title_vi": "Sổ nhật ký quỹ tiền mặt thu - chi hàng ngày",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "/ARAPManage/CashflowManage/",
+    "func": "Sổ nhật ký quỹ tiền mặt: Ghi nhận các dòng tiền mặt thu vào và chi ra phát sinh hàng ngày tại quỹ kế toán.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/财务/借款单（现金借支）-VCK-A5(横向）.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/财务/费用报销单-VCK现金-A5(横向）.xlsx"
+    ]
+  },
+  {
+    "id": 222,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "",
+    "title_zh": "付款单",
+    "title_vi": "Phiếu chi tiền thanh toán cho nhà cung cấp & Đối tác",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./GLManage/Payment/",
+    "func": "Phiếu chi tiền thanh toán: Chứng từ kế toán chi tiền thanh toán nợ mua nguyên vật liệu cho nhà cung cấp, thanh toán tiền công thầu phụ gia công ngoài.",
+    "sops": [
+      "企助ERP系统业务流程图-信凯.docx",
+      "(已翻译完成）VCK振凯表单格式20230614/财务/付款申请单-VCK(月结单或预付款项）-A5(横向）.xlsx",
+      "(已翻译完成）VCK振凯表单格式20230614/财务/付款申请单A5（210X148mm）.xlsx"
+    ]
+  },
+  {
+    "id": 223,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "",
+    "title_zh": "扣款通知单",
+    "title_vi": "Thông báo khấu trừ công nợ (Phạt lỗi / Bồi thường)",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./ARAPManage/DeductionManage/",
+    "func": "Thông báo khấu trừ công nợ: Ghi nhận các khoản phạt tiền hoặc trừ nợ nhà cung cấp do vi phạm chất lượng nguyên vật liệu, trễ hẹn giao hàng.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/财务/付款申请单A5（210X148mm）.xlsx"
+    ]
+  },
+  {
+    "id": 224,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "",
+    "title_zh": "收款单",
+    "title_vi": "Phiếu thu tiền khách hàng thanh toán tiền mua hàng",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./GLManage/Receipt/",
+    "func": "Phiếu thu tiền: Ghi nhận tiền khách hàng chuyển khoản thanh toán đơn hàng bán vào tài khoản công ty, làm cơ sở giảm trừ công nợ.",
+    "sops": [
+      "企助ERP系统业务流程图-信凯.docx",
+      "(已翻译完成）VCK振凯表单格式20230614/财务/费用报销单A5（210X148mm） - 新.xlsx"
+    ]
+  },
+  {
+    "id": 225,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "",
+    "title_zh": "采购发票",
+    "title_vi": "Hóa đơn giá trị gia tăng mua hàng đầu vào (VAT In)",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./ARAPManage/PurchaseInvoiceRewriteManage/",
+    "func": "Quản lý hóa đơn mua hàng đầu vào (VAT In): Nhập liệu hóa đơn GTGT do nhà cung cấp phát hành để đối chiếu với phiếu nhận hàng kho và ghi nhận nợ phải trả.",
+    "sops": [
+      "企助ERP系统业务流程图-信凯.docx",
+      "(已翻译完成）VCK振凯表单格式20230614/财务/借款申请单A5（210X148mm）.xlsx"
+    ]
+  },
+  {
+    "id": 226,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "",
+    "title_zh": "销售发票",
+    "title_vi": "Hóa đơn giá trị gia tăng bán hàng đầu ra (VAT Out)",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./SalesManage/Sales_InvoiceManage/",
+    "func": "Quản lý hóa đơn bán hàng đầu ra (VAT Out): Xuất hóa đơn tài chính cho khách hàng tương ứng với các đợt giao thành phẩm thành công.",
+    "sops": [
+      "企助ERP系统业务流程图-信凯.docx"
+    ]
+  },
+  {
+    "id": 227,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "",
+    "title_zh": "收款核销单",
+    "title_vi": "Phiếu cấn trừ đối trừ công nợ phải thu khách hàng",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "/ARAPManage/SendCollVerificationManage/",
+    "func": "Phiếu cấn trừ công nợ phải thu: Khớp nối phiếu thu tiền với các hóa đơn bán hàng để tất toán công nợ chi tiết theo từng hóa đơn của khách hàng.",
+    "sops": [
+      "企助ERP系统业务流程图-信凯.docx"
+    ]
+  },
+  {
+    "id": 228,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "",
+    "title_zh": "发票登记表",
+    "title_vi": "Sổ đăng ký & Quản lý phát hành hóa đơn tài chính",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./ARAPManage/ARAP_InvoiceRegisterTableManage/",
+    "func": "Sổ đăng ký hóa đơn: Bảng tổng hợp theo dõi tình trạng phát hành, ký số và lưu trữ hóa đơn thuế của doanh nghiệp.",
+    "sops": [
+      "企助ERP系统业务流程图-信凯.docx"
+    ]
+  },
+  {
+    "id": 229,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "",
+    "title_zh": "付款核销单",
+    "title_vi": "Phiếu cấn trừ đối trừ công nợ phải trả nhà cung cấp",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./ARAPManage/SendVerificationManage/",
+    "func": "Phiếu cấn trừ công nợ phải trả: Khớp nối phiếu chi tiền với các hóa đơn mua hàng để xóa nợ cho nhà cung ứng.",
+    "sops": []
+  },
+  {
+    "id": 230,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "应收应付报表",
+    "title_zh": "应开票明细报表",
+    "title_vi": "Báo cáo danh mục các đơn hàng đủ điều kiện xuất hóa đơn",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "/ARAPManage/InvoicedDetailManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Báo cáo danh mục các đơn hàng đủ điều kiện xuất hóa đơn (应开票报). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 231,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "应收应付报表",
+    "title_zh": "期初应收应付明细",
+    "title_vi": "Chi tiết số dư công nợ tồn đọng thời điểm mở sổ",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./ARAPManage/ReceivingManage/BeginningReceivingDetail/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ số dư công nợ tồn đọng thời điểm mở sổ (期初应收应付). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 232,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "应收应付报表",
+    "title_zh": "销售发票明细",
+    "title_vi": "Chi tiết dòng hàng trên các hóa đơn tài chính xuất bán",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./SalesManage/Sales_InvoiceSonManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ dòng hàng trên các hóa đơn tài chính xuất bán (销售发票). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 233,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "应收应付报表",
+    "title_zh": "采购发票明细",
+    "title_vi": "Chi tiết dòng hàng trên các hóa đơn đầu vào nhà cung cấp",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./ARAPManage/PurchaseInvoiceSonRewriteManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ dòng hàng trên các hóa đơn đầu vào nhà cung cấp (采购发票). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 234,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "应收应付报表",
+    "title_zh": "付款单明细",
+    "title_vi": "Chi tiết các giao dịch chi tiền ngân hàng và quỹ",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./GLManage/PaymentSon/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các giao dịch chi tiền ngân hàng và quỹ (付款单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 235,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "应收应付报表",
+    "title_zh": "收款单明细",
+    "title_vi": "Chi tiết các giao dịch nhận tiền thanh toán từ khách",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./GLManage/ReceiptSon/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ các giao dịch nhận tiền thanh toán từ khách (收款单). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 236,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "应收应付报表",
+    "title_zh": "应付账款明细",
+    "title_vi": "Sổ chi tiết công nợ phải trả theo từng nhà cung cấp",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "/ARAPManage/AccountsPayableManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Sổ  công nợ phải trả theo từng nhà cung cấp (应付账款). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 237,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "应收应付报表",
+    "title_zh": "应收账款明细",
+    "title_vi": "Sổ chi tiết công nợ phải thu theo từng khách hàng",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "/ARAPManage/AccountsReceivableManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ Sổ  công nợ phải thu theo từng khách hàng (应收账款). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 238,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "应收应付报表",
+    "title_zh": "现金流水登记明细",
+    "title_vi": "Chi tiết thu chi tồn quỹ tiền mặt theo thời gian thực",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./ARAPManage/CashflowManage/CashflowSonManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ thu chi tồn quỹ tiền mặt theo thời gian thực (现金流水登记). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 239,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "应收应付报表",
+    "title_zh": "发票登记明细",
+    "title_vi": "Chi tiết tình trạng hóa đơn GTGT đã kê khai thuế",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "/ARAPManage/ARAP_InvoiceRegisterTableManage/ARAP_InvoiceRegisterTableSonManage/",
+    "func": "Báo cáo tra cứu chi tiết toàn bộ các dòng giao dịch của nghiệp vụ tình trạng hóa đơn GTGT đã kê khai thuế (发票登记). Cho phép lọc theo khoảng thời gian, mã chứng từ, đối tác hoặc người tạo để phục vụ công tác kiểm tra, đối soát và xuất file Excel.",
+    "sops": []
+  },
+  {
+    "id": 240,
+    "module_zh": "应收应付管理",
+    "module_vi": "Quản lý Tài chính - Công nợ Phải thu Phải trả (AR/AP)",
+    "group": "应收应付报表",
+    "title_zh": "现金银行余额统计表",
+    "title_vi": "Báo cáo số dư khả dụng tổng hợp các tài khoản tiền tệ",
+    "dept": "Bộ phận Kế toán - Tài chính (Finance & Accounting)",
+    "jump": "./ARAPManage/CashBankStatement/",
+    "func": "Báo cáo tổng hợp số liệu phân tích thống kê nghiệp vụ Báo cáo số dư khả dụng tổng hợp các tài khoản tiền tệ (现金银行余额统计表). Cung cấp góc nhìn đa chiều về tiến độ, sản lượng và hiệu quả hoạt động phục vụ công tác điều hành quản trị.",
+    "sops": []
+  },
+  {
+    "id": 241,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "询报价",
+    "title_vi": "Cổng tương tác hỏi giá & Nhà cung cấp báo giá trực tuyến",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/SupInquiryQuotation/",
+    "func": "Cổng thông tin chào giá trực tuyến: Nhà cung ứng truy cập vào hệ thống để nhập báo giá trực tiếp theo các thư hỏi giá từ phòng mua sắm Chen Kai.",
+    "sops": [
+      "(采购)供应商平台操作手册20251215--中越文.pptx",
+      "企助_供应商平台操作手册.pptx"
+    ]
+  },
+  {
+    "id": 242,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "订单明细",
+    "title_vi": "Cổng xem & Tải đơn mua hàng PO dành cho nhà cung cấp",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/SupPurchaseOrderListManage/",
+    "func": "Cổng xem đơn mua hàng PO: Nhà cung ứng tra cứu và tải về các đơn đặt hàng chính thức đã được phòng mua hàng phát hành.",
+    "sops": [
+      "(采购)供应商平台操作手册20251215--中越文.pptx",
+      "企助_供应商平台操作手册.pptx"
+    ]
+  },
+  {
+    "id": 243,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "交货退货明细",
+    "title_vi": "Cổng đối chiếu giao nhận hàng và xuất trả phế liệu NCC",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/SupDeliveryDetailManage/",
+    "func": "Bảng đối chiếu giao nhận hàng và trả vật tư thừa giữa Chen Kai và nhà cung cấp.",
+    "sops": [
+      "(采购)供应商平台操作手册20251215--中越文.pptx",
+      "(已翻译完成）VCK振凯表单格式20230614/品质/品质异常联络单（供应商）A4（210X297mm）.xlsx"
+    ]
+  },
+  {
+    "id": 244,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "供应商退料",
+    "title_vi": "Phiếu ghi nhận nhà cung cấp trả lại vật tư thừa",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/SupDeliveryReturn/",
+    "func": "Phiếu ghi nhận việc đối tác hoàn trả lại nguyên vật liệu không đạt hoặc vật tư thừa về kho nhà máy.",
+    "sops": [
+      "(采购)供应商平台操作手册20251215--中越文.pptx"
+    ]
+  },
+  {
+    "id": 245,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "来料签收明细",
+    "title_vi": "Biên bản ký nhận hàng hóa khi xe giao đến nhà máy",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/SupReceivingDetailManage/",
+    "func": "Biên bản điện tử ký nhận hàng hóa khi xe giao hàng của nhà cung ứng đến bốc dỡ tại nhà máy.",
+    "sops": [
+      "(已翻译完成）VCK振凯表单格式20230614/品质/品质异常联络单（供应商）A4（210X297mm）.xlsx",
+      "(采购)供应商平台操作手册20251215--中越文.pptx"
+    ]
+  },
+  {
+    "id": 246,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "供应商交货",
+    "title_vi": "Cổng đăng ký trước kế hoạch giao hàng của nhà cung ứng",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/SupShipmentQuantity/",
+    "func": "Cổng đăng ký kế hoạch giao hàng: Nhà cung cấp đăng ký trước biển số xe và thời điểm xe hàng sẽ tới cổng nhà máy để bảo vệ xếp lịch vào bốc hàng.",
+    "sops": []
+  },
+  {
+    "id": 247,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "委外退料明细",
+    "title_vi": "Chi tiết đối soát hoàn trả vật tư từ thầu phụ gia công",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/SupDeliveryReturnDetail/",
+    "func": "Bảng đối soát chi tiết vật tư hoàn trả từ các xưởng gia công vệ tinh bên ngoài.",
+    "sops": []
+  },
+  {
+    "id": 248,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "欠货明细",
+    "title_vi": "Cảnh báo danh mục hàng hóa NCC chưa giao đủ theo đơn PO",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/SupOweGoodsDetailManage/",
+    "func": "Bảng cảnh báo danh mục sản phẩm nhà cung cấp chưa giao đủ số lượng theo hợp đồng đã ký kết.",
+    "sops": []
+  },
+  {
+    "id": 249,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "供应商交货明细",
+    "title_vi": "Lịch sử theo dõi các đợt giao nhận của nhà cung ứng",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/SupShipmentQuantityDetail/",
+    "func": "Nhật ký theo dõi lịch sử tất cả các đợt giao hàng của từng nhà cung ứng.",
+    "sops": []
+  },
+  {
+    "id": 250,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "对账单",
+    "title_vi": "Cổng đối soát công nợ mua sắm định kỳ giữa hai bên",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/SupReconciliationBillManage/",
+    "func": "Biên bản đối soát công nợ điện tử: Hai bên đối chiếu chi tiết số lượng hàng đã giao và tổng số tiền thanh toán vào cuối tháng.",
+    "sops": []
+  },
+  {
+    "id": 251,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "品质联络单",
+    "title_vi": "Biên bản phản ánh sự cố chất lượng gửi nhà cung cấp giải trình",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/QualityContactList/",
+    "func": "Phiếu phản ánh sự cố chất lượng: Gửi trực tiếp biên bản hàng lỗi cho nhà cung cấp để họ giải trình nguyên nhân và cam kết đổi bù.",
+    "sops": []
+  },
+  {
+    "id": 252,
+    "module_zh": "供应商管理平台",
+    "module_vi": "Cổng thông tin tương tác Nhà cung cấp (SRM Portal)",
+    "group": "",
+    "title_zh": "审厂报告",
+    "title_vi": "Báo cáo đánh giá năng lực & Thẩm định định kỳ nhà máy đối tác",
+    "dept": "Cổng tương tác Nhà cung cấp ngoài & Phòng Mua hàng (SRM)",
+    "jump": "/SupProcurementPlatform/SupAuditFactoryReportManage/",
+    "func": "Báo cáo kiểm định nhà máy đối tác: Lưu trữ kết quả đánh giá năng lực sản xuất, quy trình ISO và mức độ uy tín của nhà cung ứng.",
+    "sops": []
+  },
+  {
+    "id": 253,
+    "module_zh": "报表中心",
+    "module_vi": "Trung tâm Báo cáo Quản trị Doanh nghiệp",
+    "group": "",
+    "title_zh": "老板报表",
+    "title_vi": "Báo cáo chỉ số điều hành tổng quan dành cho Ban Giám Đốc (KPIs)",
+    "dept": "Ban Giám Đốc, Trưởng các bộ phận quản lý (Management / Boss)",
+    "jump": "./CustomManage/BossReportForms/",
+    "func": "Báo cáo quản trị điều hành dành cho Ban Giám Đốc (Boss Executive Dashboard): Tổng hợp các chỉ số cốt lõi (KPI) về doanh thu bán hàng, chi phí mua sắm, giá trị tồn kho, hiệu suất sản xuất và dòng tiền.",
+    "sops": []
+  },
+  {
+    "id": 254,
+    "module_zh": "报表中心",
+    "module_vi": "Trung tâm Báo cáo Quản trị Doanh nghiệp",
+    "group": "",
+    "title_zh": "销售出货交付明细",
+    "title_vi": "Báo cáo chi tiết tỷ lệ hoàn thành giao hàng thành phẩm bán",
+    "dept": "Ban Giám Đốc, Trưởng các bộ phận quản lý (Management / Boss)",
+    "jump": "./CustomManage/ShipmentDeliverList/",
+    "func": "Báo cáo chi tiết tình hình giao hàng thành phẩm: Theo dõi tỷ lệ giao hàng đúng tiến độ (OTD) và số lượng đã giao cho từng đối tác.",
+    "sops": []
+  },
+  {
+    "id": 255,
+    "module_zh": "报表中心",
+    "module_vi": "Trung tâm Báo cáo Quản trị Doanh nghiệp",
+    "group": "",
+    "title_zh": "采购年度报表",
+    "title_vi": "Báo cáo phân tích cơ cấu chi phí mua sắm vật tư hàng năm",
+    "dept": "Ban Giám Đốc, Trưởng các bộ phận quản lý (Management / Boss)",
+    "jump": "./CustomManage/PurchaseAnnualReport/",
+    "func": "Báo cáo phân tích kim ngạch mua sắm vật tư hàng năm: Đánh giá cơ cấu chi phí nguyên vật liệu và biến động thị trường qua các năm.",
+    "sops": []
+  },
+  {
+    "id": 256,
+    "module_zh": "报表中心",
+    "module_vi": "Trung tâm Báo cáo Quản trị Doanh nghiệp",
+    "group": "",
+    "title_zh": "销售汇总报表",
+    "title_vi": "Báo cáo tổng hợp doanh thu bán hàng theo thị trường & Sản phẩm",
+    "dept": "Ban Giám Đốc, Trưởng các bộ phận quản lý (Management / Boss)",
+    "jump": "./CustomManage/SalesSummaryReport/",
+    "func": "Báo cáo tổng hợp tình hình kinh doanh: Phân tích doanh số bán theo mặt hàng, theo khách hàng và thị trường tiêu thụ.",
+    "sops": []
+  },
+  {
+    "id": 257,
+    "module_zh": "报表中心",
+    "module_vi": "Trung tâm Báo cáo Quản trị Doanh nghiệp",
+    "group": "",
+    "title_zh": "现金银行收支明细",
+    "title_vi": "Báo cáo phân tích lưu chuyển dòng tiền thu chi công ty",
+    "dept": "Ban Giám Đốc, Trưởng các bộ phận quản lý (Management / Boss)",
+    "jump": "./CustomManage/CashBankTransaction/",
+    "func": "Báo cáo phân tích thu chi tiền tệ: Nhật ký chi tiết dòng tiền vào và dòng tiền ra của các tài khoản ngân hàng và tiền mặt.",
+    "sops": []
+  },
+  {
+    "id": 258,
+    "module_zh": "报表中心",
+    "module_vi": "Trung tâm Báo cáo Quản trị Doanh nghiệp",
+    "group": "",
+    "title_zh": "订单评审查询",
+    "title_vi": "Tra cứu biên bản thẩm định tính khả thi của các đơn đặt hàng",
+    "dept": "Ban Giám Đốc, Trưởng các bộ phận quản lý (Management / Boss)",
+    "jump": "./CustomManage/",
+    "func": "Tra cứu lịch sử biên bản thẩm định đơn hàng: Xem lại các cam kết kỹ thuật và tiến độ sản xuất đã duyệt trong cuộc họp MPS.",
+    "sops": []
+  },
+  {
+    "id": 259,
+    "module_zh": "报表中心",
+    "module_vi": "Trung tâm Báo cáo Quản trị Doanh nghiệp",
+    "group": "",
+    "title_zh": "年度销售数据分析表",
+    "title_vi": "Báo cáo phân tích tăng trưởng doanh thu bán hàng hàng năm",
+    "dept": "Ban Giám Đốc, Trưởng các bộ phận quản lý (Management / Boss)",
+    "jump": "./SalesManage/SalesContrastList/",
+    "func": "Báo cáo phân tích tăng trưởng doanh số bán hàng qua từng năm để định hướng chiến lược kinh doanh.",
+    "sops": []
+  },
+  {
+    "id": 260,
+    "module_zh": "报表中心",
+    "module_vi": "Trung tâm Báo cáo Quản trị Doanh nghiệp",
+    "group": "",
+    "title_zh": "销售数据对比分析表",
+    "title_vi": "Báo cáo đối sánh doanh số bán qua các chu kỳ kinh doanh",
+    "dept": "Ban Giám Đốc, Trưởng các bộ phận quản lý (Management / Boss)",
+    "jump": "./SalesManage/SalesContrast/",
+    "func": "Báo cáo đối sánh doanh số bán giữa các tháng và các quý để phát hiện quy luật mua hàng của khách.",
+    "sops": []
+  },
+  {
+    "id": 261,
+    "module_zh": "报表中心",
+    "module_vi": "Trung tâm Báo cáo Quản trị Doanh nghiệp",
+    "group": "",
+    "title_zh": "供应商品质分析周报",
+    "title_vi": "Báo cáo phân tích xếp hạng chất lượng nhà cung cấp theo tuần",
+    "dept": "Ban Giám Đốc, Trưởng các bộ phận quản lý (Management / Boss)",
+    "jump": "./CustomManage/SupplierQualityAnalysisWeeklyReport/",
+    "func": "Báo cáo tuần về chất lượng nhà cung cấp: Thống kê tỷ lệ lỗi phát hiện tại khâu đến hàng IQC để xếp hạng nhà cung ứng.",
+    "sops": []
+  },
+  {
+    "id": 262,
+    "module_zh": "报表中心",
+    "module_vi": "Trung tâm Báo cáo Quản trị Doanh nghiệp",
+    "group": "",
+    "title_zh": "年度统计报表",
+    "title_vi": "Báo cáo thống kê toàn diện hoạt động sản xuất kinh doanh năm",
+    "dept": "Ban Giám Đốc, Trưởng các bộ phận quản lý (Management / Boss)",
+    "jump": "./CustomManage/AnnualStatisticalReport/",
+    "func": "Báo cáo thống kê toàn diện hoạt động sản xuất kinh doanh của toàn nhà máy trong một năm tài chính.",
+    "sops": []
+  },
+  {
+    "id": 263,
+    "module_zh": "报表中心",
+    "module_vi": "Trung tâm Báo cáo Quản trị Doanh nghiệp",
+    "group": "",
+    "title_zh": "企业运营报表",
+    "title_vi": "Bảng điều khiển theo dõi sức khỏe vận hành chuỗi giá trị nhà máy",
+    "dept": "Ban Giám Đốc, Trưởng các bộ phận quản lý (Management / Boss)",
+    "jump": "./CustomManage/OperatingStatement/",
+    "func": "Bảng theo dõi sức khỏe hoạt động của toàn bộ chuỗi cung ứng sản xuất (Từ đơn hàng -> Mua vật tư -> Gia công -> Giao hàng -> Thu tiền).",
+    "sops": []
+  },
+  {
+    "id": 264,
+    "module_zh": "BI报表平台",
+    "module_vi": "Nền tảng Báo cáo BI Thông minh & Dashboard",
+    "group": "",
+    "title_zh": "报表设计",
+    "title_vi": "Công cụ thiết kế mẫu báo cáo động linh hoạt (Report Builder)",
+    "dept": "Ban Lãnh đạo & Bộ phận Phân tích Dữ liệu (BI / PMO)",
+    "jump": "./ReportPlatform/ReportDesign/",
+    "func": "Công cụ thiết kế mẫu báo cáo động (Report Designer): Cho phép người quản trị tùy biến kéo thả các cột dữ liệu, lọc thông tin để tạo báo cáo mới.",
+    "sops": []
+  },
+  {
+    "id": 265,
+    "module_zh": "BI报表平台",
+    "module_vi": "Nền tảng Báo cáo BI Thông minh & Dashboard",
+    "group": "",
+    "title_zh": "看板设计",
+    "title_vi": "Công cụ thiết kế màn hình Dashboard trực quan hóa dữ liệu (BI)",
+    "dept": "Ban Lãnh đạo & Bộ phận Phân tích Dữ liệu (BI / PMO)",
+    "jump": "./ReportPlatform/ReportDashboard/",
+    "func": "Công cụ thiết kế màn hình Dashboard điều hành (BI Dashboard): Thiết kế các biểu đồ cột, biểu đồ tròn và bảng chỉ số trực quan trình chiếu trên màn hình giám sát.",
+    "sops": []
+  },
+  {
+    "id": 266,
+    "module_zh": "配置文件管理",
+    "module_vi": "Cấu hình Tham số Hệ thống & Danh mục ban đầu",
+    "group": "",
+    "title_zh": "单据设置",
+    "title_vi": "Quy tắc sinh mã số chứng từ & Thiết lập luồng phê duyệt",
+    "dept": "Ban Quản trị ERP & Cán bộ Kỹ thuật hệ thống (ERP Admin)",
+    "jump": "./CFMManage/BillSetUpManage/",
+    "func": "Thiết lập quy tắc sinh mã số chứng từ tự động (Tiền tố SO, PO, MO, IQC... và số tự nhảy) kèm cấu hình các cấp phê duyệt chứng từ.",
+    "sops": []
+  },
+  {
+    "id": 267,
+    "module_zh": "配置文件管理",
+    "module_vi": "Cấu hình Tham số Hệ thống & Danh mục ban đầu",
+    "group": "",
+    "title_zh": "会计科目",
+    "title_vi": "Thiết lập danh mục hệ thống tài khoản kế toán doanh nghiệp",
+    "dept": "Ban Quản trị ERP & Cán bộ Kỹ thuật hệ thống (ERP Admin)",
+    "jump": "./GLManage/VoucherManage/AccountanManage/",
+    "func": "Thiết lập danh mục hệ thống tài khoản kế toán doanh nghiệp theo chuẩn mực tài chính hiện hành.",
+    "sops": []
+  },
+  {
+    "id": 268,
+    "module_zh": "配置文件管理",
+    "module_vi": "Cấu hình Tham số Hệ thống & Danh mục ban đầu",
+    "group": "",
+    "title_zh": "结算方式",
+    "title_vi": "Cấu hình các phương thức thanh toán tiền tệ thương mại",
+    "dept": "Ban Quản trị ERP & Cán bộ Kỹ thuật hệ thống (ERP Admin)",
+    "jump": "./CFMManage/CashManage/",
+    "func": "Cấu hình các hình thức thanh toán được áp dụng (Tiền mặt, Chuyển khoản ngân hàng, Tín dụng thư L/C, Trả chậm 30 ngày...).",
+    "sops": []
+  },
+  {
+    "id": 269,
+    "module_zh": "配置文件管理",
+    "module_vi": "Cấu hình Tham số Hệ thống & Danh mục ban đầu",
+    "group": "",
+    "title_zh": "仓位管理",
+    "title_vi": "Thiết lập danh mục kho bãi & Mã hóa vị trí dãy kệ (Bin/Rack)",
+    "dept": "Ban Quản trị ERP & Cán bộ Kỹ thuật hệ thống (ERP Admin)",
+    "jump": "./CFMManage/WarehouseManage/",
+    "func": "Thiết lập sơ đồ danh mục kho hàng và phân định vị trí dãy kệ (Bin/Rack/Shelf) để quản lý vị trí lưu trữ vật tư chính xác.",
+    "sops": []
+  },
+  {
+    "id": 270,
+    "module_zh": "配置文件管理",
+    "module_vi": "Cấu hình Tham số Hệ thống & Danh mục ban đầu",
+    "group": "",
+    "title_zh": "打印文件设置",
+    "title_vi": "Thiết lập tham số định dạng in ấn biểu mẫu chứng từ",
+    "dept": "Ban Quản trị ERP & Cán bộ Kỹ thuật hệ thống (ERP Admin)",
+    "jump": "./CFMManage/PrintParameterSetManage/",
+    "func": "Cấu hình mẫu in biểu mẫu chứng từ: Tùy chỉnh logo, kích thước khổ giấy in (A4, A5, tem mã vạch) cho phiếu xuất kho, lệnh sản xuất.",
+    "sops": []
+  },
+  {
+    "id": 271,
+    "module_zh": "配置文件管理",
+    "module_vi": "Cấu hình Tham số Hệ thống & Danh mục ban đầu",
+    "group": "",
+    "title_zh": "币别设置",
+    "title_vi": "Cấu hình danh mục loại tiền tệ & Cập nhật tỷ giá quy đổi",
+    "dept": "Ban Quản trị ERP & Cán bộ Kỹ thuật hệ thống (ERP Admin)",
+    "jump": "./CFMManage/CurrencyManage/",
+    "func": "Quản lý danh mục loại tiền tệ (VND, USD, RMB, EUR) và cập nhật bảng tỷ giá quy đổi phục vụ hạch toán tài chính.",
+    "sops": []
+  },
+  {
+    "id": 272,
+    "module_zh": "配置文件管理",
+    "module_vi": "Cấu hình Tham số Hệ thống & Danh mục ban đầu",
+    "group": "",
+    "title_zh": "模具设备点检配置",
+    "title_vi": "Cấu hình tiêu chí kiểm tra an toàn định kỳ khuôn máy",
+    "dept": "Ban Quản trị ERP & Cán bộ Kỹ thuật hệ thống (ERP Admin)",
+    "jump": "/IPQManage/SaltFogManage/SaltFogMaintenanceManage/",
+    "func": "Thiết lập danh mục các tiêu chí an toàn cần kiểm tra định kỳ hàng ngày cho từng dòng máy móc thiết bị.",
+    "sops": []
+  },
+  {
+    "id": 273,
+    "module_zh": "配置文件管理",
+    "module_vi": "Cấu hình Tham số Hệ thống & Danh mục ban đầu",
+    "group": "",
+    "title_zh": "模具设备保检配置",
+    "title_vi": "Thiết lập định mức chu kỳ giờ chạy máy bảo dưỡng thiết bị",
+    "dept": "Ban Quản trị ERP & Cán bộ Kỹ thuật hệ thống (ERP Admin)",
+    "jump": "/CFMManage/MoldInspectionManage/",
+    "func": "Cấu hình định mức chu kỳ giờ chạy máy hoặc số lần dập khuôn để hệ thống tự động cảnh báo bảo dưỡng.",
+    "sops": []
+  },
+  {
+    "id": 274,
+    "module_zh": "配置文件管理",
+    "module_vi": "Cấu hình Tham số Hệ thống & Danh mục ban đầu",
+    "group": "",
+    "title_zh": "预警配置",
+    "title_vi": "Thiết lập ngưỡng kích hoạt cảnh báo thông minh (Hết hàng/Trễ hạn)",
+    "dept": "Ban Quản trị ERP & Cán bộ Kỹ thuật hệ thống (ERP Admin)",
+    "jump": "./CFMManage/EarlyWarningConfigure/",
+    "func": "Cấu hình ngưỡng cảnh báo thông minh: Cảnh báo khi tồn kho vật tư dưới mức an toàn, đơn hàng sắp trễ hạn giao, công nợ vượt hạn mức.",
+    "sops": []
+  },
+  {
+    "id": 275,
+    "module_zh": "配置文件管理",
+    "module_vi": "Cấu hình Tham số Hệ thống & Danh mục ban đầu",
+    "group": "",
+    "title_zh": "资料导入",
+    "title_vi": "Công cụ nạp dữ liệu danh mục ban đầu hàng loạt từ Excel",
+    "dept": "Ban Quản trị ERP & Cán bộ Kỹ thuật hệ thống (ERP Admin)",
+    "jump": "./CFMManage/ImportManage/",
+    "func": "Công cụ nạp dữ liệu ban đầu từ file Excel vào hệ thống: Nhập hàng loạt danh bạ khách hàng, danh mục vật tư, số dư ban đầu.",
+    "sops": []
+  },
+  {
+    "id": 276,
+    "module_zh": "系统设置",
+    "module_vi": "Quản trị Hệ thống, Phân quyền & Nhật ký",
+    "group": "",
+    "title_zh": "日志管理",
+    "title_vi": "Nhật ký truy vết bảo mật hoạt động người dùng (Audit Trail)",
+    "dept": "Ban Quản trị ERP & Bộ phận IT (System Admin / IT)",
+    "jump": "./SystemManage/LogManage/",
+    "func": "Nhật ký kiểm toán hệ thống (Audit Logs): Ghi lại toàn bộ thao tác của người dùng (ai đã đăng nhập, tạo mới, chỉnh sửa, xóa dữ liệu nào vào lúc nào).",
+    "sops": [
+      "SOP Xóa Cache Hằng Ngày.pdf"
+    ]
+  },
+  {
+    "id": 277,
+    "module_zh": "系统设置",
+    "module_vi": "Quản trị Hệ thống, Phân quyền & Nhật ký",
+    "group": "",
+    "title_zh": "基本信息",
+    "title_vi": "Cấu hình thông tin pháp lý doanh nghiệp & Tham số hệ thống",
+    "dept": "Ban Quản trị ERP & Bộ phận IT (System Admin / IT)",
+    "jump": "./SystemManage/BasicInfoManage/",
+    "func": "Cấu hình thông tin pháp lý doanh nghiệp, tên công ty hiển thị trên tiêu đề phần mềm, địa chỉ và thông số kết nối máy chủ.",
+    "sops": [
+      "ERP系统基本档案建立-VCK.xlsx",
+      "ERP培训视屏/公司，部门，人事档案，角色，仓位，人员账号_2021年7月23日 1.mp4"
+    ]
+  },
+  {
+    "id": 278,
+    "module_zh": "系统设置",
+    "module_vi": "Quản trị Hệ thống, Phân quyền & Nhật ký",
+    "group": "",
+    "title_zh": "菜单管理",
+    "title_vi": "Cấu hình cây điều hướng menu & Phân cấp trang giao diện",
+    "dept": "Ban Quản trị ERP & Bộ phận IT (System Admin / IT)",
+    "jump": "./SystemManage/MenuManage/",
+    "func": "Cấu hình cây điều hướng menu: Bổ sung, ẩn/hiện hoặc đổi tên các nút chức năng trên thanh menu hệ thống ERP.",
+    "sops": [
+      "ERP模块单据及明细页面显示-失效处理.doc",
+      "ERP工具栏 -ERP Bản Dịch Thanh Công Cụ  - 使用部门.xlsx"
+    ]
+  },
+  {
+    "id": 279,
+    "module_zh": "系统设置",
+    "module_vi": "Quản trị Hệ thống, Phân quyền & Nhật ký",
+    "group": "",
+    "title_zh": "用户管理",
+    "title_vi": "Quản lý danh sách tài khoản đăng nhập cán bộ công nhân viên",
+    "dept": "Ban Quản trị ERP & Bộ phận IT (System Admin / IT)",
+    "jump": "./SystemManage/UserManage/",
+    "func": "Quản lý danh sách tài khoản người dùng: Khởi tạo tài khoản mới, phân nhóm đơn vị, khóa tài khoản và thiết lập lại mật khẩu cán bộ nhân viên.",
+    "sops": [
+      "ERP工具栏 -ERP Bản Dịch Thanh Công Cụ  - 使用部门.xlsx",
+      "ERP培训视屏/公司，部门，人事档案，角色，仓位，人员账号_2021年7月23日 1.mp4"
+    ]
+  },
+  {
+    "id": 280,
+    "module_zh": "系统设置",
+    "module_vi": "Quản trị Hệ thống, Phân quyền & Nhật ký",
+    "group": "",
+    "title_zh": "角色管理",
+    "title_vi": "Quản lý nhóm vai trò & Phân quyền chức năng (RBAC)",
+    "dept": "Ban Quản trị ERP & Bộ phận IT (System Admin / IT)",
+    "jump": "./SystemManage/UserRoleManage/",
+    "func": "Quản lý vai trò và phân quyền bảo mật (Role-Based Access Control - RBAC): Phân chia quyền Xem, Thêm, Sửa, Xóa, Phê duyệt, Xuất Excel cho từng vị trí.",
+    "sops": [
+      "ERP培训视屏/公司，部门，人事档案，角色，仓位，人员账号_2021年7月23日 1.mp4",
+      "ERP系统基本档案建立-VCK.xlsx"
+    ]
+  },
+  {
+    "id": 281,
+    "module_zh": "系统设置",
+    "module_vi": "Quản trị Hệ thống, Phân quyền & Nhật ký",
+    "group": "",
+    "title_zh": "页面字段设置",
+    "title_vi": "Tùy biến hiển thị các cột trường thông tin trên màn hình",
+    "dept": "Ban Quản trị ERP & Bộ phận IT (System Admin / IT)",
+    "jump": "./SystemManage/LableManage/",
+    "func": "Tùy biến hiển thị các trường dữ liệu trên màn hình: Bật hoặc ẩn bớt các cột không cần thiết để đơn giản hóa giao diện nhập liệu.",
+    "sops": [
+      "PDA-工业平板（资产）使用清单--VCK.xlsx",
+      "工业平板SOP操作流程20250403.docx",
+      "工业平板扫码报工操作流程SOP-20260421.docx"
+    ]
+  },
+  {
+    "id": 282,
+    "module_zh": "系统设置",
+    "module_vi": "Quản trị Hệ thống, Phân quyền & Nhật ký",
+    "group": "",
+    "title_zh": "字典管理",
+    "title_vi": "Quản lý danh mục từ điển dữ liệu chuẩn hệ thống",
+    "dept": "Ban Quản trị ERP & Bộ phận IT (System Admin / IT)",
+    "jump": "./SystemManage/DicTypeManage/",
+    "func": "Quản lý danh mục từ điển dữ liệu chuẩn (màu sắc, đơn vị tính, lý do lỗi, trạng thái chứng từ).",
+    "sops": []
+  },
+  {
+    "id": 283,
+    "module_zh": "系统设置",
+    "module_vi": "Quản trị Hệ thống, Phân quyền & Nhật ký",
+    "group": "",
+    "title_zh": "列表管理",
+    "title_vi": "Cấu hình quy tắc sắp xếp & Bố cục hiển thị lưới bảng dữ liệu",
+    "dept": "Ban Quản trị ERP & Bộ phận IT (System Admin / IT)",
+    "jump": "./SystemManage/TabulationManage/",
+    "func": "Cấu hình quy tắc sắp xếp và độ rộng các cột hiển thị trên các bảng lưới dữ liệu.",
+    "sops": []
+  },
+  {
+    "id": 284,
+    "module_zh": "系统设置",
+    "module_vi": "Quản trị Hệ thống, Phân quyền & Nhật ký",
+    "group": "",
+    "title_zh": "主页设置",
+    "title_vi": "Thiết lập trang đích mặc định sau đăng nhập theo vai trò người dùng",
+    "dept": "Ban Quản trị ERP & Bộ phận IT (System Admin / IT)",
+    "jump": "./SystemManage/PageHomeManage/",
+    "func": "Thiết lập trang đích hiển thị mặc định sau khi đăng nhập cho từng nhóm đối tượng nhân sự.",
+    "sops": []
+  },
+  {
+    "id": 285,
+    "module_zh": "系统设置",
+    "module_vi": "Quản trị Hệ thống, Phân quyền & Nhật ký",
+    "group": "",
+    "title_zh": "数据结转",
+    "title_vi": "Thao tác chốt số liệu niên độ & Kết chuyển mở năm làm việc mới",
+    "dept": "Ban Quản trị ERP & Bộ phận IT (System Admin / IT)",
+    "jump": "./SystemManage/DataTransfer/",
+    "func": "Thao tác chốt số liệu niên độ làm việc: Lưu trữ số liệu lịch sử năm cũ và khởi tạo niên độ làm việc mới cho toàn hệ thống.",
+    "sops": []
+  }
+];
