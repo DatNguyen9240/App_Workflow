@@ -2709,6 +2709,35 @@ function updateActiveTabFilterChips() {
 }
 
 
+// Helper to generate online viewer URL for SOPs (Office Online Viewer for PPTX, XLSX, DOCX without downloading)
+function getTabSopOnlineUrl(s) {
+  var ext = s.split('.').pop().toLowerCase();
+  var isOfficeDoc = ['docx', 'doc', 'pptx', 'ppt', 'xlsx', 'xls', 'et'].indexOf(ext) !== -1;
+  var isWeb = (typeof window !== 'undefined' && window.location && typeof window.location.protocol === 'string') ? window.location.protocol.indexOf('http') === 0 : false;
+  var isLocalhost = (typeof window !== 'undefined' && window.location && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'));
+  var origin = (typeof window !== 'undefined' && window.location && window.location.origin) ? window.location.origin : '';
+  var localPath = 'SOP/' + encodeURI(s);
+
+  // PDF and MP4 open natively in browser
+  if (ext === 'pdf' || ext === 'mp4') {
+    return localPath;
+  }
+
+  // Office documents (PPTX, XLSX, DOCX) viewable online via Microsoft Office Viewer
+  if (isOfficeDoc) {
+    var publicUrl;
+    if (isWeb && !isLocalhost && origin) {
+      publicUrl = origin + '/' + localPath;
+    } else {
+      // GitHub raw fallback for localhost or file:/// testing
+      publicUrl = 'https://raw.githubusercontent.com/DatNguyen9240/App_Workflow/master/' + localPath;
+    }
+    return 'https://view.officeapps.live.com/op/view.aspx?src=' + encodeURIComponent(publicUrl);
+  }
+
+  return localPath;
+}
+
 // Helper function to format SOP badge with file icons & clean basename
 function getTabSopBadgeHtml(s, isTable) {
   var fileName = s.split('/').pop();
@@ -2722,10 +2751,17 @@ function getTabSopBadgeHtml(s, isTable) {
   else if (ext === '7z' || ext === 'zip') icon = '📦';
 
   var label = fileName;
-  if (isTable && label.length > 22) {
-    label = label.substring(0, 20) + '...';
+  if (isTable && label.length > 24) {
+    label = label.substring(0, 22) + '...';
   }
-  return '<a href="SOP/' + encodeURI(s) + '" target="_blank" class="badge-sop' + (isTable ? ' my-0.5 inline-flex items-center gap-1' : ' inline-flex items-center gap-1') + '" title="Mở tài liệu: ' + s + '">' + icon + ' ' + label + '</a>';
+
+  var viewUrl = getTabSopOnlineUrl(s);
+  var isOffice = ['docx', 'doc', 'pptx', 'ppt', 'xlsx', 'xls', 'et'].indexOf(ext) !== -1;
+  var tooltip = isOffice
+    ? '👁️ Bấm để xem trực tiếp online qua Office Viewer (không cần tải về): ' + fileName
+    : '👁️ Bấm để mở xem trực tiếp: ' + fileName;
+
+  return '<a href="' + viewUrl + '" target="_blank" rel="noopener noreferrer" class="badge-sop' + (isTable ? ' my-0.5 inline-flex items-center gap-1' : ' inline-flex items-center gap-1') + '" title="' + tooltip.replace(/"/g, '&quot;') + '">' + icon + ' ' + label + ' <span class="text-[10px] opacity-75 font-normal">👁️</span></a>';
 }
 
 function renderTabCardsView(items) {
